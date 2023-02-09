@@ -1,5 +1,5 @@
 
 scripts/.local/bin/rust-analyzer
-scripts/.local/bin
+# scripts/.local/bin
 getnf/
 lazygit/.config/lazygit
