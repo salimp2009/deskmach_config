@@ -21,7 +21,6 @@ vim.opt.relativenumber = true
 -- vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 -- lvim.keys.normal_mode["<C-Left>"] = "<C-W> <"
 
-
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
@@ -77,18 +76,18 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+    "bash",
+    "c",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "tsx",
+    "css",
+    "rust",
+    "java",
+    "yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -135,128 +134,144 @@ lvim.builtin.treesitter.highlight.enable = true
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
 
--- -- set a formatter, this will override the language server formatting capabilities (if it exists)
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  { command = "black", filetypes = { "python" } },
-  -- { command = "isort", filetypes = { "python" } },
-  {
-    -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-    command = "prettier",
-    ---@usage arguments to pass to the formatter
-    -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-    -- extra_args = { "--print-with", "100" },
-    ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "css", "typescript", "typescriptreact", "javascriptreact", "javascript" },
-  },
-{ command = "shfmt", filetypes = { "sh", "zsh", "bash" } },
+-- dap active
+lvim.builtin.dap.active = true
 
-}
-vim.filetype.add {
-  extension = {
-    zsh = "zsh",
-  },
-}
+-- -- set a formatter, this will override the language server formatting capabilities (if it exists)
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+    { command = "black", filetypes = { "python" } },
+    -- { command = "isort", filetypes = { "python" } },
+    {
+        -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
+        command = "prettier",
+        ---@usage arguments to pass to the formatter
+        -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+        -- extra_args = { "--print-with", "100" },
+        ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+        filetypes = { "css", "typescript", "typescriptreact", "javascriptreact", "javascript" },
+    },
+    { command = "shfmt", filetypes = { "sh", "zsh", "bash" } },
+})
+vim.filetype.add({
+    extension = {
+        zsh = "zsh",
+    },
+})
 -- -- set additional linters
-local linters = require "lvim.lsp.null-ls.linters"
-linters.setup {
-  { command = "flake8", filetypes = { "python" } },
-  -- {
-  --   -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-  --   command = "shellcheck",
-  --   ---@usage arguments to pass to the formatter
-  --   -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-  --   extra_args = { "--severity", "warning" },
-  -- },
-  -- {
-  --   command = "codespell",
-  --   ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-  --   filetypes = { "javascript", "python" },
-  -- },
-}
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+    { command = "flake8", filetypes = { "python" } },
+    -- {
+    --   -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
+    --   command = "shellcheck",
+    --   ---@usage arguments to pass to the formatter
+    --   -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+    --   extra_args = { "--severity", "warning" },
+    -- },
+    -- {
+    --   command = "codespell",
+    --   ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+    --   filetypes = { "javascript", "python" },
+    -- },
+})
 
 -- emmet-lsp setup
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "emmet-ls" })
 -- shell script setup
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "bashls" })
 
-local lsp_manager = require "lvim.lsp.manager"
+local lsp_manager = require("lvim.lsp.manager")
 
 lsp_manager.setup("bashls", {
-  filetypes = { "sh", "zsh" },
-  on_init = require("lvim.lsp").common_on_init,
-  capabilities = require("lvim.lsp").common_capabilities(),
+    filetypes = { "sh", "zsh" },
+    on_init = require("lvim.lsp").common_on_init,
+    capabilities = require("lvim.lsp").common_capabilities(),
 })
-
 
 lsp_manager.setup("emmet_ls", {
-  filetypes = { "astro", "html" },
-  -- cmd = { "/Users/chris/Library/Caches/fnm_multishells/65657_1672759387689/bin/ls_emmet", "--stdio" },
-  on_init = require("lvim.lsp").common_on_init,
-  capabilities = require("lvim.lsp").common_capabilities(),
+    filetypes = { "astro", "html" },
+    -- cmd = { "/Users/chris/Library/Caches/fnm_multishells/65657_1672759387689/bin/ls_emmet", "--stdio" },
+    on_init = require("lvim.lsp").common_on_init,
+    capabilities = require("lvim.lsp").common_capabilities(),
 })
-
 
 -- Additional Plugins
 lvim.plugins = {
-  { "tzachar/cmp-tabnine", run = "./install.sh" },
-  {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
-  },
-  { "roobert/tailwindcss-colorizer-cmp.nvim" },
-  { "lunarvim/darkplus.nvim" },
-  {
-    "p00f/nvim-ts-rainbow",
-  },
+    { "tzachar/cmp-tabnine",                   run = "./install.sh" },
+    {
+        "windwp/nvim-ts-autotag",
+        config = function()
+          require("nvim-ts-autotag").setup()
+        end,
+    },
+    { "roobert/tailwindcss-colorizer-cmp.nvim" },
+    { "lunarvim/darkplus.nvim" },
+    {
+        "p00f/nvim-ts-rainbow",
+    },
+    { "mfussenegger/nvim-jdtls" },
+    { "leoluz/nvim-dap-go" },
+    { "mfussenegger/nvim-dap-python" },
+    { "jose-elias-alvarez/typescript.nvim" },
+    { "mxsdev/nvim-dap-vscode-js" },
+    {
+        "microsoft/vscode-js-debug",
+        opt = true,
+        run = "npm install --legacy-peer-deps && npm run compile",
+    },
 
-  { "NvChad/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup {
-        filetypes = {
-          "typescript",
-          "typescriptreact",
-          "javascript",
-          "javascriptreact",
-          "css",
-          "html",
-          "astro",
-          "lua",
-        },
-        user_default_options = {
-          rgb_fn = true,
-          tailwind = "both",
-        },
-        buftypes = {
-          -- '*', -- seems like this doesn't work with the float window, but works with the other `buftype`s.
-          -- Not sure if the window has a `buftype` at all
-        },
-      }
-    end
-  },
+    { "kylechui/nvim-surround" },
+
+    {
+        "NvChad/nvim-colorizer.lua",
+        config = function()
+          require("colorizer").setup({
+              filetypes = {
+                  "typescript",
+                  "typescriptreact",
+                  "javascript",
+                  "javascriptreact",
+                  "css",
+                  "html",
+                  "astro",
+                  "lua",
+              },
+              user_default_options = {
+                  rgb_fn = true,
+                  tailwind = "both",
+              },
+              buftypes = {
+                  -- '*', -- seems like this doesn't work with the float window, but works with the other `buftype`s.
+                  -- Not sure if the window has a `buftype` at all
+              },
+          })
+        end,
+    },
 }
+-- adding plugin configuration file under ./lua/user/
+reload "user.surround"
+
+require "user.lsp.languages.js-ts"
 
 -- lvim.builtin.treesitter.rainbow.enable = true
 
 if lvim.colorscheme == "darkplus" then
   lvim.builtin.treesitter.rainbow = {
-    enable = true,
-    extended_mode = false,
-    colors = {
-      "DodgerBlue",
-      "Orchid",
-      "Gold",
-    },
-
-    disable = { "html" }
+      enable = true,
+      extended_mode = false,
+      colors = {
+          "DodgerBlue",
+          "Orchid",
+          "Gold",
+      },
+      disable = { "html" },
   }
 else
   lvim.builtin.treesitter.rainbow = {
-    enable = true,
-    extended_mode = false,
-    disable = { "html" }
+      enable = true,
+      extended_mode = false,
+      disable = { "html" },
   }
 end
 
