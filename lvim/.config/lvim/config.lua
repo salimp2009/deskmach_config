@@ -73,6 +73,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.treesitter.autotag = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -149,7 +150,7 @@ formatters.setup({
     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
     -- extra_args = { "--print-with", "100" },
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "css", "typescript", "typescriptreact", "javascriptreact", "javascript" },
+    filetypes = { "html", "css", "typescript", "typescriptreact", "javascriptreact", "javascript" },
   },
   { command = "shfmt", filetypes = { "sh", "zsh", "bash" } },
 })
@@ -190,7 +191,8 @@ lsp_manager.setup("bashls", {
 })
 
 lsp_manager.setup("emmet_ls", {
-  filetypes = { "astro", "html", "typescriptreact", "javascript", "javascriptreact", "css", "sass", "scss", "less" },
+  -- filetypes = { "astro", "html", "javascriptreact", "typescriptreact", "css", "sass", "scss", "less" },
+  filetypes = { "astro", "html", "javascript", "javascriptreact", "typescriptreact", "css", "sass", "scss", "less" },
   -- cmd = { "/Users/chris/Library/Caches/fnm_multishells/65657_1672759387689/bin/ls_emmet", "--stdio" },
   on_init = require("lvim.lsp").common_on_init,
   capabilities = require("lvim.lsp").common_capabilities(),
@@ -198,7 +200,10 @@ lsp_manager.setup("emmet_ls", {
 
 -- Additional Plugins
 lvim.plugins = {
-  { "tzachar/cmp-tabnine",                   run = "./install.sh" },
+  {
+    "tzachar/cmp-tabnine",
+    run = "./install.sh"
+  },
   {
     "windwp/nvim-ts-autotag",
     config = function()
