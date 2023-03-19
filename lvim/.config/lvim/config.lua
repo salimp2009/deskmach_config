@@ -235,6 +235,16 @@ lvim.plugins = {
 	{ "kylechui/nvim-surround" },
 
 	{
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+		setup = function()
+			vim.g.mkdp_auto_close = 0
+		end,
+	},
+
+	{
 		"NvChad/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup({
