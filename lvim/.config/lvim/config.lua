@@ -142,7 +142,7 @@ lvim.builtin.dap.active = true
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{ command = "black", filetypes = { "python" } },
-	-- { command = "isort", filetypes = { "python" } },
+	{ command = "isort", filetypes = { "python" } },
 	{
 		-- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
 		command = "prettier",
@@ -181,8 +181,13 @@ linters.setup({
 
 local code_actions = require("lvim.lsp.null-ls.code_actions")
 code_actions.setup({
-	{ name = "proselint" },
+	-- { name = "proselint" },
+	{ name = "cspell", filetypes = { "markdown" } },
 })
+
+-- TODO: check how to use this ; needs a .marksman.toml file ??
+-- require("lspconfig").marksman.setup({})
+
 -- emmet-lsp setup
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "emmet-ls" })
 -- shell script setup
@@ -198,7 +203,18 @@ lsp_manager.setup("bashls", {
 
 lsp_manager.setup("emmet_ls", {
 	-- filetypes = { "astro", "html", "javascriptreact", "typescriptreact", "css", "sass", "scss", "less" },
-	filetypes = { "astro", "html", "javascript", "javascriptreact", "typescriptreact", "css", "sass", "scss", "less" },
+	filetypes = {
+		"astro",
+		"html",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"css",
+		"sass",
+		"scss",
+		"less",
+	},
 	-- cmd = { "/Users/chris/Library/Caches/fnm_multishells/65657_1672759387689/bin/ls_emmet", "--stdio" },
 	on_init = require("lvim.lsp").common_on_init,
 	capabilities = require("lvim.lsp").common_capabilities(),
