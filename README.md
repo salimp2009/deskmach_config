@@ -24,6 +24,7 @@ stow zsh # Just my zsh config
 
 ## Programs
 
-An list of all the programs I have is included in the `programs` directory 
+An list of all the programs I have is included in the `programs` directory
 
-Thanks to [Christian Chiarulli](https://github.com/ChristianChiarulli) for inspiring, his videos, awesome discord community, zap (best zsh plugin),scripts and LunarVim.
+Thanks to [Christian Chiarulli](https://github.com/ChristianChiarulli) for inspiring,
+his videos, awesome discord community, zap (best zsh plugin),scripts and LunarVim.
