@@ -6,6 +6,9 @@ keymap("x", "p", [["_dP]])
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- h, l does not go line below if they are at beginning or end of line
+-- vim.cmd("set ww-=h,l")
+
 -- keymap("n", "<c-j>", "<c-d>", opts)
 -- keymap("n", "<c-k>", "<c-u>", opts)
 keymap("n", "<c-m>", "<s-m>", opts)
