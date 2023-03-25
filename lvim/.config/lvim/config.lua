@@ -11,7 +11,7 @@ require("user.options")
 require("user.plugins")
 require("user.keymaps")
 reload("user.surround")
--- require("user.lsp.init")
+require("user.lsp.init")
 -- require "user.lsp.languages.js-ts"
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
@@ -117,6 +117,8 @@ formatters.setup({
 	},
 	{ command = "shfmt", filetypes = { "sh", "zsh", "bash" } },
 	{ command = "stylua", filetypes = { "lua" } },
+	{ name = "taplo", filetypes = { "toml" } },
+	{ command = "rustfmt", filetypes = { "rust", "*.rs" } },
 })
 vim.filetype.add({
 	extension = {

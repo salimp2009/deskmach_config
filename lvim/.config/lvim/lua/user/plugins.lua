@@ -26,23 +26,23 @@ lvim.plugins = {
 	-- 	run = "npm install --legacy-peer-deps && npm run compile",
 	-- },
 
-	-- { "simrat39/rust-tools.nvim" },
-	-- {
-	-- 	"saecki/crates.nvim",
-	-- 	tag = "v0.3.0",
-	-- 	requires = { "nvim-lua/plenary.nvim" },
-	-- 	config = function()
-	-- 		require("crates").setup({
-	-- 			null_ls = {
-	-- 				enabled = true,
-	-- 				name = "crates.nvim",
-	-- 			},
-	-- 			popup = {
-	-- 				border = "rounded",
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
+	{ "simrat39/rust-tools.nvim" },
+	{
+		"saecki/crates.nvim",
+		tag = "v0.3.0",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("crates").setup({
+				null_ls = {
+					enabled = true,
+					name = "crates.nvim",
+				},
+				popup = {
+					border = "rounded",
+				},
+			})
+		end,
+	},
 	-- {
 	-- 	"j-hui/fidget.nvim",
 	-- 	config = function()
