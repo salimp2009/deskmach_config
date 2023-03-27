@@ -1,7 +1,8 @@
 -- Additional Plugins
-table.insert(lvim.plugins, {
-	"p00f/clangd_extensions.nvim",
-})
+-- this is added in plugins.lua file
+-- table.insert(lvim.plugins, {
+-- 	"p00f/clangd_extensions.nvim",
+-- })
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
 
@@ -38,6 +39,7 @@ local custom_on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>lH", "<cmd>ClangdTypeHierarchy<cr>", opts)
 	vim.keymap.set("n", "<leader>lt", "<cmd>ClangdSymbolInfo<cr>", opts)
 	vim.keymap.set("n", "<leader>lm", "<cmd>ClangdMemoryUsage<cr>", opts)
+	vim.keymap.set("n", "<leader>lH", "<cmd>ClangdToggleInlayHints<cr>", opts)
 
 	require("clangd_extensions.inlay_hints").setup_autocmd()
 	require("clangd_extensions.inlay_hints").set_inlay_hints()
@@ -47,6 +49,12 @@ local status_ok, project_config = pcall(require, "rhel.clangd_wrl")
 if status_ok then
 	clangd_flags = vim.tbl_deep_extend("keep", project_config, clangd_flags)
 end
+
+lvim.builtin.which_key.mappings["C"] = {
+	name = "C++",
+	h = {},
+	A = {},
+}
 
 local custom_on_init = function(client, bufnr)
 	require("lvim.lsp").common_on_init(client, bufnr)

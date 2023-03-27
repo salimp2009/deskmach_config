@@ -4,6 +4,7 @@ lvim.plugins = {
 		"tzachar/cmp-tabnine",
 		run = "./install.sh",
 	},
+	{ "p00f/clangd_extensions.nvim" },
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()
