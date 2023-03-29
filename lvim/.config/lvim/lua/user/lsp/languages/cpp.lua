@@ -50,12 +50,6 @@ if status_ok then
 	clangd_flags = vim.tbl_deep_extend("keep", project_config, clangd_flags)
 end
 
-lvim.builtin.which_key.mappings["C"] = {
-	name = "C++",
-	h = {},
-	A = {},
-}
-
 local custom_on_init = function(client, bufnr)
 	require("lvim.lsp").common_on_init(client, bufnr)
 	require("clangd_extensions.config").setup({})
