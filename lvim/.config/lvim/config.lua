@@ -12,7 +12,8 @@ require("user.plugins")
 require("user.keymaps")
 reload("user.surround")
 require("user.lsp.init")
--- require "user.lsp.languages.js-ts"
+reload("user.inlay-hints")
+-- reload("user.spectre")
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"

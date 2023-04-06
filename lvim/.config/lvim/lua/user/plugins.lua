@@ -16,6 +16,8 @@ lvim.plugins = {
 	{
 		"p00f/nvim-ts-rainbow",
 	},
+	{ "lvimuser/lsp-inlayhints.nvim" },
+	{ "windwp/nvim-spectre" },
 	{ "mfussenegger/nvim-jdtls" },
 	{ "leoluz/nvim-dap-go" },
 	{ "mfussenegger/nvim-dap-python" },
