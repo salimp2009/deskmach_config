@@ -21,11 +21,11 @@ lvim.plugins = {
 	{ "mfussenegger/nvim-dap-python" },
 	{ "jose-elias-alvarez/typescript.nvim" },
 	{ "mxsdev/nvim-dap-vscode-js" },
-	-- {
-	-- 	"microsoft/vscode-js-debug",
-	-- 	opt = true,
-	-- 	run = "npm install --legacy-peer-deps && npm run compile",
-	-- },
+	{
+		"microsoft/vscode-js-debug",
+		opt = true,
+		run = "npm install --legacy-peer-deps && npm run compile",
+	},
 
 	{ "simrat39/rust-tools.nvim" },
 	{
