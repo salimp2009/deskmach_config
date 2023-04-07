@@ -6,6 +6,7 @@ lvim.plugins = {
 	},
 	{ "p00f/clangd_extensions.nvim" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
+	{ "monaqa/dial.nvim" },
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()

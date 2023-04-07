@@ -13,6 +13,7 @@ require("user.keymaps")
 reload("user.surround")
 require("user.lsp.init")
 reload("user.inlay-hints")
+reload("user.dial")
 -- reload("user.textobjects")
 -- reload("user.spectre")
 
