@@ -5,6 +5,7 @@ lvim.plugins = {
 		run = "./install.sh",
 	},
 	{ "p00f/clangd_extensions.nvim" },
+	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()
