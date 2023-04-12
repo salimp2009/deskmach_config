@@ -143,9 +143,9 @@ linters.setup({
 		extra_args = { "--severity", "warning" },
 	},
 	-- {
-	--   command = "codespell",
-	--   ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-	--   filetypes = { "javascript", "python" },
+	-- 	command = "codespell",
+	-- 	---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+	-- 	filetypes = { "javascript", "python", "markdown", "cpp" },
 	-- },
 })
 
