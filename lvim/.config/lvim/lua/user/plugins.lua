@@ -4,6 +4,7 @@ lvim.plugins = {
 		"tzachar/cmp-tabnine",
 		run = "./install.sh",
 	},
+	-- { "Exafunction/codeium.vim" },
 	{ "p00f/clangd_extensions.nvim" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{ "monaqa/dial.nvim" },

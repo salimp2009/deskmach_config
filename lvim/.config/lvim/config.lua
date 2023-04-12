@@ -16,6 +16,7 @@ reload("user.inlay-hints")
 reload("user.dial")
 -- reload("user.textobjects")
 reload("user.spectre")
+-- reload("user.codeium")
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"

@@ -1,0 +1,25 @@
+local ok, codeium = pcall(require, "codeium")
+if not ok then
+	return
+end
+
+codeium.config = function()
+	vim.keymap.set("i", "<C-a>", function()
+		return vim.fn["codeium#Accept"]()
+	end, { expr = true })
+
+	vim.keymap.set("i", "<c-j>", function()
+		return vim.fn["codeium#CycleCompletions"](1)
+	end, { expr = true })
+
+	vim.keymap.set("i", "<c-k>", function()
+		return vim.fn["codeium#CycleCompletions"](-1)
+	end, { expr = true })
+
+	vim.keymap.set("i", "<c-x>", function()
+		return vim.fn["codeium#Clear"]()
+	end, { expr = true })
+end
+
+local sources_table = lvim.builtin.cmp.sources
+sources_table[#sources_table + 1] = { name = "codeium" }
