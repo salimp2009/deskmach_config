@@ -59,7 +59,13 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 	}
 end
 
+-- local code_actions = require("lvim.lsp.null-ls.code_actions")
+-- code_actions.setup({
+-- 	-- { name = "proselint" },
+-- 	{ name = "eslint_d", filetypes = { "javascript", "javascriptreact", "typescriptreact", "typescript" } },
+-- })
+
 -- local linters = require("lvim.lsp.null-ls.linters")
 -- linters.setup({
--- 	{ command = "eslint", filetypes = { "javascript", "typescript" } },
+-- 	{ command = "eslint_d", filetypes = { "javascript", "typescript" } },
 -- })
