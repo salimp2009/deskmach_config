@@ -19,7 +19,6 @@ eval "$(fnm env)"
 #eval "$(zoxide init zsh)"
 # eval "`pip completion --zsh`"
 
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 
@@ -36,4 +35,3 @@ eval "$(fnm env)"
 # unset __conda_setup
 
 # <<< conda initialize <<<
-

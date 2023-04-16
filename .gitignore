@@ -1,5 +1,6 @@
 
 scripts/.local/bin/rust-analyzer
+zsh/.config/zsh/openaikey.zsh
 # scripts/.local/bin
 getnf/
 lazygit/.config/lazygit

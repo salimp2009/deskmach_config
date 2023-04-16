@@ -73,6 +73,8 @@ lvim.plugins = {
 		end,
 	},
 
+	{ "Bryley/neoai.nvim" },
+
 	{
 		"NvChad/nvim-colorizer.lua",
 		config = function()
