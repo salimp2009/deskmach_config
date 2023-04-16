@@ -32,7 +32,7 @@ sources_table[#sources_table + 1] = { name = "codeium" }
 -- keymap("i", "<c-x>", "<Cmd>call codeium#Clear()<CR>", opts)
 -- keymap("i", "<c-a>", "<Cmd>call codeium#Accept()<CR>", opts)
 
-vim.keymap.set("i", "<C-a>", function()
+vim.keymap.set("i", "<C-s>", function()
 	return vim.fn["codeium#Accept"]()
 end, { expr = true })
 
@@ -44,6 +44,6 @@ vim.keymap.set("i", "<c-j>", function()
 	return vim.fn["codeium#CycleCompletions"](-1)
 end, { expr = true })
 
-vim.keymap.set("i", "<c-x>", function()
+vim.keymap.set("i", "<c-q>", function()
 	return vim.fn["codeium#Clear"]()
 end, { expr = true })
