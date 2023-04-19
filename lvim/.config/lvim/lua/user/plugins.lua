@@ -2,10 +2,12 @@
 lvim.plugins = {
 	{
 		"tzachar/cmp-tabnine",
-		run = "./install.sh",
+		event = "InsertEnter",
+		build = "./install.sh",
 	},
 	{
 		"Exafunction/codeium.vim",
+		event = "InsertEnter",
 		config = function()
 			vim.g.codeium_enabled = false
 		end,
@@ -33,15 +35,15 @@ lvim.plugins = {
 	{ "mxsdev/nvim-dap-vscode-js" },
 	{
 		"microsoft/vscode-js-debug",
-		opt = true,
-		run = "npm install --legacy-peer-deps && npm run compile",
+		lazy = true,
+		build = "npm install --legacy-peer-deps && npm run compile",
 	},
 
 	{ "simrat39/rust-tools.nvim" },
 	{
 		"saecki/crates.nvim",
-		tag = "v0.3.0",
-		requires = { "nvim-lua/plenary.nvim" },
+		version = "v0.3.0",
+		-- requires = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("crates").setup({
 				null_ls = {
@@ -65,10 +67,10 @@ lvim.plugins = {
 
 	{
 		"iamcco/markdown-preview.nvim",
-		run = function()
+		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-		setup = function()
+		init = function()
 			vim.g.mkdp_auto_close = 0
 		end,
 	},
