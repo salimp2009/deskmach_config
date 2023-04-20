@@ -7,6 +7,7 @@ require("user.lsp.languages.typescript")
 -- require "user.lsp.languages.sh"
 -- require "user.lsp.languages.emmet"
 require("user.lsp.languages.cpp")
+-- require("user.lsp.languages.cppnew")
 
 lvim.lsp.diagnostics.virtual_text = false
 

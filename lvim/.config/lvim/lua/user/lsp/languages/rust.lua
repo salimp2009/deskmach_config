@@ -1,6 +1,6 @@
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
-local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
+local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "lvim/mason/")
 
 local codelldb_adapter = {
 	type = "server",
