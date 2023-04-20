@@ -3,4 +3,5 @@ scripts/.local/bin/rust-analyzer
 zsh/.config/zsh/openaikey.zsh
 # scripts/.local/bin
 getnf/
+lvim/.config/lvim1.3/
 lazygit/.config/lazygit
