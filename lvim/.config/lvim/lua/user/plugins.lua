@@ -14,7 +14,10 @@ lvim.plugins = {
 	},
 	{ "p00f/clangd_extensions.nvim" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
-	{ "monaqa/dial.nvim" },
+	{
+		"monaqa/dial.nvim",
+		event = "BufRead",
+	},
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()
@@ -27,7 +30,10 @@ lvim.plugins = {
 		"p00f/nvim-ts-rainbow",
 	},
 	{ "lvimuser/lsp-inlayhints.nvim" },
-	{ "windwp/nvim-spectre" },
+	{
+		"windwp/nvim-spectre",
+		event = "BufRead",
+	},
 	{ "mfussenegger/nvim-jdtls" },
 	{ "leoluz/nvim-dap-go" },
 	{ "mfussenegger/nvim-dap-python" },
@@ -40,6 +46,10 @@ lvim.plugins = {
 	},
 
 	{ "simrat39/rust-tools.nvim" },
+	{
+		"folke/todo-comments.nvim",
+		event = "BufRead",
+	},
 	{
 		"saecki/crates.nvim",
 		version = "v0.3.0",
@@ -70,7 +80,8 @@ lvim.plugins = {
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-		init = function()
+		ft = "markdown",
+		config = function()
 			vim.g.mkdp_auto_close = 0
 		end,
 	},

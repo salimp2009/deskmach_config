@@ -194,6 +194,8 @@ lsp_manager.setup("emmet_ls", {
 	capabilities = require("lvim.lsp").common_capabilities(),
 })
 
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
+
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "marksman" })
 lsp_manager.setup("marksman", {
 	filetypes = { "markdown", "md" },
