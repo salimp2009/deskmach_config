@@ -43,7 +43,7 @@ lvim.plugins = {
 	{
 		"saecki/crates.nvim",
 		version = "v0.3.0",
-		-- requires = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("crates").setup({
 				null_ls = {
