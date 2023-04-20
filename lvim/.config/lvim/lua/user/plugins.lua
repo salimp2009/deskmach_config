@@ -42,7 +42,8 @@ lvim.plugins = {
 	{
 		"microsoft/vscode-js-debug",
 		lazy = true,
-		build = "npm install --legacy-peer-deps && npm run compile",
+		-- build = "npm install --legacy-peer-deps && npm run compile",
+		build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
 	},
 
 	{ "simrat39/rust-tools.nvim" },
