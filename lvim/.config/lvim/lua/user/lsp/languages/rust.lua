@@ -1,12 +1,13 @@
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "lvim/mason/")
-
+-- print(mason_path)
 local codelldb_adapter = {
 	type = "server",
 	port = "${port}",
 	executable = {
 		command = mason_path .. "bin/codelldb",
+		-- command = "/usr/bin/lldb-vscode",
 		args = { "--port", "${port}" },
 		-- On windows you may have to uncomment this:
 		-- detached = false,

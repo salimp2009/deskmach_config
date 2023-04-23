@@ -34,7 +34,10 @@ lvim.plugins = {
 		"windwp/nvim-spectre",
 		event = "BufRead",
 	},
-	{ "mfussenegger/nvim-jdtls" },
+	{
+		"mfussenegger/nvim-jdtls",
+		lazy = true,
+	},
 	{ "leoluz/nvim-dap-go" },
 	{ "mfussenegger/nvim-dap-python" },
 	{ "jose-elias-alvarez/typescript.nvim" },
@@ -93,6 +96,13 @@ lvim.plugins = {
 		"0x100101/lab.nvim",
 		build = "cd js && npm ci",
 	},
+	-- {
+	-- 	-- show diagnoscics with arrows
+	-- 	url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+	-- 	-- config = require("user.lsp_lines").config,
+	-- 	event = "User FileOpened",
+	-- },
+
 	{
 		"NvChad/nvim-colorizer.lua",
 		config = function()

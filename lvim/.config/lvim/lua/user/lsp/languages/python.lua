@@ -1,3 +1,6 @@
+-- Set up pylyzer an alternative lsp , linter
+-- require("lspconfig").pylyzer.setup({})
+
 -- Setup dap for python
 local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
 pcall(function()

@@ -1,0 +1,44 @@
+-- local M = {}
+-- M.config = function()
+-- local status_ok, lsp_lines = pcall(require, "lsp_lines")
+-- if not status_ok then
+-- 	return
+-- end
+
+-- lvim.lsp.diagnostics.virtual_text = true
+-- 	lvim.lsp.diagnostics.virtual_lines = false
+
+-- lsp_lines.setup()
+
+-- lvim.builtin.which_key.mappings.l.v = {
+-- 	function()
+-- 		local config = vim.diagnostic.config()
+-- 		if not config then
+-- 			return nil
+-- 		end
+-- 		config.virtual_text = not config.virtual_text
+-- 		config.virtual_lines = not config.virtual_lines
+-- 		vim.diagnostic.config(config)
+-- 	end,
+-- 	"Toggle lsp lines <--> virtual text",
+-- }
+
+-- 	lvim.builtin.which_key.mappings.l.V = {
+-- 		function()
+-- 			local config = vim.diagnostic.config()
+-- 			if not config then
+-- 				return nil
+-- 			end
+-- 			if config.virtual_text or config.virtual_lines then
+-- 				config.virtual_text = false
+-- 				config.virtual_lines = false
+-- 			else
+-- 				config.virtual_text = false
+-- 				config.virtual_lines = true
+-- 			end
+-- 			vim.diagnostic.config(config)
+-- 		end,
+-- 		"Toggle diagnostics",
+-- 	}
+-- end
+-- return M

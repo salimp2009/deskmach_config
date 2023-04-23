@@ -20,6 +20,7 @@ reload("user.codeium")
 reload("user.whichkey")
 reload("user.neoai")
 reload("user.lab")
+reload("user.telescope")
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
