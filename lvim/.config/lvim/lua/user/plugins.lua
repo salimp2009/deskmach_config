@@ -7,7 +7,7 @@ lvim.plugins = {
 	},
 	{
 		"Exafunction/codeium.vim",
-		event = "InsertEnter",
+		event = { "BufRead", "InsertEnter" },
 		config = function()
 			vim.g.codeium_enabled = false
 		end,
