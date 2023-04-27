@@ -19,6 +19,10 @@ lvim.plugins = {
 		event = "BufRead",
 	},
 	{
+		"nvim-treesitter/playground",
+		event = "BufRead",
+	},
+	{
 		"windwp/nvim-ts-autotag",
 		config = function()
 			require("nvim-ts-autotag").setup()
