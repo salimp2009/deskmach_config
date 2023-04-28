@@ -22,6 +22,7 @@ reload("user.neoai")
 reload("user.lab")
 reload("user.telescope")
 reload("user.autocommands")
+-- lvim.builtin.telescope.theme = "center"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping

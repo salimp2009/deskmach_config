@@ -11,7 +11,9 @@ keymap("v", ">", ">gv", opts)
 
 -- keymap("n", "<c-j>", "<c-d>", opts)
 -- keymap("n", "<c-k>", "<c-u>", opts)
-keymap("n", "<c-m>", "<s-m>", opts)
+
+-- This causes a bug; Enter key in normal mode jumo lines
+-- keymap("n", "<c-m>", "<s-m>", opts)
 
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
@@ -40,3 +42,15 @@ end
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+
+-- vim.cmd([[
+--   function! QuickFixToggle()
+--     if empty(filter(getwininfo(), 'v:val.quickfix'))
+--       copen
+--     else
+--       cclose
+--     endif
+--   endfunction
+-- ]])
+
+-- keymap("n", "<m-q>", ":call QuickFixToggle()<cr>", opts)
