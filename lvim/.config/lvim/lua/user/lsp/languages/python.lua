@@ -5,6 +5,8 @@ pcall(function()
 	-- require("dap-python").setup("python")
 end)
 
+local python_path = mason_path .. "packages/debugpy/venv/bin/python"
+
 -- Supported test frameworks are unittest, pytest and django. By default it
 -- tries to detect the runner by probing for pytest.ini and manage.py, if
 -- neither are present it defaults to unittest.
@@ -12,6 +14,17 @@ pcall(function()
 	require("dap-python").test_runner = "pytest"
 end)
 
+require("neotest").setup({
+	adapters = {
+		require("neotest-python")({
+			dap = { justMyCode = false },
+			args = { "--log-level", "DEBUG" },
+			runner = "pytest",
+			-- python = ".venv/bin/python",
+			python = python_path,
+		}),
+	},
+})
 -- vim.api.nvim_create_autocmd({ "FileType" }, {
 -- 	pattern = { "python" },
 -- 	callback = function()
