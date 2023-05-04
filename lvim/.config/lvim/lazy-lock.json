@@ -1,6 +1,5 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "a89339ffbee677ab0521a483b6dac7e2e67c907e" },
-  "FixCursorHold.nvim": { "branch": "master", "commit": "1900f89dc17c603eec29960f57c00bd9ae696495" },
   "LuaSnip": { "branch": "master", "commit": "a6355b12a3b7da0aef71f02560e17ff480182b97" },
   "alpha-nvim": { "branch": "main", "commit": "dafa11a6218c2296df044e00f88d9187222ba6b0" },
   "bigfile.nvim": { "branch": "main", "commit": "c1bad34ce742b4f360b67ca23c873fef998240fc" },
@@ -29,7 +28,7 @@
   "mason.nvim": { "branch": "main", "commit": "a1e01f3029217910a376be4a890c3b836ddda113" },
   "neoai.nvim": { "branch": "main", "commit": "b90180e30d143afb71490b92b08c1e9121d4416a" },
   "neodev.nvim": { "branch": "main", "commit": "ac2747fa98cd19ccfbf70df1503ad80a812f0bfd" },
-  "neotest": { "branch": "master", "commit": "972a7dc9dfe860649edaf89e08c514a98d3a2a09" },
+  "neotest": { "branch": "master", "commit": "32beac0c0736aeb7fcb7eb6cd93307bb5eeee30a" },
   "neotest-python": { "branch": "master", "commit": "6c06041cfb45f45e276068020baa06c06fe20d5c" },
   "nlsp-settings.nvim": { "branch": "main", "commit": "41a855c3bfb9d5a2120707e315a432e74931f80f" },
   "nui.nvim": { "branch": "main", "commit": "698e75814cd7c56b0dd8af4936bcef2d13807f3c" },
@@ -70,6 +69,6 @@
   "typescript.nvim": { "branch": "main", "commit": "f66d4472606cb24615dfb7dbc6557e779d177624" },
   "venv-selector.nvim": { "branch": "main", "commit": "479a145f8f4dd854cffd7289f18b8267f82e5cf0" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
-  "vscode-js-debug": { "branch": "main", "commit": "0d0704da3726653e2d806be528b8ab51fa952cf0" },
+  "vscode-js-debug": { "branch": "main", "commit": "ae8e2f10dbc2c9950159027be6e032b4a1bfc4fb" },
   "which-key.nvim": { "branch": "main", "commit": "20fcd7b602a2c58d634eaa1f1d28b16a6acbfad3" }
 }

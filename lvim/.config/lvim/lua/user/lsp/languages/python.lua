@@ -5,11 +5,8 @@ pcall(function()
 	-- require("dap-python").setup("python")
 end)
 
-local python_path = mason_path .. "packages/debugpy/venv/bin/python"
+-- local python_path = mason_path .. "packages/debugpy/venv/bin/python"
 
--- Supported test frameworks are unittest, pytest and django. By default it
--- tries to detect the runner by probing for pytest.ini and manage.py, if
--- neither are present it defaults to unittest.
 pcall(function()
 	require("dap-python").test_runner = "pytest"
 end)
@@ -17,11 +14,16 @@ end)
 require("neotest").setup({
 	adapters = {
 		require("neotest-python")({
-			dap = { justMyCode = false },
-			args = { "--log-level", "DEBUG" },
+			-- Extra arguments for nvim-dap configuration
+			-- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
+			dap = {
+				justMyCode = false,
+				console = "integratedTerminal",
+			},
+			args = { "--log-level", "DEBUG", "--quiet" },
 			runner = "pytest",
 			-- python = ".venv/bin/python",
-			python = python_path,
+			-- python = python_path,
 		}),
 	},
 })
