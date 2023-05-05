@@ -5,6 +5,7 @@
 -- })
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
+local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
 
 -- some settings can only passed as commandline flags, see `clangd --help`
 local clangd_flags = {
@@ -78,7 +79,7 @@ lvim.builtin.dap.on_config_done = function(dap)
 		port = "${port}",
 		executable = {
 			-- provide the absolute path for `codelldb` command if not using the one installed using `mason.nvim`
-			command = "codelldb",
+			command = mason_path .. "bin/codelldb",
 			args = { "--port", "${port}" },
 
 			-- On windows you may have to uncomment this:
@@ -105,36 +106,3 @@ lvim.builtin.dap.on_config_done = function(dap)
 	}
 	dap.configurations.c = dap.configurations.cpp
 end
-
--- local dap = require("dap")
--- dap.adapters.lldb = {
--- 	type = "executable",
--- 	command = "/usr/bin/lldb-vscode", -- adjust as needed, must be absolute path
--- 	name = "lldb",
--- }
-
--- dap.configurations.cpp = {
--- 	{
--- 		name = "Launch",
--- 		type = "lldb",
--- 		request = "launch",
--- 		program = function()
--- 			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/build/", "file")
--- 		end,
--- 		cwd = "${workspaceFolder}",
--- 		stopOnEntry = false,
--- 		args = {},
--- 		-- 💀
--- 		-- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
--- 		--
--- 		--    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
--- 		--
--- 		-- Otherwise you might get the following error:
--- 		--
--- 		--    Error on launch: Failed to attach to the target process
--- 		--
--- 		-- But you should be aware of the implications:
--- 		-- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
--- 		-- runInTerminal = false,
--- 	},
--- }

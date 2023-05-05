@@ -1,18 +1,37 @@
+-- TODO : codelldb gives error; opened an issue at rust-tools
+-- using rustlldb.lua works but has bugs ??
+-- the keymapping are under after/ftplugin/rust.lua
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
-local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "lvim/mason/")
+local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
 -- print(mason_path)
-local codelldb_adapter = {
-	type = "server",
-	port = "${port}",
-	executable = {
-		command = mason_path .. "bin/codelldb",
-		-- command = "/usr/bin/lldb-vscode",
-		args = { "--port", "${port}" },
-		-- On windows you may have to uncomment this:
-		-- detached = false,
-	},
-}
+-- local codelldb_adapter = {
+-- 	type = "server",
+-- 	port = "${port}",
+-- 	executable = {
+-- 		command = mason_path .. "bin/codelldb",
+-- 		-- command = "/usr/bin/lldb-vscode",
+-- 		args = { "--port", "${port}" },
+-- 		-- On windows you may have to uncomment this:
+-- 		-- detached = false,
+-- 	},
+-- }
+
+-- this is suggest at rust-tool repo;
+-- https://github.com/simrat39/rust-tools.nvim/wiki/Debugging
+local package_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.6.7/"
+local codelldb_path = mason_path .. "bin/codelldb"
+local liblldb_path = mason_path .. "packages/codelldb/extension/lldb/lib/liblldb"
+local this_os = vim.loop.os_uname().sysname
+
+-- The path in windows is different
+if this_os:find("Windows") then
+	codelldb_path = package_path .. "adapter\\codelldb.exe"
+	liblldb_path = package_path .. "lldb\\bin\\liblldb.dll"
+else
+	-- The liblldb extension is .so for linux and .dylib for macOS
+	liblldb_path = liblldb_path .. (this_os == "Linux" and ".so" or ".dylib")
+end
 
 pcall(function()
 	require("rust-tools").setup({
@@ -47,7 +66,8 @@ pcall(function()
 			end,
 		},
 		dap = {
-			adapter = codelldb_adapter,
+			-- adapter= codelldb_adapter,
+			adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
 		},
 		server = {
 			on_attach = function(client, bufnr)
@@ -73,7 +93,7 @@ pcall(function()
 end)
 
 lvim.builtin.dap.on_config_done = function(dap)
-	dap.adapters.codelldb = codelldb_adapter
+	dap.adapters.codelldb = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path)
 	dap.configurations.rust = {
 		{
 			name = "Launch file",
@@ -91,24 +111,3 @@ lvim.builtin.dap.on_config_done = function(dap)
 end
 
 vim.api.nvim_set_keymap("n", "<m-d>", "<cmd>RustOpenExternalDocs<Cr>", { noremap = true, silent = true })
-
--- lvim.builtin.which_key.mappings["R"] = {
--- 	name = "Rust",
--- 	r = { "<cmd>RustRunnables<Cr>", "Runnables" },
--- 	t = { "<cmd>lua _CARGO_TEST()<cr>", "Cargo Test" },
--- 	m = { "<cmd>RustExpandMacro<Cr>", "Expand Macro" },
--- 	c = { "<cmd>RustOpenCargo<Cr>", "Open Cargo" },
--- 	p = { "<cmd>RustParentModule<Cr>", "Parent Module" },
--- 	d = { "<cmd>RustDebuggables<Cr>", "Debuggables" },
--- 	v = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
--- 	R = {
--- 		"<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<Cr>",
--- 		"Reload Workspace",
--- 	},
--- 	o = { "<cmd>RustOpenExternalDocs<Cr>", "Open External Docs" },
--- 	y = { "<cmd>lua require'crates'.open_repository()<cr>", "[crates] open repository" },
--- 	P = { "<cmd>lua require'crates'.show_popup()<cr>", "[crates] show popup" },
--- 	i = { "<cmd>lua require'crates'.show_crate_popup()<cr>", "[crates] show info" },
--- 	f = { "<cmd>lua require'crates'.show_features_popup()<cr>", "[crates] show features" },
--- 	D = { "<cmd>lua require'crates'.show_dependencies_popup()<cr>", "[crates] show dependencies" },
--- }

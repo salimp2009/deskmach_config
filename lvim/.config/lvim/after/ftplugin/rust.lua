@@ -33,6 +33,13 @@ local mappings = {
 		f = { "<cmd>lua require'crates'.show_features_popup()<cr>", "[crates] show features" },
 		D = { "<cmd>lua require'crates'.show_dependencies_popup()<cr>", "[crates] show dependencies" },
 	},
+	-- R = {
+	-- 	name = "Rust Neotest-Debug",
+	-- 	n = { "<cmd>lua require('neotest').run.run()<cr>", "NeoTest Method Test" },
+	-- 	N = { "<cmd>lua require('neotest').run.run(vim.fn.expand(' % '))<cr>", "NeoTest Class Test" },
+	-- 	d = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "NeoTest Method DAP" },
+	-- 	D = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "NeoTest Class DAP" },
+	-- },
 }
 
 which_key.register(mappings, opts)

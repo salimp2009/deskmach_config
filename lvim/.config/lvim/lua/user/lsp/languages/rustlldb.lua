@@ -108,3 +108,11 @@ lvim.builtin.dap.on_config_done = function(dap)
 		},
 	}
 end
+
+-- TODO: Neotest default setup needs code with tests;
+-- the keymapping are under after/ftplugin/rust.lua
+-- require("neotest").setup({
+-- 	adapters = {
+-- 		require("neotest-rust"),
+-- 	},
+-- })
