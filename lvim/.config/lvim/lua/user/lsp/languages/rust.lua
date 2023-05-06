@@ -19,15 +19,15 @@ local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
 
 -- this is suggest at rust-tool repo;
 -- https://github.com/simrat39/rust-tools.nvim/wiki/Debugging
-local package_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.6.7/"
+-- local package_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.6.7/"
 local codelldb_path = mason_path .. "bin/codelldb"
 local liblldb_path = mason_path .. "packages/codelldb/extension/lldb/lib/liblldb"
 local this_os = vim.loop.os_uname().sysname
 
 -- The path in windows is different
 if this_os:find("Windows") then
-	codelldb_path = package_path .. "adapter\\codelldb.exe"
-	liblldb_path = package_path .. "lldb\\bin\\liblldb.dll"
+	codelldb_path = mason_path .. "packages\\codelldb\\extension\\adapter\\codelldb.exe"
+	liblldb_path = mason_path .. "packages\\codelldb\\extension\\lldb\\bin\\liblldb.dll"
 else
 	-- The liblldb extension is .so for linux and .dylib for macOS
 	liblldb_path = liblldb_path .. (this_os == "Linux" and ".so" or ".dylib")

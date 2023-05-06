@@ -7,3 +7,5 @@ lsp_manager.setup("marksman", {
 	on_init = require("lvim.lsp").common_on_init,
 	capabilities = require("lvim.lsp").common_capabilities(),
 })
+
+-- require("lspconfig").marksman.setup({})
