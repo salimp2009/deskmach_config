@@ -21,7 +21,7 @@ local mappings = {
 		v = { "<cmd>VenvSelect<cr>", "Virtual Env Select" },
 		V = { "<cmd>VenvSelectCached<cr>", "Virtual Env Select Cached" },
 		n = { "<cmd>lua require('neotest').run.run()<cr>", "NeoTest Run Test" },
-		N = { "<cmd>lua require('neotest').run.run(vim.fn.expand(' % '))<cr>", "NeoTest Run File" },
+		N = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%')})<cr>", "NeoTest Run File" },
 		d = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "NeoTest Debug" },
 		D = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "NeoTest Class DAP" },
 	},
