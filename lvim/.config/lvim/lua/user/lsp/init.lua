@@ -7,10 +7,10 @@ require("user.lsp.languages.python")
 require("user.lsp.languages.typescript")
 require("user.lsp.languages.bash")
 require("user.lsp.languages.emmet")
--- require("user.lsp.languages.cpp")
-require("user.lsp.languages.cppgdb")
+require("user.lsp.languages.cpp")
 
 -- require("user.lsp.languages.cpplldb")
+-- require("user.lsp.languages.cppgdb")
 
 lvim.lsp.diagnostics.virtual_text = false
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })

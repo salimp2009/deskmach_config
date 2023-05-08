@@ -98,7 +98,8 @@ lvim.builtin.dap.on_config_done = function(dap)
 			request = "launch",
 			MIMode = "gdb",
 			miDebuggerServerAddress = "localhost:1234",
-			miDebuggerPath = "/usr/bin/gdb",
+			-- miDebuggerPath = "/usr/bin/gdb",
+			miDebuggerPath = "/usr/bin/lldb-vscode",
 			cwd = "${workspaceFolder}",
 			program = function()
 				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
