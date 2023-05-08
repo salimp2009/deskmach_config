@@ -36,7 +36,7 @@ local mappings = {
 	-- R = {
 	-- 	name = "Rust Neotest-Debug",
 	-- 	n = { "<cmd>lua require('neotest').run.run()<cr>", "NeoTest Method Test" },
-	-- 	N = { "<cmd>lua require('neotest').run.run(vim.fn.expand(' % '))<cr>", "NeoTest Class Test" },
+	-- 	N = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "NeoTest Class Test" },
 	-- 	d = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "NeoTest Method DAP" },
 	-- 	D = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "NeoTest Class DAP" },
 	-- },
