@@ -122,6 +122,7 @@ lvim.plugins = {
 					"lua",
 				},
 				user_default_options = {
+					names = false,
 					rgb_fn = true,
 					tailwind = "both",
 				},
