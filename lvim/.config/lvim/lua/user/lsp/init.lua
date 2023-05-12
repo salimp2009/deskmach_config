@@ -9,6 +9,9 @@ require("user.lsp.languages.bash")
 require("user.lsp.languages.emmet")
 require("user.lsp.languages.cpp")
 
+-- marksman setup for markdown
+-- require("lvim.lsp.manager").setup("marksman")
+
 -- require("user.lsp.languages.cpplldb")
 -- require("user.lsp.languages.cppgdb")
 vim.diagnostic.config({ virtual_text = false })
