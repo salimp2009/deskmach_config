@@ -1,5 +1,8 @@
 -- Additional Plugins
 lvim.plugins = {
+	{ url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
+	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
+	{ "marko-cerovac/material.nvim" },
 	{
 		"tzachar/cmp-tabnine",
 		event = "InsertEnter",
