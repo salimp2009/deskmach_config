@@ -36,6 +36,7 @@ vim.filetype.add({
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
 	{ command = "flake8", filetypes = { "python" } },
+	{ name = "jsonlint" },
 	{
 		command = "markdownlint",
 	},

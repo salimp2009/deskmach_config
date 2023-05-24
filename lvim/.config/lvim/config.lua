@@ -22,6 +22,9 @@ reload("user.lab")
 reload("user.telescope")
 reload("user.autocommands")
 reload("user.formatlint")
+reload("user.bqf")
+-- reload("user.dbee")
+-- reload("user.sqtest")
 
 -- EXAMPLES for setups;
 -- lvim.builtin.telescope.theme = "center"

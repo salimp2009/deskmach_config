@@ -2,5 +2,16 @@
   "workspace.checkThirdParty": false,
   "diagnostics.globals": [
     "reload"
-  ]
+  ],
+    "workspace.library": [
+        "/usr/local/share/nvim/runtime",
+        "/home/salim/.local/share/lunarvim/lvim",
+        "/home/salim/.local/share/lunarvim/site/pack/lazy/opt/neodev.nvim/types/stable",
+        "${3rd}/busted/library",
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library",
+        "/home/salim/.local/share/lunarvim/site/pack/lazy/opt/telescope.nvim/lua",
+        "/home/salim/.local/share/lunarvim/site/pack/lazy/opt/plenary.nvim/lua",
+        "/home/salim/.local/share/lvim/mason/packages/lua-language-server/libexec/meta/25cc2350"
+    ]
 }

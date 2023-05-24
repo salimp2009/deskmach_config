@@ -2,6 +2,21 @@
 lvim.plugins = {
 	{ url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
 	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
+	-- {
+	-- 	"kndndrj/nvim-dbee",
+	-- 	event = "BufRead",
+	-- 	build = function()
+	-- 		require("dbee").install()
+	-- 	end,
+	-- },
+	-- {
+	-- 	"kkharji/sqlite.lua",
+	-- 	event = "BufRead",
+	-- },
+	{
+		"kevinhwang91/nvim-bqf",
+		event = "BufRead",
+	},
 	{ "marko-cerovac/material.nvim" },
 	{
 		"tzachar/cmp-tabnine",
