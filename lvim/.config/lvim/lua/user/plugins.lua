@@ -2,6 +2,10 @@
 lvim.plugins = {
 	{ url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
 	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
+	{
+		"christianchiarulli/harpoon",
+		event = "BufRead",
+	},
 	-- {
 	-- 	"kndndrj/nvim-dbee",
 	-- 	event = "BufRead",

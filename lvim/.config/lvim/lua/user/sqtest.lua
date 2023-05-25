@@ -50,7 +50,7 @@ end
 local test = {
 	{ filepath = "/home/salim/.config/lvim/config.lua", linenumbers = "3,7" },
 	{ filepath = "/home/salim/.config/lvim/lua/user/bqf.lua.lua", linenumbers = "1,4" },
-	{ filepath = "/home/salim/.config/lvim/lua/user/git.lua", linenumbers = "2,5" },
+	-- { filepath = "/home/salim/.config/lvim/lua/user/git.lua", linenumbers = "2,5" },
 	{ filepath = "/home/salim/.config/lvim/lua/user/dial.lua", linenumbers = "6,9" },
 }
 

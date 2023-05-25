@@ -25,7 +25,8 @@ reload("user.formatlint")
 reload("user.bqf")
 -- reload("user.dbee")
 -- reload("user.sqtest")
-
+reload("user.harpoon")
+reload("user.bookmarks")
 -- EXAMPLES for setups;
 -- lvim.builtin.telescope.theme = "center"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
