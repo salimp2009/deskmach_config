@@ -13,10 +13,10 @@ lvim.plugins = {
 	-- 		require("dbee").install()
 	-- 	end,
 	-- },
-	-- {
-	-- 	"kkharji/sqlite.lua",
-	-- 	event = "BufRead",
-	-- },
+	{
+		"kkharji/sqlite.lua",
+		event = "BufRead",
+	},
 	{
 		"kevinhwang91/nvim-bqf",
 		event = "BufRead",
