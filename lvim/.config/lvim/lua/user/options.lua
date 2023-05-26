@@ -25,6 +25,7 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.autotag = true
 lvim.builtin.dap.active = true
+-- lvim.builtin.bufferline.active = false
 -- lvim.builtin.treesitter.auto_install = true
 
 -- if you don't want all the parsers change this to a table of the ones you want

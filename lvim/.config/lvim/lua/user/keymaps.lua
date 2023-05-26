@@ -43,7 +43,18 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
--- vim.cmd([[
+keymap("n", "<PageUp>", "<cmd>BookmarkNext<cr>", opts)
+keymap("n", "<PageDown>", "<cmd>BookmarkPrev<cr>", opts)
+-- keymap("n", "<Right>", "<cmd>FilemarkNext<cr>", opts)
+-- keymap("n", "<Left>", "<cmd>FilemarkPrev<cr>", opts)
+vim.api.nvim_set_keymap(
+	"n",
+	"<tab>",
+	"<cmd>lua require('telescope').extensions.bookmark.filemarks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Filemarks'})<cr>",
+	opts
+)
+-- -- vim.cmd([[
+
 --   function! QuickFixToggle()
 --     if empty(filter(getwininfo(), 'v:val.quickfix'))
 --       copen
