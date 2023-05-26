@@ -21,7 +21,11 @@ lvim.plugins = {
 		"kevinhwang91/nvim-bqf",
 		event = "BufRead",
 	},
-	{ "marko-cerovac/material.nvim" },
+	{
+		"stevearc/dressing.nvim",
+		opts = {},
+		event = "BufRead",
+	},
 	{
 		"tzachar/cmp-tabnine",
 		event = "InsertEnter",
