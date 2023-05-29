@@ -43,10 +43,13 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
-keymap("n", "<PageUp>", "<cmd>BookmarkNext<cr>", opts)
-keymap("n", "<PageDown>", "<cmd>BookmarkPrev<cr>", opts)
--- keymap("n", "<Right>", "<cmd>FilemarkNext<cr>", opts)
--- keymap("n", "<Left>", "<cmd>FilemarkPrev<cr>", opts)
+keymap("n", "<PageDown>", "<cmd>BookmarkNext<cr>", opts)
+keymap("n", "<PageUp>", "<cmd>BookmarkPrev<cr>", opts)
+keymap("n", "<m-c>", "<cmd>BookmarkToggle<cr>", opts)
+keymap("n", "<m-x>", "<cmd>BookmarkClear<cr>", opts)
+keymap("n", "<s-tab>", "<cmd>FilemarkToggle<cr>", opts)
+keymap("n", "<s-l>", "<cmd>FilemarkNext<cr>", opts)
+keymap("n", "<s-h>", "<cmd>FilemarkPrev<cr>", opts)
 vim.api.nvim_set_keymap(
 	"n",
 	"<tab>",
