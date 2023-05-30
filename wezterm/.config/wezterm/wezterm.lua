@@ -47,28 +47,30 @@ config.color_scheme = "tokyonight_night"
 config.colors = wezterm.color.get_builtin_schemes()[config.color_scheme]
 config.enable_kitty_graphics = true
 config.default_prog = { "zsh" }
+config.colors = {
+	tab_bar = {
+		background = "#282a36",
+		inactive_tab = {
+			bg_color = "#282a36",
+			fg_color = "#6272a4",
+		},
+		active_tab = {
+			bg_color = "#282a36",
+			fg_color = "#9CA5B4",
+		},
+		new_tab = {
+			bg_color = "#282a36",
+			fg_color = "#9CA5B4",
+		},
+		new_tab_hover = {
+			bg_color = "#282a36",
+			fg_color = "#9CA5B4",
+		},
+	},
+}
 -- config.colors = {
 -- 	background = "#585B70",
 -- 	foreground = "#CDD6F4",
--- 	tab_bar = {
--- 		background = "#282a36",
--- 		inactive_tab = {
--- 			bg_color = "#282a36",
--- 			fg_color = "#6272a4",
--- 		},
--- 		active_tab = {
--- 			bg_color = "#282a36",
--- 			fg_color = "#f8f8f2",
--- 		},
--- 		new_tab = {
--- 			bg_color = "#282a36",
--- 			fg_color = "#f8f8f2",
--- 		},
--- 		new_tab_hover = {
--- 			bg_color = "#282a36",
--- 			fg_color = "#f8f8f2",
--- 		},
--- 	},
 
 -- 	ansi = {
 -- 		"#282936",
