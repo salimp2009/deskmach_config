@@ -4,13 +4,13 @@ require("user.lsp.languages.rust")
 -- require "user.lsp.languages.go"
 require("user.lsp.languages.python")
 -- require("user.lsp.languages.js-ts")
-require("user.lsp.languages.typescript")
-require("user.lsp.languages.bash")
+-- require("user.lsp.languages.typescript")
+-- require("user.lsp.languages.bash")
 -- require("user.lsp.languages.emmet")
 -- require("user.lsp.languages.cpp")
 
 -- require("user.lsp.languages.cpplldb")
-require("user.lsp.languages.cppgdb")
+-- require("user.lsp.languages.cppgdb")
 vim.diagnostic.config({ virtual_text = false })
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
 -- if you don't want all the parsers change this to a table of the ones you want
