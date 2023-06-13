@@ -15,7 +15,7 @@ reload("user.inlay-hints")
 reload("user.dial")
 reload("user.textobjects")
 reload("user.spectre")
-reload("user.codeium")
+-- reload("user.codeium")
 reload("user.whichkey")
 reload("user.neoai")
 reload("user.lab")
@@ -27,6 +27,7 @@ reload("user.bqf")
 -- reload("user.sqtest")
 reload("user.harpoon")
 reload("user.bookmark")
+reload("user.noice")
 
 -- EXAMPLES for setups;
 -- lvim.builtin.telescope.theme = "center"

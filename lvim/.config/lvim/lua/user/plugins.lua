@@ -3,6 +3,16 @@ lvim.plugins = {
 	{ url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
 	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
 	{
+		"folke/noice.nvim",
+		event = "VimEnter",
+		enabled = true,
+		priority = 20,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	},
+	{
 		"christianchiarulli/harpoon",
 		event = "BufRead",
 	},
@@ -40,13 +50,13 @@ lvim.plugins = {
 		event = "InsertEnter",
 		build = "./install.sh",
 	},
-	{
-		"Exafunction/codeium.vim",
-		event = { "BufRead", "InsertEnter" },
-		config = function()
-			vim.g.codeium_enabled = false
-		end,
-	},
+	-- {
+	-- 	"Exafunction/codeium.vim",
+	-- 	event = { "BufRead", "InsertEnter" },
+	-- 	config = function()
+	-- 		vim.g.codeium_enabled = false
+	-- 	end,
+	-- },
 	{ "p00f/clangd_extensions.nvim" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{
