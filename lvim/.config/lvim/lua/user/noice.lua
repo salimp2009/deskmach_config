@@ -18,8 +18,8 @@ require("noice").setup({
 		message = {
 			-- Messages shown by lsp servers
 			enabled = false,
-			view = "notify",
-			opts = {},
+			-- view = "notify",
+			-- opts = {},
 		},
 	},
 	-- you can enable a preset for easier configuration
