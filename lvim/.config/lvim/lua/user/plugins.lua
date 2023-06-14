@@ -4,12 +4,12 @@ lvim.plugins = {
 	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
 	{
 		"folke/noice.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		enabled = true,
 		priority = 20,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
+			-- "rcarriga/nvim-notify",
 		},
 	},
 	{

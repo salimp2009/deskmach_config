@@ -2,8 +2,8 @@ lvim.builtin.which_key.mappings["v"] = { "<cmd>vsplit<cr>", "vsplit" }
 
 lvim.builtin.which_key.mappings["a"] = {
 	name = "A.I.",
-	c = { "<cmd>Codeium Enable<cr>", "Codeium Enable" },
-	d = { "<cmd>Codeium Disable<cr>", "Codeium Disable" },
+	-- c = { "<cmd>Codeium Enable<cr>", "Codeium Enable" },
+	-- d = { "<cmd>Codeium Disable<cr>", "Codeium Disable" },
 }
 
 -- local m_opts = {
@@ -49,7 +49,7 @@ lvim.builtin.which_key.mappings["B"] = {
 	x = { "<cmd>BookmarkClear<cr>", "Clear" },
 	z = { "<cmd>BookmarkList<cr>", "List" },
 	t = { "<cmd>FilemarkToggle<cr>", "Mark File" },
-	m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
+	m = { "<cmd>BookmarkToggle<cr>", "List" },
 
 	-- m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
 	-- n = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Harpoon Next" },

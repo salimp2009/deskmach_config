@@ -15,6 +15,12 @@ require("noice").setup({
 			["vim.lsp.util.stylize_markdown"] = true,
 			["cmp.entry.get_documentation"] = true,
 		},
+		message = {
+			-- Messages shown by lsp servers
+			enabled = false,
+			view = "notify",
+			opts = {},
+		},
 	},
 	-- you can enable a preset for easier configuration
 	presets = {
@@ -46,16 +52,17 @@ require("noice").setup({
 			-- lua = false, -- to disable a format, set to `false`
 		},
 	},
-	-- messages = {
-	-- 	-- NOTE: If you enable messages, then the cmdline is enabled automatically.
-	-- 	-- This is a current Neovim limitation.
-	-- 	enabled = true, -- enables the Noice messages UI
-	-- 	view = "notify", -- default view for messages
-	-- 	view_error = "notify", -- view for errors
-	-- 	view_warn = "notify", -- view for warnings
-	-- 	view_history = "messages", -- view for :messages
-	-- 	view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
-	-- },
+
+	messages = {
+		-- NOTE: If you enable messages, then the cmdline is enabled automatically.
+		-- This is a current Neovim limitation.
+		enabled = false, -- enables the Noice messages UI
+		view = "notify", -- default view for messages
+		view_error = "notify", -- view for errors
+		view_warn = "notify", -- view for warnings
+		view_history = "messages", -- view for :messages
+		view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
+	},
 	popupmenu = {
 		enabled = true, -- enables the Noice popupmenu UI
 		---@type 'nui'|'cmp'
@@ -65,71 +72,71 @@ require("noice").setup({
 		kind_icons = {}, -- set to `false` to disable icons
 	},
 
-	routes = {
-		{
-			view = "notify",
-			filter = { event = "msg_showmode" },
-		},
-		{
-			filter = {
-				event = "msg_show",
-				find = "%d+L, %d+B",
-			},
-			view = "mini",
-		},
-		{
-			view = "cmdline_output",
-			filter = { cmdline = "^:", min_height = 5 },
-			-- BUG: will be fixed after https://github.com/neovim/neovim/issues/21044 gets merged
-		},
-		{
-			filter = { event = "msg_show", kind = "search_count" },
-			opts = { skip = true },
-		},
-		{
-			filter = {
-				event = "msg_show",
-				find = "; before #",
-			},
-			opts = { skip = true },
-		},
-		{
-			filter = {
-				event = "msg_show",
-				find = "; after #",
-			},
-			opts = { skip = true },
-		},
-		{
-			filter = {
-				event = "msg_show",
-				find = " lines, ",
-			},
-			opts = { skip = true },
-		},
-		{
-			filter = {
-				event = "msg_show",
-				find = "go up one level",
-			},
-			opts = { skip = true },
-		},
-		{
-			filter = {
-				event = "msg_show",
-				find = "yanked",
-			},
-			opts = { skip = true },
-		},
-		{
-			filter = { find = "No active Snippet" },
-			opts = { skip = true },
-		},
-		{
-			filter = { find = "waiting for cargo metadata" },
-			opts = { skip = true },
-		},
-	},
+	-- routes = {
+	-- 	{
+	-- 		view = "mini",
+	-- 		filter = { event = "msg_showmode" },
+	-- 	},
+	-- 	{
+	-- 		filter = {
+	-- 			event = "msg_show",
+	-- 			find = "%d+L, %d+B",
+	-- 		},
+	-- 		view = "mini",
+	-- 	},
+	-- 	{
+	-- 		view = "cmdline_output",
+	-- 		filter = { cmdline = "^:", min_height = 5 },
+	-- 		-- BUG: will be fixed after https://github.com/neovim/neovim/issues/21044 gets merged
+	-- 	},
+	-- 	{
+	-- 		filter = { event = "msg_show", kind = "search_count" },
+	-- 		opts = { skip = true },
+	-- 	},
+	-- 	{
+	-- 		filter = {
+	-- 			event = "msg_show",
+	-- 			find = "; before #",
+	-- 		},
+	-- 		opts = { skip = true },
+	-- 	},
+	-- 	{
+	-- 		filter = {
+	-- 			event = "msg_show",
+	-- 			find = "; after #",
+	-- 		},
+	-- 		opts = { skip = true },
+	-- 	},
+	-- 	{
+	-- 		filter = {
+	-- 			event = "msg_show",
+	-- 			find = " lines, ",
+	-- 		},
+	-- 		opts = { skip = true },
+	-- 	},
+	-- 	{
+	-- 		filter = {
+	-- 			event = "msg_show",
+	-- 			find = "go up one level",
+	-- 		},
+	-- 		opts = { skip = true },
+	-- 	},
+	-- 	{
+	-- 		filter = {
+	-- 			event = "msg_show",
+	-- 			find = "yanked",
+	-- 		},
+	-- 		opts = { skip = true },
+	-- 	},
+	-- 	{
+	-- 		filter = { find = "No active Snippet" },
+	-- 		opts = { skip = true },
+	-- 	},
+	-- 	{
+	-- 		filter = { find = "waiting for cargo metadata" },
+	-- 		opts = { skip = true },
+	-- 	},
+	-- },
     -- stylua: ignore
   keys = {
     {
