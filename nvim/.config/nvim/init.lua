@@ -1,5 +1,5 @@
 -- vim.loader.enable()
 require("user.options")
--- require "keymaps"
--- require "Lazy"
--- require "autocommands"
+require "user.keymaps"
+require("user.lazy")
+require "user.autocommands"
