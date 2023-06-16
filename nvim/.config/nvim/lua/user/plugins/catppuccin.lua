@@ -3,7 +3,8 @@ local M = {
 	name = "catppuccin",
 	lazy = false,
 	build = ":CatppuccinCompile",
-	priority = 1000,
+  enabled = false,
+  --	priority = 1000,
 }
 
 function M.config()
