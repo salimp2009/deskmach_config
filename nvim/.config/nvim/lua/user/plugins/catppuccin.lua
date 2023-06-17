@@ -4,7 +4,7 @@ local M = {
 	lazy = false,
 	build = ":CatppuccinCompile",
   enabled = false,
-  --	priority = 1000,
+  -- priority = 1000,
 }
 
 function M.config()

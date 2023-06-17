@@ -15,12 +15,11 @@ local M = {
 			"L3MON4D3/LuaSnip",
 			"rafamadriz/friendly-snippets",
 		},
-		{
-			"jcdickinson/codeium.nvim",
-			config = function()
-				require("codeium").setup({})
-			end,
-		},
+    {
+      "tzachar/cmp-tabnine",
+      event = "InsertEnter",
+      build = "./install.sh",
+    },
 	},
 }
 
@@ -67,7 +66,8 @@ function M.config()
 		Event = "",
 		Operator = "󰆕",
 		TypeParameter = "󰊄",
-		Codeium = "󰚩",
+		Tabnine = "󰚩",
+		-- Codeium = "󰚩",
 		Copilot = "",
 	}
 	-- find more here: https://www.nerdfonts.com/cheat-sheet
@@ -168,6 +168,7 @@ function M.config()
 			select = false,
 		},
 		window = {
+      completion = cmp.config.window.bordered(),
 			documentation = {
 				border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			},

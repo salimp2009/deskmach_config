@@ -22,7 +22,10 @@ require("lazy").setup("user.plugins", {
 	},
 	defaults = { lazy = false },
 	install = { colorscheme = { "tokyo-night" } },
-	-- ui = { wrap = "true" },
+-- ui = { 
+ --    border = "rounded",
+ --    wrap = "true" 
+ --  },
 	-- change_detection = { enabled = true },
 	-- debug = false,
 	performance = {
