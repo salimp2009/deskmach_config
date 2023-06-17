@@ -17,7 +17,7 @@ function M.config()
 			-- the presets plugin, adds help for a bunch of default keybindings in Neovim
 			-- No actual key bindings are created
 			presets = {
-				operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+				operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
 				motions = true, -- adds help for motions
 				text_objects = true, -- help for text objects triggered after entering an operator
 				windows = true, -- default bindings on <c-w>
@@ -69,6 +69,7 @@ function M.config()
 			-- most people should not need to change this
 			i = { "j", "k" },
 			v = { "j", "k" },
+
 		},
 	}
 
@@ -94,6 +95,8 @@ function M.config()
 		["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
 		["m"] = { "<cmd>lua _MOCP_TOGGLE()<CR>", "MOCP" },
 		["j"] = { "<cmd>Jaq<CR>", "Jaq" },
+    ["h"] = { "<cmd>nohlsearch<cr>", "nohl" },
+    ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
 		["f"] = {
 			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>",
 			"Find files",

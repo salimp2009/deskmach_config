@@ -16,6 +16,10 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- Comment Toggle; Normal & visualmode 
+--keymap("n", "gc", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+--keymap("x", "gc", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -66,16 +70,16 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", opts)
 
--- keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 
 --keymaps for toggleterm
--- keymap("n", "<M-1>", "<cmd>ToggleTerm direction=horizontal size=12<cr>", opts)
--- keymap("t", "<M-1>", "<cmd>ToggleTerm direction=horizontal size=12<cr>", opts)
--- keymap("n", "<M-2>", "<cmd>ToggleTerm direction=vertical size=50<cr>", opts)
--- keymap("t", "<M-2>", "<cmd>ToggleTerm direction=vertical size=50<cr>", opts)
--- keymap("n", "<M-3>", "<cmd>ToggleTerm direction=float<cr>", opts)
--- keymap("t", "<M-3>", "<cmd>ToggleTerm direction=float<cr>", opts)
+keymap("n", "<M-1>", "<cmd>ToggleTerm direction=horizontal size=12<cr>", opts)
+keymap("t", "<M-1>", "<cmd>ToggleTerm direction=horizontal size=12<cr>", opts)
+keymap("n", "<M-2>", "<cmd>ToggleTerm direction=vertical size=50<cr>", opts)
+keymap("t", "<M-2>", "<cmd>ToggleTerm direction=vertical size=50<cr>", opts)
+keymap("n", "<M-3>", "<cmd>ToggleTerm direction=float<cr>", opts)
+keymap("t", "<M-3>", "<cmd>ToggleTerm direction=float<cr>", opts)
 
 --keymaps for tabs
 keymap("n", "<M-l>", ":tabnext<CR>", opts)
@@ -84,6 +88,6 @@ keymap("n", "<A-q>", ":tabclose<CR>", opts)
 keymap("n", "<A-i>", ":tabnew<CR>", opts)
 
 -- lsp keymap
--- keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
 -- keymap("n", "-", require("oil").open, { desc = "Open parent directory" })

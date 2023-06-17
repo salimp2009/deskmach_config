@@ -10,7 +10,8 @@ function M.config()
 	require("nvim-tree").setup({
 		disable_netrw = true,
 		hijack_netrw = true,
-		renderer = {
+
+    renderer = {
 			group_empty = true,
 			icons = {
 				webdev_colors = true,
