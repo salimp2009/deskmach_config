@@ -137,7 +137,34 @@ function M.config()
 				-- Kind icons
 				-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 				-- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-				vim_item.kind = kind_icons[vim_item.kind]
+        -- vim.api.nvim_set_hl(0, "CmpItemKindTabNine", {fg ="#6CC644"}) 
+        if entry.source.name == "copilot" then
+          vim_item.kind_hl_group = "CmpItemKindCopilot"
+        end
+
+        if entry.source.name == "cmp_tabnine" then
+          vim_item.kind_hl_group = "CmpItemKindTabnine"
+        end
+
+        if entry.source.name == "crates" then
+          vim_item.kind_hl_group = "CmpItemKindCrate"
+        end
+
+        if entry.source.name == "lab.quick_data" then
+          vim_item.kind_hl_group = "CmpItemKindConstant"
+        end
+
+        if entry.source.name == "emoji" then
+          vim_item.kind_hl_group = "CmpItemKindEmoji"
+        end
+
+        -- Added those to autocommands; it seems to be working
+        vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+        vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
+        vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
+        vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
+
+        vim_item.kind = kind_icons[vim_item.kind]
         vim_item.menu = ({
 					nvim_lsp = "[LSP]",
 					nvim_lua = "[NVLUA]",
@@ -147,6 +174,8 @@ function M.config()
 					cmp_tabnine = "[TBNI]",
 					codeium = "[CDEM]",
           copilot = "[CPLT]",
+          crate = "[CRAT]",
+          emoji = "[EMOJ]"
 				})[entry.source.name]
 				return vim_item
 			end,
@@ -160,6 +189,8 @@ function M.config()
 			{ name = "cmp_tabnine" },
 			{ name = "copilot" },
 			{ name = "codeium" },
+			{ name = "crate" },
+			{ name = "emoji" },
 		},
 		confirm_opts = {
 			behavior = cmp.ConfirmBehavior.Replace,
