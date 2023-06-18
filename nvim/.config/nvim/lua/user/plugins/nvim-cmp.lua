@@ -27,11 +27,6 @@ function M.config()
 	local cmp = require("cmp")
 	local luasnip = require("luasnip")
 
-	-- local status_ok, copilot_cmp = pcall(require, "copilot_cmp.comparators")
-	-- if not status_ok then
-	--   return
-	-- end
-
 	require("luasnip/loaders/from_vscode").lazy_load()
 
 	local check_backspace = function()
@@ -66,7 +61,7 @@ function M.config()
 		Event = "",
 		Operator = "󰆕",
 		TypeParameter = "󰊄",
-		Tabnine = "󰚩",
+		TabNine = "󰚩",
 		-- Codeium = "󰚩",
 		Copilot = "",
 	}
@@ -140,16 +135,18 @@ function M.config()
 			fields = { "kind", "abbr", "menu" },
 			format = function(entry, vim_item)
 				-- Kind icons
-				vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+				-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 				-- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-				vim_item.menu = ({
+				vim_item.kind = kind_icons[vim_item.kind]
+        vim_item.menu = ({
 					nvim_lsp = "[LSP]",
 					nvim_lua = "[NVLUA]",
 					luasnip = "[SNPT]",
 					buffer = "[BFR]",
 					path = "[PATH]",
-					copilot = "[CPLT]",
+					cmp_tabnine = "[TBNI]",
 					codeium = "[CDEM]",
+          copilot = "[CPLT]",
 				})[entry.source.name]
 				return vim_item
 			end,
@@ -160,6 +157,7 @@ function M.config()
 			{ name = "luasnip" },
 			{ name = "buffer" },
 			{ name = "path" },
+			{ name = "cmp_tabnine" },
 			{ name = "copilot" },
 			{ name = "codeium" },
 		},
