@@ -104,6 +104,12 @@ vim.api.nvim_create_autocmd({ "TermEnter" }, {
 	end,
 })
 
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, {
+-- 	callback = function()
+-- 		require("user.lsp.attach").enable_format_on_save()
+-- 	end,
+-- })
+
 -- vim.api.nvim_create_autocmd({"VimEnter"},
 --   {
 --     callback = function()

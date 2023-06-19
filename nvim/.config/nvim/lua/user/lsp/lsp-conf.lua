@@ -13,6 +13,7 @@ local servers = {
 	tsserver = "typescript-language-server",
 	pyright = "pyright",
   astro= "astro-ls",
+  clangd = "clangd",
 }
 
 for k, v in pairs(servers) do

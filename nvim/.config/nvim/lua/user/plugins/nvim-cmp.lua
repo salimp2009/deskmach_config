@@ -75,14 +75,14 @@ function M.config()
 				luasnip.lsp_expand(args.body) -- For `luasnip` users.
 			end,
 		},
---		sorting = {
---			comparators = {
---				cmp.config.compare.exact,
---				-- copilot_cmp.prioritize,
---				-- copilot_cmp.score,
---				require("clangd_extensions.cmp_scores"),
---			},
---		},
+	sorting = {
+		comparators = {
+			cmp.config.compare.exact,
+			-- copilot_cmp.prioritize,
+			-- copilot_cmp.score,
+			require("clangd_extensions.cmp_scores"),
+		},
+	},
 		mapping = {
 			--my-keymappings
 			["<Up>"] = cmp.mapping.select_prev_item(),
