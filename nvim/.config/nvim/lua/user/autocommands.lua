@@ -8,25 +8,24 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, 
-  { 
-   callback = function(data)
-    -- buffer is a directory
-      local directory = vim.fn.isdirectory(data.file) == 1
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function(data)
+		-- buffer is a directory
+		local directory = vim.fn.isdirectory(data.file) == 1
 
-      if not directory then
-        return
-      end
+		if not directory then
+			return
+		end
 
-      -- change to the directory
-      vim.cmd.cd(data.file)
+		-- change to the directory
+		vim.cmd.cd(data.file)
 
-      -- open the tree
-      -- require("nvim-tree.api").tree.focus()
-      require("nvim-tree.api").tree.open()
-    end
-  })
- 
+		-- open the tree
+		-- require("nvim-tree.api").tree.focus()
+		require("nvim-tree.api").tree.open()
+	end,
+})
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "gitcommit", "markdown" },
 	callback = function()
@@ -65,9 +64,43 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	callback = function()
 		local line_count = vim.api.nvim_buf_line_count(0)
-		if line_count >= 5000 then
+		if line_count >= 10000 then
 			vim.cmd("IlluminatePauseBuf")
 		end
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "TermEnter" }, {
+	pattern = { "*" },
+	callback = function()
+		vim.cmd("startinsert")
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = { "" },
+	callback = function()
+		local get_project_dir = function()
+			local cwd = vim.fn.getcwd()
+			local project_dir = vim.split(cwd, "/")
+			local project_name = project_dir[#project_dir]
+			return project_name
+		end
+		vim.opt.titlestring = get_project_dir()
+	end,
+})
+
+vim.cmd([[
+  augroup terminal_setup | au!
+  autocmd TermOpen * nnoremap <buffer><LeftRelease> <LeftRelease>i
+  autocmd TermEnter * startinsert!
+  augroup end
+]])
+
+vim.api.nvim_create_autocmd({ "TermEnter" }, {
+	pattern = { "*" },
+	callback = function()
+		vim.cmd("startinsert")
 	end,
 })
 
