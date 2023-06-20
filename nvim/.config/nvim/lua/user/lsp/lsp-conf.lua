@@ -12,8 +12,8 @@ local servers = {
 	jsonls = "vscode-json-language-server",
 	tsserver = "typescript-language-server",
 	pyright = "pyright",
-  astro= "astro-ls",
-  clangd = "clangd",
+	astro = "astro-ls",
+	-- clangd = "clangd",
 }
 
 for k, v in pairs(servers) do
@@ -92,4 +92,3 @@ if vim.fn.executable("pyright") == 1 then
 else
 	print("lspconfig: pyright not found")
 end
-

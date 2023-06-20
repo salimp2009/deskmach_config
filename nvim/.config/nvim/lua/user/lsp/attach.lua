@@ -21,6 +21,7 @@ end
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	attach_navic(client, bufnr)
+	-- require("illuminate").on_attach(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -35,7 +36,7 @@ function M.enable_format_on_save()
 	vim.cmd([[
     augroup format_on_save
       autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.format({ async = true }) 
+      autocmd BufWritePre * lua vim.lsp.buf.format() 
     augroup end
   ]])
 	vim.notify("Enabled format on save")

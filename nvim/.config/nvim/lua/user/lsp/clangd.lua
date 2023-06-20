@@ -18,7 +18,11 @@ if vim.fn.executable("clangd") == 1 then
 		},
 	})
 	require("clangd_extensions").setup({
-		server = clangd_configs,
+		server = {
+			clangd_configs,
+			on_attach = require("user.lsp.attach").on_attach,
+			capabilities = { require("user.lsp.attach").capabilities, offsetEncoding = { "utf-16" } },
+		},
 		extensions = {
 			autoSetHints = true,
 			hover_with_actions = true,
@@ -44,7 +48,7 @@ if vim.fn.executable("clangd") == 1 then
 					statement = "",
 					["template argument"] = "",
 				},
-				{
+				kind_icons = {
 					Compound = "",
 					Recovery = "",
 					TranslationUnit = "",
@@ -52,7 +56,10 @@ if vim.fn.executable("clangd") == 1 then
 					TemplateTypeParm = "",
 					TemplateTemplateParm = "",
 					TemplateParamObject = "",
+					ExprWithCleanups = "",
+					CXXConstruct = "",
 				},
+
 				highlights = {
 					detail = "Comment",
 				},
@@ -68,4 +75,3 @@ if vim.fn.executable("clangd") == 1 then
 else
 	print("lspconfig: clangd not found")
 end
-

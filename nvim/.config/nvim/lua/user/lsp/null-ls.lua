@@ -9,11 +9,11 @@ require("null-ls").setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({
-			extra_args = {   },
+			extra_args = {},
 			filetypes = {
 				"jsonc",
 				"toml",
-        "astro",
+				"astro",
 				"javascript",
 				"javascriptreact",
 				"typescript",
@@ -38,11 +38,10 @@ require("null-ls").setup({
 		formatting.astyle.with({
 			extra_args = { "--indent=spaces=4", "style=google" },
 		}),
+		formatting.rustfmt,
 		diagnostics.shellcheck,
 		diagnostics.zsh,
-		-- diagnostics.fish,
 		diagnostics.proselint,
-		formatting.rustfmt,
+		diagnostics.flake8,
 	},
 })
-

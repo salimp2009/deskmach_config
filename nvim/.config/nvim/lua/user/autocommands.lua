@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
+    vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "gitcommit", "markdown" },
 	callback = function()
 		vim.opt_local.wrap = true
@@ -90,21 +90,32 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	end,
 })
 
-vim.cmd([[
-  augroup terminal_setup | au!
-  autocmd TermOpen * nnoremap <buffer><LeftRelease> <LeftRelease>i
-  autocmd TermEnter * startinsert!
-  augroup end
-]])
+-- vim.api.nvim_create_autocmd({ "BufEnter" }, {
+-- 	callback = function()
+-- 		vim.api.nvim_set_hl(0, "LspReferenceText", { underline = true })
+-- 	end,
+-- })
+-- vim.cmd([[
+--   augroup terminal_setup | au!
+--   autocmd TermOpen * nnoremap <buffer><LeftRelease> <LeftRelease>i
+--   autocmd TermEnter * startinsert!
+--   augroup end
+-- ]])
+--
+-- vim.api.nvim_create_autocmd({ "TermEnter" }, {
+-- 	pattern = { "*" },
+-- 	callback = function()
+-- 		vim.cmd("startinsert")
+-- 	end,
+-- })
 
-vim.api.nvim_create_autocmd({ "TermEnter" }, {
-	pattern = { "*" },
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	callback = function()
-		vim.cmd("startinsert")
+		vim.lsp.buf.format()
 	end,
 })
 
--- vim.api.nvim_create_autocmd({ "VimEnter" }, {
+-- vim.api.nvim_create_autocmd({ "BufEnter" }, {
 -- 	callback = function()
 -- 		require("user.lsp.attach").enable_format_on_save()
 -- 	end,

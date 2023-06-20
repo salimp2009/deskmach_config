@@ -20,7 +20,7 @@ return {
 			"javascriptreact",
 			"typescript",
 			"typescriptreact",
-      "astro",
+			"astro",
 			"python",
 		},
 		lazy = true,
@@ -55,4 +55,3 @@ return {
 		end,
 	},
 }
-
