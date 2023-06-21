@@ -35,8 +35,8 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 function M.enable_format_on_save()
 	vim.cmd([[
     augroup format_on_save
-      autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.format() 
+    autocmd! 
+     autocmd BufWritePre * lua vim.lsp.buf.format({ async = true }) 
     augroup end
   ]])
 	vim.notify("Enabled format on save")
@@ -48,7 +48,7 @@ function M.disable_format_on_save()
 end
 
 function M.toggle_format_on_save()
-	if vim.fn.exists("#format_on_save#BufWritePre") == 0 then
+       	if vim.fn.exists("#format_on_save#BufWritePre") == 0 then
 		M.enable_format_on_save()
 	else
 		M.disable_format_on_save()

@@ -1,7 +1,7 @@
 local M = {
 	"RRethy/vim-illuminate",
 	event = "BufReadPost",
-  enabled = false,
+	enabled = false,
 }
 
 function M.config()
@@ -50,4 +50,3 @@ function M.config()
 end
 
 return M
-

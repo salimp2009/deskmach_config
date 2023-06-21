@@ -17,11 +17,15 @@ if vim.fn.executable("clangd") == 1 then
 			"--pch-storage=memory",
 		},
 	})
+
+	local clangd_cap = require("user.lsp.attach").capabilities
+	clangd_cap.offsetEncoding = { "utf-16" }
+
 	require("clangd_extensions").setup({
 		server = {
 			clangd_configs,
 			on_attach = require("user.lsp.attach").on_attach,
-			capabilities = { require("user.lsp.attach").capabilities, offsetEncoding = { "utf-16" } },
+			capabilities = clangd_cap,
 		},
 		extensions = {
 			autoSetHints = true,
