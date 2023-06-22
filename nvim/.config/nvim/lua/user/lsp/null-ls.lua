@@ -4,7 +4,6 @@ local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
-
 require("null-ls").setup({
 	debug = false,
 	sources = {
@@ -39,6 +38,7 @@ require("null-ls").setup({
 			extra_args = { "--indent=spaces=4", "style=google" },
 		}),
 		formatting.rustfmt,
+		formatting.clang_format,
 		diagnostics.shellcheck,
 		diagnostics.zsh,
 		diagnostics.proselint,

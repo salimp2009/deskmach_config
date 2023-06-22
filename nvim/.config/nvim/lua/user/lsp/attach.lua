@@ -48,7 +48,7 @@ function M.disable_format_on_save()
 end
 
 function M.toggle_format_on_save()
-       	if vim.fn.exists("#format_on_save#BufWritePre") == 0 then
+	if vim.fn.exists("#format_on_save#BufWritePre") == 0 then
 		M.enable_format_on_save()
 	else
 		M.disable_format_on_save()

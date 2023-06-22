@@ -1,4 +1,4 @@
-    vim.api.nvim_create_autocmd({ "FileType" }, {
+vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },
 	callback = function()
 		vim.cmd([[
@@ -63,13 +63,10 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	callback = function()
-		vim.api.nvim_set_hl(0, "illuminatedWordRead", { fg = "", underline = true })
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
 		vim.api.nvim_set_hl(0, "illuminatedWord", { fg = "", underline = true })
+		vim.api.nvim_set_hl(0, "illuminatedWordRead", { fg = "", underline = true })
+		vim.api.nvim_set_hl(0, "illuminatedWordWrite", { fg = "", underline = true })
+		vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = "", underline = true })
 	end,
 })
 
@@ -102,11 +99,6 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	end,
 })
 
--- vim.api.nvim_create_autocmd({ "BufEnter" }, {
--- 	callback = function()
--- 		vim.api.nvim_set_hl(0, "LspReferenceText", { underline = true })
--- 	end,
--- })
 -- vim.cmd([[
 --   augroup terminal_setup | au!
 --   autocmd TermOpen * nnoremap <buffer><LeftRelease> <LeftRelease>i
@@ -127,18 +119,17 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	end,
 })
 
--- vim.api.nvim_create_autocmd({ "BufEnter" }, {
--- 	callback = function()
--- 		require("user.lsp.attach").enable_format_on_save()
--- 	end,
--- })
-
--- vim.api.nvim_create_autocmd({"VimEnter"},
---   {
---     callback = function()
---       vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
---       vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
---       vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
---       vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
---     end,
---   })
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "BufEnter" }, {
+	pattern = { "*" },
+	callback = function()
+		local buf_ft = vim.bo.filetype
+		if buf_ft == "" or buf_ft == nil then
+			vim.cmd([[
+      nnoremap <silent> <buffer> q :close<CR>
+      " nnoremap <silent> <buffer> <c-j> j<CR>
+      " nnoremap <silent> <buffer> <c-k> k<CR>
+      set nobuflisted
+    ]])
+		end
+	end,
+})

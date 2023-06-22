@@ -36,6 +36,9 @@ function M.config()
 			---@type string
 			basename = "",
 		},
+		-- show_dirname = false,
+		show_basename = true,
+
 		symbols = {
 			---string to be shown at the start of winbar
 			---@type string

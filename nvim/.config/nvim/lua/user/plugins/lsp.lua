@@ -31,6 +31,21 @@ return {
 		end,
 	},
 	{
+		"folke/neodev.nvim",
+		config = function()
+			require("neodev").setup({
+      library = {
+        runtime = true,
+        types = true,
+        plugins = {},
+    },
+      })
+		end,
+		lazy = true,
+		ft = { "lua" },
+		opts = {},
+	},
+	{
 		"p00f/clangd_extensions.nvim",
 		ft = { "c", "cpp" },
 		lazy = true,

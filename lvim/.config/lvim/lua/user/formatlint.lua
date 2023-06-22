@@ -24,7 +24,7 @@ formatters.setup({
 	{ command = "shfmt", filetypes = { "sh", "zsh", "bash" } },
 	{ command = "stylua", filetypes = { "lua" } },
 	{ name = "taplo", filetypes = { "toml" } },
-	{ command = "rustfmt", filetypes = { "rust", "*.rs" } },
+	-- { command = "rustfmt", filetypes = { "rust", "*.rs" } },
 	{ command = "clang-format", filetypes = { "cpp", "c" } },
 })
 vim.filetype.add({
@@ -32,6 +32,13 @@ vim.filetype.add({
 		zsh = "zsh",
 	},
 })
+
+vim.filetype.add({
+	extension = {
+		conf = "dosini",
+	},
+})
+
 -- -- set additional linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
@@ -44,7 +51,7 @@ linters.setup({
 	{
 		-- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
 		command = "shellcheck",
-		filetypes = { "sh", "bash" },
+		filetypes = { "sh", "bash", "zsh" },
 		---@usage arguments to pass to the formatter
 		-- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
 		extra_args = { "--severity", "warning" },

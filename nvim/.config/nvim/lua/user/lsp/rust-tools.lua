@@ -1,8 +1,27 @@
 if vim.fn.executable("rust-analyzer") == 1 then
 	require("rust-tools").setup({
 		server = {
-			on_attach = require("user.lsp.attach").on_attach,
+			on_attach = function(client, bufnr)
+				require("user.lsp.attach").on_attach(client, bufnr)
+				local rt = require("rust-tools")
+				vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
+			end,
 			capabilities = require("user.lsp.attach").capabilities,
+			settings = {
+				["rust-analyzer"] = {
+					lens = {
+						enable = true,
+					},
+					checkOnSave = {
+						enable = true,
+						command = "clippy",
+					},
+					diagnostics = {
+						enable = true,
+					},
+					-- event = "BufReadPost",
+				},
+			},
 		},
 		tools = {
 			executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
@@ -28,6 +47,10 @@ if vim.fn.executable("rust-analyzer") == 1 then
 			on_initialized = function()
 				vim.api.nvim_create_autocmd({
 					"BufAdd",
+					"BufWritePost",
+					"BufEnter",
+					"CursorHold",
+					"InsertLeave",
 				}, {
 					pattern = { "*.rs" },
 					callback = function()
@@ -36,23 +59,7 @@ if vim.fn.executable("rust-analyzer") == 1 then
 				})
 			end,
 		},
-		settings = {
-			["rust-analyzer"] = {
-				lens = {
-					enable = true,
-				},
-				checkOnSave = {
-					enable = true,
-					command = "clippy",
-				},
-				diagnostics = {
-					enable = true,
-				},
-				-- event = "BufReadPost",
-			},
-		},
 	})
 else
 	print("lspconfig: rust-analyzer not found")
 end
-

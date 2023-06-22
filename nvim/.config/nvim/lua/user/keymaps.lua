@@ -1,4 +1,4 @@
-local opts = { silent = true }
+local opts = { noremap = true, silent = true }
 
 -- Shorten function name
 local keymap = vim.keymap.set
@@ -16,7 +16,7 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Comment Toggle; Normal & visualmode 
+-- Comment Toggle; Normal & visualmode
 --keymap("n", "gc", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 --keymap("x", "gc", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
 
@@ -45,6 +45,9 @@ keymap("i", "<C-a>", "<ESC>:0,$y<CR>a", opts)
 keymap("n", "<C-a>", ":0,$y<CR>", opts)
 
 -- keymap("n", ";", ":", opts)
+
+-- open link in Browser
+keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
 -- Visual --
 -- Stay in indent mode
