@@ -24,7 +24,7 @@ formatters.setup({
 	{ command = "shfmt", filetypes = { "sh", "zsh", "bash" } },
 	{ command = "stylua", filetypes = { "lua" } },
 	{ name = "taplo", filetypes = { "toml" } },
-	-- { command = "rustfmt", filetypes = { "rust", "*.rs" } },
+	-- { command = "rustfmt", filetypes = { "rust", "*.rs", "rs" }, extra_args = { "--edition=2021" } },
 	{ command = "clang-format", filetypes = { "cpp", "c" } },
 })
 vim.filetype.add({
