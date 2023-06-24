@@ -12,6 +12,7 @@ M.servers = {
 	"tsserver",
 	"pyright",
 	"astro",
+	"emmet_ls",
 }
 
 return M
