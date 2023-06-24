@@ -3,30 +3,28 @@ return {
 	go_to_source_definition = {
 		fallback = true, -- fall back to standard LSP definition on failure
 	},
-	server = {
-		settings = {
-			typescript = {
-				inlayHints = {
-					includeInlayEnumMemberValueHints = true,
-					includeInlayFunctionLikeReturnTypeHints = true,
-					includeInlayFunctionParameterTypeHints = false,
-					includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-					includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-					includeInlayPropertyDeclarationTypeHints = true,
-					includeInlayVariableTypeHints = true,
-				},
+	settings = {
+		typescript = {
+			inlayHints = {
+				includeInlayEnumMemberValueHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayFunctionParameterTypeHints = false,
+				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayVariableTypeHints = true,
 			},
-			javascript = {
-				inlayHints = {
-					includeInlayParameterNameHints = "all",
-					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-					includeInlayFunctionParameterTypeHints = true,
-					includeInlayVariableTypeHints = true,
-					includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-					includeInlayPropertyDeclarationTypeHints = true,
-					includeInlayFunctionLikeReturnTypeHints = true,
-					includeInlayEnumMemberValueHints = true,
-				},
+		},
+		javascript = {
+			inlayHints = {
+				includeInlayParameterNameHints = "all",
+				includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+				includeInlayFunctionParameterTypeHints = true,
+				includeInlayVariableTypeHints = true,
+				includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayEnumMemberValueHints = true,
 			},
 		},
 	},
