@@ -34,12 +34,12 @@ return {
 		"folke/neodev.nvim",
 		config = function()
 			require("neodev").setup({
-      library = {
-        runtime = true,
-        types = true,
-        plugins = {},
-    },
-      })
+				library = {
+					runtime = true,
+					types = true,
+					plugins = {},
+				},
+			})
 		end,
 		lazy = true,
 		ft = { "lua" },
@@ -69,4 +69,11 @@ return {
 			require("user.lsp.null-ls")
 		end,
 	},
+	-- {
+	-- 	"j-hui/fidget.nvim",
+	-- 	tag = "legacy",
+	-- 	config = function()
+	-- 		require("fidget").setup()
+	-- 	end,
+	-- },
 }
