@@ -6,6 +6,7 @@ local M = {
 		{
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
+		{ "windwp/nvim-ts-autotag" },
 		{
 			"kyazdani42/nvim-web-devicons",
 			config = function()
@@ -37,28 +38,34 @@ function M.config()
 			"python",
 			"c",
 			"cpp",
-      "rust",
-      "astro",
+			"rust",
+			"astro",
 			"toml",
 			"vim",
 			"vimdoc",
 			"html",
 			"python",
-      "gitignore",
-      "javascript",
-      "json",
-      "jsonc",
-      "make",
-      "typescript",
-      "tsx",
-      "vim",
-      "yaml",
+			"gitignore",
+			"javascript",
+			"json",
+			"jsonc",
+			"make",
+			"typescript",
+			"tsx",
+			"vim",
+			"yaml",
 		}, -- put the language you want in this array
 		-- ensure_installed = "all",
 		sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
 		ignore_install = {}, -- List of parsers to ignore installing
 		autopairs = {
 			enable = true,
+		},
+		autotag = {
+			enable = true,
+			enable_rename = true,
+			enable_close = true,
+			enable_close_on_slash = true,
 		},
 		highlight = {
 			enable = true, -- false will disable the whole extension
@@ -74,4 +81,3 @@ function M.config()
 end
 
 return M
-
