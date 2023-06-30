@@ -58,10 +58,14 @@ local custom_on_init = function(client, bufnr)
   ]])
 end
 
+local clangd_cap = require("lvim.lsp").common_capabilities()
+clangd_cap.offsetEncoding = { "utf-16" }
+
 local opts = {
 	cmd = { provider, unpack(clangd_flags) },
 	on_attach = custom_on_attach,
 	on_init = custom_on_init,
+	capabilities = clangd_cap,
 }
 
 require("lvim.lsp.manager").setup("clangd", opts)

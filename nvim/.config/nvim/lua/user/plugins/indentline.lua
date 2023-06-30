@@ -44,8 +44,8 @@ function M.config()
 	-- }
 	-- HACK: work-around for https://github.com/lukas-reineke/indent-blankline.nvim/issues/59
 	vim.wo.colorcolumn = "99999"
-	vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = "#3b4261", nocombine = true })
-	-- vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#1d2228", nocombine = true })
+	vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = "#737aa2", nocombine = true })
+	vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#3b4261", nocombine = true })
 	-- vim.api.nvim_set_hl(0, "IndentBlanklineIndent2", { fg = "#1d2228" })
 	-- vim.api.nvim_set_hl(0, "IndentBlanklineIndent3", { fg = "#1d2228" })
 
@@ -64,6 +64,7 @@ function M.config()
 		-- show_end_of_line = true,
 		-- space_char_blankline = " ",
 		show_current_context = true,
+		context_char = "▏",
 		-- show_current_context_start = true,
 		-- char_highlight_list = {
 		-- 	"IndentBlanklineIndent1",
