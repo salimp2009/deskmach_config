@@ -78,7 +78,7 @@ lvim.builtin.dap.on_config_done = function(dap)
 		command = mason_path .. "bin/OpenDebugAD7",
 	}
 
-	dap.configurations.cpp = {
+	dap.configurations.c = {
 		{
 			name = "Launch file",
 			type = "cppdbg",
@@ -118,5 +118,5 @@ lvim.builtin.dap.on_config_done = function(dap)
 			},
 		},
 	}
-	dap.configurations.c = dap.configurations.cpp
+	-- dap.configurations.c = dap.configurations.cpp
 end
