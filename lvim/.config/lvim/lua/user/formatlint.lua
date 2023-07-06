@@ -39,6 +39,16 @@ vim.filetype.add({
 	},
 })
 
+-- vim.filetype.add({
+-- 	extension = {
+-- 		yml = "yaml.ansible",
+-- 	},
+-- })
+
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+	return server ~= "ansiblels"
+end, lvim.lsp.automatic_configuration.skipped_servers)
+
 -- -- set additional linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
