@@ -11,6 +11,10 @@ local M = {
 					"nvim-telescope/telescope-file-browser.nvim",
 					cmd = "Telescope file_browser",
 				},
+				{
+					"nvim-telescope/telescope-fzf-native.nvim",
+					build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+				},
 			},
 		},
 	},
@@ -21,7 +25,7 @@ function M.config()
 	local actions = require("telescope.actions")
 	local icons = require("user.icons")
 	telescope.load_extension("file_browser")
-
+	telescope.load_extension("fzf")
 	require("project_nvim").setup({
 		---@usage set to false to disable project.nvim.
 		--- This is on by default since it's currently the expected behavior.
@@ -39,9 +43,9 @@ function M.config()
 		-- detection_methods = { "lsp", "pattern" }, -- NOTE: lsp detection will get annoying with multiple langs in one project
 		detection_methods = { "pattern" },
 		---@usage patterns used to detect root dir, when **"pattern"** is in detection_methods
-		patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "LICENSE" },
+		patterns = { "lazy-lock.json", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "LICENSE" },
 		---@ Show hidden files in telescope when searching for files in a project
-		show_hidden = false,
+		show_hidden = true,
 		---@usage When set to false, you will get a message when project.nvim changes your directory.
 		-- When set to false, you will get a message when project.nvim changes your directory.
 		silent_chdir = true,
@@ -131,15 +135,15 @@ function M.config()
 					-- ["<C-u>"] = actions.preview_scrolling_up,
 					-- ["<C-d>"] = actions.preview_scrolling_down,
 
-					-- ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-					["<Tab>"] = actions.close,
-					["<S-Tab>"] = actions.close,
-					-- ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+					["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+					-- ["<Tab>"] = actions.close,
+					-- ["<S-Tab>"] = actions.close,
+					["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 					["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
 					["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					["<C-l>"] = actions.complete_tag,
 					["<C-h>"] = actions.which_key, -- keys from pressing <C-h>
-					-- ["<esc>"] = actions.close,
+					["<esc>"] = actions.close,
 				},
 				n = {
 					["<esc>"] = actions.close,
@@ -178,9 +182,11 @@ function M.config()
 		pickers = {
 			live_grep = {
 				theme = "dropdown",
+				only_sort_text = true,
 			},
 			grep_string = {
 				theme = "dropdown",
+				only_sort_text = true,
 			},
 			find_files = {
 				theme = "dropdown",
@@ -222,6 +228,17 @@ function M.config()
 			-- Now the picker_config_key will be applied every time you call this
 			-- builtin picker
 		},
+		buffers = {
+			initial_mode = "normal",
+			mappings = {
+				i = {
+					["<C-d>"] = actions.delete_buffer,
+				},
+				n = {
+					["dd"] = actions.delete_buffer,
+				},
+			},
+		},
 		extensions = {
 			file_browser = {
 				theme = "ivy",
@@ -240,8 +257,13 @@ function M.config()
 				},
 			},
 		},
+		fzf = {
+			fuzzy = true, -- false will only do exact matching
+			override_generic_sorter = true, -- override the generic sorter
+			override_file_sorter = true, -- override the file sorter
+			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+		},
 	})
 end
 
 return M
-
