@@ -13,7 +13,7 @@ local M = {
 				},
 				{
 					"nvim-telescope/telescope-fzf-native.nvim",
-					build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+					build = "make",
 				},
 			},
 		},
@@ -191,6 +191,7 @@ function M.config()
 			find_files = {
 				theme = "dropdown",
 				previewer = false,
+				hidden = true,
 			},
 			buffers = {
 				theme = "dropdown",
