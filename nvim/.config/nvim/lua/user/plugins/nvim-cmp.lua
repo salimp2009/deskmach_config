@@ -15,11 +15,11 @@ local M = {
 			"L3MON4D3/LuaSnip",
 			"rafamadriz/friendly-snippets",
 		},
-    {
-      "tzachar/cmp-tabnine",
-      event = "InsertEnter",
-      build = "./install.sh",
-    },
+		{
+			"tzachar/cmp-tabnine",
+			event = "InsertEnter",
+			build = "./install.sh",
+		},
 	},
 }
 
@@ -68,6 +68,10 @@ function M.config()
 	-- find more here: https://www.nerdfonts.com/cheat-sheet
 	cmp.setup({
 		enabled = function()
+			local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+			if buftype == "prompt" then
+				return false
+			end
 			return vim.g.cmp_toggle
 		end,
 		snippet = {
@@ -75,14 +79,14 @@ function M.config()
 				luasnip.lsp_expand(args.body) -- For `luasnip` users.
 			end,
 		},
-	sorting = {
-		comparators = {
-			cmp.config.compare.exact,
-			-- copilot_cmp.prioritize,
-			-- copilot_cmp.score,
-			require("clangd_extensions.cmp_scores"),
+		sorting = {
+			comparators = {
+				cmp.config.compare.exact,
+				-- copilot_cmp.prioritize,
+				-- copilot_cmp.score,
+				require("clangd_extensions.cmp_scores"),
+			},
 		},
-	},
 		mapping = {
 			--my-keymappings
 			["<Up>"] = cmp.mapping.select_prev_item(),
@@ -137,35 +141,35 @@ function M.config()
 				-- Kind icons
 				-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 				-- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-        -- vim.api.nvim_set_hl(0, "CmpItemKindTabNine", {fg ="#6CC644"}) 
-        if entry.source.name == "copilot" then
-          vim_item.kind_hl_group = "CmpItemKindCopilot"
-        end
+				-- vim.api.nvim_set_hl(0, "CmpItemKindTabNine", {fg ="#6CC644"})
+				if entry.source.name == "copilot" then
+					vim_item.kind_hl_group = "CmpItemKindCopilot"
+				end
 
-        if entry.source.name == "cmp_tabnine" then
-          vim_item.kind_hl_group = "CmpItemKindTabnine"
-        end
+				if entry.source.name == "cmp_tabnine" then
+					vim_item.kind_hl_group = "CmpItemKindTabnine"
+				end
 
-        if entry.source.name == "crates" then
-          vim_item.kind_hl_group = "CmpItemKindCrate"
-        end
+				if entry.source.name == "crates" then
+					vim_item.kind_hl_group = "CmpItemKindCrate"
+				end
 
-        if entry.source.name == "lab.quick_data" then
-          vim_item.kind_hl_group = "CmpItemKindConstant"
-        end
+				if entry.source.name == "lab.quick_data" then
+					vim_item.kind_hl_group = "CmpItemKindConstant"
+				end
 
-        if entry.source.name == "emoji" then
-          vim_item.kind_hl_group = "CmpItemKindEmoji"
-        end
+				if entry.source.name == "emoji" then
+					vim_item.kind_hl_group = "CmpItemKindEmoji"
+				end
 
-        -- Added those to autocommands; it seems to be working
-        vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
-        vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
-        vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
-        vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
+				-- Added those to autocommands; it seems to be working
+				vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+				vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
+				vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
+				vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 
-        vim_item.kind = kind_icons[vim_item.kind]
-        vim_item.menu = ({
+				vim_item.kind = kind_icons[vim_item.kind]
+				vim_item.menu = ({
 					nvim_lsp = "[LSP]",
 					nvim_lua = "[NVLUA]",
 					luasnip = "[SNPT]",
@@ -173,9 +177,9 @@ function M.config()
 					path = "[PATH]",
 					cmp_tabnine = "[TBNI]",
 					codeium = "[CDEM]",
-          copilot = "[CPLT]",
-          crate = "[CRAT]",
-          emoji = "[EMOJ]"
+					copilot = "[CPLT]",
+					crate = "[CRAT]",
+					emoji = "[EMOJ]",
 				})[entry.source.name]
 				return vim_item
 			end,
@@ -197,16 +201,16 @@ function M.config()
 			select = false,
 		},
 		window = {
-      completion = cmp.config.window.bordered(),
+			completion = cmp.config.window.bordered(),
 			documentation = {
 				border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			},
 		},
 		experimental = {
+			native_menu = false,
 			-- ghost_text = true,
 		},
 	})
 end
 
 return M
-
