@@ -26,6 +26,16 @@ function M.config()
 	local icons = require("user.icons")
 	telescope.load_extension("file_browser")
 	telescope.load_extension("fzf")
+
+	-- local previewers = require("telescope.previewers")
+	-- local sorters = require("telescope.sorters")
+	--
+	-- local file_previewer = previewers.vim_buffer_cat.new
+	-- local grep_previewer = previewers.vim_buffer_vimgrep.new
+	-- local qflist_previewer = previewers.vim_buffer_qflist.new
+	-- local file_sorter = sorters.get_fuzzy_file
+	-- local generic_sorter = sorters.get_generic_fuzzy_sorter
+
 	require("project_nvim").setup({
 		---@usage set to false to disable project.nvim.
 		--- This is on by default since it's currently the expected behavior.
