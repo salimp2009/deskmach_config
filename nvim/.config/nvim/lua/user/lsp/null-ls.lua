@@ -57,6 +57,7 @@ require("null-ls").setup({
 		formatting.rustfmt,
 		formatting.clang_format,
 		diagnostics.shellcheck,
+		-- diagnostics.shellcheck.with({ filetypes = { "sh", "bash", "zsh" } }),
 		diagnostics.zsh,
 		diagnostics.proselint,
 		diagnostics.flake8,

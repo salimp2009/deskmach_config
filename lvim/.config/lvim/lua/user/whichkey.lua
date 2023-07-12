@@ -1,4 +1,5 @@
 lvim.builtin.which_key.mappings["v"] = { "<cmd>vsplit<cr>", "vsplit" }
+lvim.builtin.which_key.mappings["j"] = { "<C-]>", "jump to tag" }
 
 lvim.builtin.which_key.mappings["a"] = {
 	name = "A.I.",
