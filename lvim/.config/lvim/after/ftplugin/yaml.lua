@@ -1,4 +1,4 @@
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "yamlls", "ansiblels" })
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "yamlls" })
 
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 -- 	return server ~= "ansiblels"
@@ -9,8 +9,8 @@
 -- local parts = vim.split(path, "/")
 -- local filename = parts[#parts]
 -- print(filename)
--- print(parts[#parts])
--- -- -- -- check if ansidble is in file extension
+-- print(#parts)
+-- -- check if ansidble is in file extension
 -- if string.find(filename, "ansible") and (string.find(filename, "yaml") or string.find(filename, "yml")) then
 -- 	require("lvim.lsp.manager").setup("ansiblels", {})
 -- 	require("lvim.lsp.manager").setup("yamlls", {})

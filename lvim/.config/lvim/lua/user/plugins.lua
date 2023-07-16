@@ -2,6 +2,7 @@
 lvim.plugins = {
 	{ url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
 	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
+	{ url = "git@github.com:LunarVim/primer.nvim.git" },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -16,13 +17,14 @@ lvim.plugins = {
 		"christianchiarulli/harpoon",
 		event = "BufRead",
 	},
-	-- {
-	-- 	"kndndrj/nvim-dbee",
-	-- 	event = "BufRead",
-	-- 	build = function()
-	-- 		require("dbee").install()
-	-- 	end,
-	-- },
+	{
+		"kndndrj/nvim-dbee",
+		event = "BufRead",
+		-- lazy = "VeryLazy",
+		build = function()
+			require("dbee").install()
+		end,
+	},
 	{
 		"kkharji/sqlite.lua",
 		event = "BufRead",

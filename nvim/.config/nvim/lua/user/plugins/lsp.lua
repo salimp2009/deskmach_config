@@ -69,6 +69,11 @@ return {
 			require("user.lsp.null-ls")
 		end,
 	},
+	{
+		"stevearc/dressing.nvim",
+		opts = {},
+		event = "BufRead",
+	},
 	-- {
 	-- 	"j-hui/fidget.nvim",
 	-- 	tag = "legacy",

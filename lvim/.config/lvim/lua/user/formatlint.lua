@@ -59,6 +59,10 @@ linters.setup({
 		extra_args = { "--line-length=false", "--no-inline-html=false" },
 	},
 	{
+		command = "ansiblelint",
+		filetypes = { "yaml.ansible" },
+	},
+	{
 		-- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
 		command = "shellcheck",
 		filetypes = { "sh", "bash", "zsh" },
