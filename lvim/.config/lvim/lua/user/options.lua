@@ -27,7 +27,8 @@ lvim.builtin.treesitter.autotag = true
 lvim.builtin.dap.active = true
 -- lvim.builtin.bufferline.active = false
 -- lvim.builtin.treesitter.auto_install = true
-
+-- lvim.builtin.telescope.defaults.layout_config = { width = 0.55, height = 0.95 }
+lvim.builtin.telescope.theme = "center"
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
 	"bash",

@@ -6,14 +6,17 @@ local M = {
 		{
 			"nvim-telescope/telescope.nvim",
 			cmd = { "Telescope" },
+			lazy = true,
 			dependencies = {
 				{
 					"nvim-telescope/telescope-file-browser.nvim",
 					cmd = "Telescope file_browser",
+					lazy = true,
 				},
 				{
 					"nvim-telescope/telescope-fzf-native.nvim",
 					build = "make",
+					lazy = true,
 				},
 			},
 		},
@@ -73,6 +76,21 @@ function M.config()
 			prompt_prefix = icons.ui.Telescope .. " ",
 			selection_caret = " ",
 			path_display = { "smart" },
+			selection_strategy = "reset",
+			color_devicons = true,
+			set_env = { ["COLORTERM"] = "truecolor" },
+			vimgrep_arguments = {
+				"rg",
+				"--color=never",
+				"--no-heading",
+				"--with-filename",
+				"--line-number",
+				"--column",
+				"--smart-case",
+				"--hidden",
+				"--glob=!.git/",
+			},
+
 			file_ignore_patterns = {
 				".git/",
 				"target/",
@@ -94,7 +112,7 @@ function M.config()
 				".github/",
 				".gradle/",
 				".idea/",
-				".settings/",
+				"%.settings/",
 				".vscode/",
 				"__pycache__/",
 				"build/",
@@ -203,11 +221,6 @@ function M.config()
 				previewer = false,
 				hidden = true,
 			},
-			buffers = {
-				theme = "dropdown",
-				previewer = false,
-				initial_mode = "normal",
-			},
 			planets = {
 				show_pluto = true,
 				show_moon = true,
@@ -240,6 +253,8 @@ function M.config()
 			-- builtin picker
 		},
 		buffers = {
+			theme = "dropdown",
+			previewer = false,
 			initial_mode = "normal",
 			mappings = {
 				i = {

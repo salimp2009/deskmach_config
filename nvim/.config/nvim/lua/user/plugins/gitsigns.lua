@@ -1,5 +1,6 @@
 local M = {
 	"lewis6991/gitsigns.nvim",
+	commit = "ec4742a7eebf68bec663041d359b95637242b5c3",
 	event = "BufReadPost",
 }
 
@@ -58,11 +59,15 @@ M.opts = {
 		delay = 1000,
 		ignore_whitespace = false,
 	},
-	current_line_blame_formatter_opts = {
+	current_line_blame_formatter = {
+		"<author>, <author_time:%Y-%m-%d> - <summary>",
 		relative_time = false,
 	},
+	-- current_line_blame_formatter_opts = {
+	-- 	relative_time = false,
+	-- },
 	sign_priority = 6,
-	update_debounce = 100,
+	update_debounce = 200,
 	status_formatter = nil, -- Use default
 	max_file_length = 40000,
 	preview_config = {

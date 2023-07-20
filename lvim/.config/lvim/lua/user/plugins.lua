@@ -4,6 +4,15 @@ lvim.plugins = {
 	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
 	{ url = "git@github.com:LunarVim/primer.nvim.git" },
 	{
+		"tpope/vim-dadbod",
+		-- lazy = "VeryLazy",
+	},
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		-- lazy = "VeryLazy",
+		-- cmd = "DAPUI",
+	},
+	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		enabled = true,
@@ -74,6 +83,8 @@ lvim.plugins = {
 		config = function()
 			require("nvim-ts-autotag").setup()
 		end,
+		event = "BufRead",
+		lazy = true,
 	},
 	{ "roobert/tailwindcss-colorizer-cmp.nvim" },
 	{ "lunarvim/darkplus.nvim" },
@@ -89,10 +100,26 @@ lvim.plugins = {
 		"mfussenegger/nvim-jdtls",
 		lazy = true,
 	},
-	{ "leoluz/nvim-dap-go" },
-	{ "mfussenegger/nvim-dap-python" },
-	{ "jose-elias-alvarez/typescript.nvim" },
-	{ "mxsdev/nvim-dap-vscode-js" },
+	{
+		"leoluz/nvim-dap-go",
+		event = "BufRead",
+		lazy = "VeryLazy",
+	},
+	{
+		"mfussenegger/nvim-dap-python",
+		event = "BufRead",
+		lazy = "VeryLazy",
+	},
+	{
+		"jose-elias-alvarez/typescript.nvim",
+		event = "BufRead",
+		lazy = "VeryLazy",
+	},
+	{
+		"mxsdev/nvim-dap-vscode-js",
+		event = "BufRead",
+		lazy = "VeryLazy",
+	},
 	{
 		"microsoft/vscode-js-debug",
 		lazy = true,
@@ -100,10 +127,15 @@ lvim.plugins = {
 		build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
 	},
 
-	{ "simrat39/rust-tools.nvim" },
+	{
+		"simrat39/rust-tools.nvim",
+		event = "BufRead",
+		lazy = true,
+	},
 	{
 		"folke/todo-comments.nvim",
 		event = "BufRead",
+		lazy = VeryLazy,
 	},
 	{
 		"saecki/crates.nvim",

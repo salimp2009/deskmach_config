@@ -25,13 +25,18 @@ return {
 			},
 			workspace = {
 				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					-- [vim.fn.expand("$VIMRUNTIME/lua")] = true,
 					[vim.fn.stdpath("config") .. "/lua"] = true,
-					require("neodev.config").types(),
-					checkThirdParty = false,
+					[vim.fn.expand(vim.fn.stdpath("data") .. "/mason/packages/lua_language_server/meta/")] = true,
+					-- require("neodev.config").types(),
+					"${3rd}/busted/library",
+					"${3rd}/luassert/library",
+					"${3rd}/luv/library",
 				},
-			maxPreload = 5000,
-  preloadFileSize = 10000,},
+				checkThirdParty = false,
+				maxPreload = 5000,
+				preloadFileSize = 10000,
+			},
 			telemetry = {
 				enable = false,
 			},
