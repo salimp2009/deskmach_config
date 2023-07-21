@@ -25,7 +25,7 @@ return {
 			},
 			workspace = {
 				library = {
-					-- [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 					[vim.fn.stdpath("config") .. "/lua"] = true,
 					[vim.fn.expand(vim.fn.stdpath("data") .. "/mason/packages/lua_language_server/meta/")] = true,
 					-- require("neodev.config").types(),
