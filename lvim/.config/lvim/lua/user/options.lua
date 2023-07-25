@@ -16,7 +16,7 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
--- TODO: User Config for predefined plugins
+-- NOTE: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -29,6 +29,7 @@ lvim.builtin.dap.active = true
 -- lvim.builtin.treesitter.auto_install = true
 -- lvim.builtin.telescope.defaults.layout_config = { width = 0.55, height = 0.95 }
 lvim.builtin.telescope.theme = "center"
+
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
 	"bash",

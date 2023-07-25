@@ -57,3 +57,13 @@ lvim.builtin.which_key.mappings["B"] = {
 	-- p = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Harpoon Prev" },
 	s = { "<cmd>Telescope harpoon marks<cr>", "Search Files" },
 }
+
+lvim.builtin.which_key.mappings["t"] = {
+	name = "TodoList",
+	n = { "<cmd>lua require('todo-comments').jump_next()<cr>", " Next Todo" },
+	p = { "<cmd>lua require('todo-comments').jump_prev()<cr>", " Prev Todo" },
+	t = { "<cmd>TodoTrouble<cr>", " Todo Trouble" },
+	d = { "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", " Todo/Fix/Fixme Trouble" },
+	s = { "<cmd>TodoTelescope<cr>", " Search Todos" },
+	k = { "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", " Search Todos Todo/Fix/Fixme" },
+}

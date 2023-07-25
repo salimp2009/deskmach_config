@@ -134,8 +134,16 @@ lvim.plugins = {
 	},
 	{
 		"folke/todo-comments.nvim",
-		event = "BufRead",
-		lazy = VeryLazy,
+		-- enabled = false,
+		dependencies = { "folke/trouble.nvim" },
+		cmd = { "TodoTrouble", "TodoTelescope" },
+		-- lazy = "VeryLazy",
+		config = require("user.todo_comments"),
+	},
+	{
+		"folke/trouble.nvim",
+		cmd = { "Trouble" },
+		-- enabled = false,
 	},
 	{
 		"saecki/crates.nvim",

@@ -27,10 +27,10 @@ vim.g.maplocalleader = " "
 -- keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Better window navigation
-keymap("n", "<m-h>", "<C-w>h", opts)
+keymap("n", "<c-h>", "<C-w>h", opts)
 keymap("n", "<c-j>", "<C-w>j", opts)
 keymap("n", "<c-k>", "<C-w>k", opts)
-keymap("n", "<m-l>", "<C-w>l", opts)
+keymap("n", "<c-l>", "<C-w>l", opts)
 keymap("n", "<m-tab>", "<c-6>", opts)
 
 -- vim.keymap.del("t", "<C-l>")

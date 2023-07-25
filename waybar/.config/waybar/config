@@ -1,5 +1,6 @@
 {
   // NOTE: Icons: https://github.com/Alexays/Waybar/issues/350
+    "layer": "top", // Waybar on highest layer so tooltips go over windows
     "height": 30, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
     // "modules-left": ["custom/launcher", "wlr/workspaces", "hyprland/window"],
