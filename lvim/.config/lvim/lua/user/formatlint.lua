@@ -19,6 +19,7 @@ formatters.setup({
 			"typescriptreact",
 			"javascriptreact",
 			"javascript",
+			"vue",
 		},
 	},
 	{ command = "shfmt", filetypes = { "sh", "zsh", "bash" } },
@@ -47,6 +48,10 @@ vim.filetype.add({
 
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 	return server ~= "ansiblels"
+end, lvim.lsp.automatic_configuration.skipped_servers)
+
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+	return server ~= "vuels"
 end, lvim.lsp.automatic_configuration.skipped_servers)
 
 -- -- set additional linters

@@ -60,6 +60,7 @@ function M.config()
 		Struct = "",
 		Event = "",
 		Operator = "󰆕",
+		Package = "",
 		TypeParameter = "󰊄",
 		TabNine = "󰚩",
 		-- Codeium = "󰚩",
@@ -151,6 +152,7 @@ function M.config()
 				end
 
 				if entry.source.name == "crates" then
+					vim_item.kind = kind_icons.Package
 					vim_item.kind_hl_group = "CmpItemKindCrate"
 				end
 
@@ -178,7 +180,7 @@ function M.config()
 					cmp_tabnine = "[TBNI]",
 					codeium = "[CDEM]",
 					copilot = "[CPLT]",
-					crate = "[CRAT]",
+					crates = "[CRAT]",
 					emoji = "[EMOJ]",
 				})[entry.source.name]
 				return vim_item
@@ -193,7 +195,7 @@ function M.config()
 			{ name = "cmp_tabnine" },
 			{ name = "copilot" },
 			{ name = "codeium" },
-			{ name = "crate" },
+			{ name = "crates" },
 			{ name = "emoji" },
 		},
 		confirm_opts = {

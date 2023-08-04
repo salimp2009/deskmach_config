@@ -3,7 +3,6 @@ local on_attach = require("user.lsp.attach").on_attach
 
 local capabilities = require("user.lsp.attach").capabilities
 
-
 -- nvim-basic-ide code
 for _, server in pairs(require("utils").servers) do
 	Opts = {
@@ -20,4 +19,3 @@ for _, server in pairs(require("utils").servers) do
 
 	lspconfig[server].setup(Opts)
 end
-

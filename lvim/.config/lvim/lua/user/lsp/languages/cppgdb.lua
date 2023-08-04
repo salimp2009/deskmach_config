@@ -115,4 +115,5 @@ lvim.builtin.dap.on_config_done = function(dap)
 		},
 	}
 	dap.configurations.c = dap.configurations.cpp
+	dap.configurations.rust = dap.configurations.cpp
 end
