@@ -1,3 +1,5 @@
+lvim.builtin.which_key.setup.plugins.presets.z = true
+
 lvim.builtin.which_key.mappings["v"] = { "<cmd>vsplit<cr>", "vsplit" }
 lvim.builtin.which_key.mappings["j"] = { "<C-]>", "jump to tag" }
 
