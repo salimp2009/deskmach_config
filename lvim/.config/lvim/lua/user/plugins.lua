@@ -3,6 +3,7 @@ lvim.plugins = {
 	{ url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
 	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
 	{ url = "git@github.com:LunarVim/primer.nvim.git" },
+	{ "towolf/vim-helm" },
 	{
 		"tpope/vim-dadbod",
 		-- lazy = "VeryLazy",

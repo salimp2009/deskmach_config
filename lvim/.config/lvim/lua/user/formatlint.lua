@@ -45,6 +45,16 @@ vim.filetype.add({
 -- 		yml = "yaml.ansible",
 -- 	},
 -- })
+vim.filetype.add({
+	extension = {
+		gotmpl = "helm",
+	},
+	pattern = {
+		[".*/templates/.*%.yaml"] = "helm",
+		[".*/templates/.*%.tpl"] = "helm",
+		["helmfile.*%.yaml"] = "helm",
+	},
+})
 
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 	return server ~= "ansiblels"
