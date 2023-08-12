@@ -37,7 +37,7 @@ function M.config()
 	-- 󰃐 󰆩 󰙅 󰛡  󰅲 some other gogin for getting the float window for hovers etcod icons
 	local kind_icons = {
 		Text = "󰉿",
-		Method = "m",
+		Method = "",
 		Function = "󰊕",
 		Constructor = "",
 		Field = "",
