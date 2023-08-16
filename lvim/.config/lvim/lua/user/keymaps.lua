@@ -57,6 +57,7 @@ vim.api.nvim_set_keymap(
 	"<cmd>lua require('telescope').extensions.bookmark.filemarks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Filemarks'})<cr>",
 	opts
 )
+lvim.keys.normal_mode["<C-space>"] = ":Telescope buffers sort_mru=true only_cwd=true initial_mode=insert<CR>"
 -- -- vim.cmd([[
 
 --   function! QuickFixToggle()

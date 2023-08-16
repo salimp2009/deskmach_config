@@ -9,6 +9,12 @@ lvim.builtin.which_key.mappings["a"] = {
 	-- d = { "<cmd>Codeium Disable<cr>", "Codeium Disable" },
 }
 
+-- lvim.builtin.which_key.mappings["F"] = {
+-- 	"<cmd>lua require('telescope.builtin').find_files({hidden=true, layout_config={prompt_position='top'}})<cr>",
+-- 	"Find in Hidden Files",
+-- }
+lvim.builtin.which_key.mappings["F"] =
+	{ "<cmd>Telescope find_files path_display='truncate' hidden=true<cr>", "Find (inc Hidden Files)" }
 -- local m_opts = {
 -- 	mode = "n", -- NORMAL mode
 -- 	prefix = "m",

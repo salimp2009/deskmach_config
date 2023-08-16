@@ -64,6 +64,10 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(serve
 	return server ~= "vuels"
 end, lvim.lsp.automatic_configuration.skipped_servers)
 
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+	return server ~= "sqls"
+end, lvim.lsp.automatic_configuration.skipped_servers)
+
 -- -- set additional linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
