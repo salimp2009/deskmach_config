@@ -153,7 +153,13 @@ async fn main() -> anyhow::Result<()> {{
 		t({ "", "}" }),
 	}),
 
-	s("pd", fmt([[println!("{}: {{:?}}", {});]], { same(1), i(1) })),
+	s("implt", {
+		t({ "impl<T> Name<T>" }),
+		t({ " {", "pub fn name(&self){}    " }),
+		t({ "", "}" }),
+	}),
+
+	s("printlns", fmt([[println!("{}: {{:?}}", {});]], { same(1), i(1) })),
 	-- _pd = {
 	--   t [[println!("{:?}", ]],
 	--   i(1),

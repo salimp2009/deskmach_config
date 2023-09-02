@@ -5,7 +5,6 @@ keymap("x", "p", [["_dP]])
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
 -- h, l does not go line below if they are at beginning or end of line
 -- vim.cmd("set ww-=h,l")
 
@@ -33,11 +32,11 @@ keymap("n", "<m-tab>", "<c-6>", opts)
 lvim.keys.term_mode = { ["<C-l>"] = false }
 
 function _G.set_terminal_keymaps()
-	vim.api.nvim_buf_set_keymap(0, "t", "<m-h>", [[<C-\><C-n><C-W>h]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<m-j>", [[<C-\><C-n><C-W>j]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<m-k>", [[<C-\><C-n><C-W>k]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<m-l>", [[<C-\><C-n><C-W>l]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<m-h>", [[<C-\><C-n><C-W>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<m-j>", [[<C-\><C-n><C-W>j]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<m-k>", [[<C-\><C-n><C-W>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<m-l>", [[<C-\><C-n><C-W>l]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
@@ -52,10 +51,10 @@ keymap("n", "<s-tab>", "<cmd>FilemarkToggle<cr>", opts)
 keymap("n", "<s-l>", "<cmd>FilemarkNext<cr>", opts)
 keymap("n", "<s-h>", "<cmd>FilemarkPrev<cr>", opts)
 vim.api.nvim_set_keymap(
-	"n",
-	"<tab>",
-	"<cmd>lua require('telescope').extensions.bookmark.filemarks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Filemarks'})<cr>",
-	opts
+  "n",
+  "<tab>",
+  "<cmd>lua require('telescope').extensions.bookmark.filemarks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Filemarks'})<cr>",
+  opts
 )
 lvim.keys.normal_mode["<C-space>"] = ":Telescope buffers sort_mru=true only_cwd=true initial_mode=insert<CR>"
 -- -- vim.cmd([[

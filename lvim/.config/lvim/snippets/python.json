@@ -1,0 +1,9 @@
+{
+  "hello": {
+    "prefix": "salim",
+    "body": [
+      "print('Hello, Salim!')"
+    ],
+    "description": "print Hello, Salim!"
+  }
+}

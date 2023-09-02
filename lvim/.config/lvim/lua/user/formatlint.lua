@@ -27,7 +27,9 @@ formatters.setup({
 	{ name = "taplo", filetypes = { "toml" } },
 	-- { command = "rustfmt", filetypes = { "rust", "*.rs", "rs" }, extra_args = { "--edition=2021" } },
 	{ command = "clang-format", filetypes = { "cpp", "c" } },
+	{ command = "cmake-format", filetypes = { "cmake" } },
 })
+
 vim.filetype.add({
 	extension = {
 		zsh = "zsh",
@@ -45,6 +47,13 @@ vim.filetype.add({
 -- 		yml = "yaml.ansible",
 -- 	},
 -- })
+
+-- vim.filetype.add({
+-- 	pattern = {
+-- 		["*%.lua.symlink"] = "lua",
+-- 	},
+-- })
+
 vim.filetype.add({
 	extension = {
 		gotmpl = "helm",
@@ -59,6 +68,10 @@ vim.filetype.add({
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 	return server ~= "ansiblels"
 end, lvim.lsp.automatic_configuration.skipped_servers)
+
+-- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+-- 	return server ~= "denols"
+-- end, lvim.lsp.automatic_configuration.skipped_servers)
 
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 	return server ~= "vuels"
