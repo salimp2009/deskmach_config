@@ -1,4 +1,5 @@
 -- Additional Plugins
+
 lvim.plugins = {
 	{ url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
 	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
@@ -6,13 +7,49 @@ lvim.plugins = {
 	{ "towolf/vim-helm" },
 	{
 		"tpope/vim-dadbod",
-		-- lazy = "VeryLazy",
+		dependencies = {
+			-- { "kristijanhusak/vim-dadbod-completion" },
+			{
+				"kristijanhusak/vim-dadbod-ui",
+				-- config = function()
+				-- 	local status_ok, cmp = pcall(require, "nvim-cmp")
+				-- 	if status_ok then
+				-- 		vim.api.nvim_create_autocmd("FileType", {
+				-- 			pattern = { "sql", "mysql", "plsql" },
+				-- 			callback = function()
+				-- 				cmp.setup.buffer({ sources = { { name = "vim-dadbod-completion" } } })
+				-- 			end,
+				-- 		})
+				-- 	end
+				-- end,
+			},
+		},
+		cmd = { "DBUI", "DBUIToggle" },
 	},
-	{
-		"kristijanhusak/vim-dadbod-ui",
-		-- lazy = "VeryLazy",
-		-- cmd = "DAPUI",
-	},
+	-- {
+	-- 	"tpope/vim-dadbod",
+	-- 	-- lazy = true,
+	-- 	dependencies = {
+	-- 		"kristijanhusak/vim-dadbod-ui",
+	-- 		{
+	-- 			"kristijanhusak/vim-dadbod-completion",
+	-- 			config = function()
+	-- 				local status_ok, cmp = pcall(require, "nvim-cmp")
+	-- 				if status_ok then
+	-- 					vim.api.nvim_create_autocmd("FileType", {
+	-- 						pattern = { "sql", "mysql", "plsql" },
+	-- 						callback = function()
+	-- 							cmp.setup.buffer({ sources = { { name = "vim-dadbod-completion" } } })
+	-- 						end,
+	-- 					})
+	-- 				end
+	-- 			end,
+	-- 		},
+	-- 	},
+	-- 	cmd = { "DBUI", "DBUIToggle" },
+	-- },
+	-- { "kristijanhusak/vim-dadbod-ui" },
+	-- { "kristijanhusak/vim-dadbod-completion" },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",

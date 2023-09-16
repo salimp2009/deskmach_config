@@ -6,6 +6,17 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {
+		"sql",
+		"mysql",
+		"plsql",
+	},
+	callback = function()
+		vim.schedule(db_completion)
+	end,
+})
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = {
 		"Jaq",

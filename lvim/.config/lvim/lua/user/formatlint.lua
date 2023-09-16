@@ -48,12 +48,6 @@ vim.filetype.add({
 -- 	},
 -- })
 
--- vim.filetype.add({
--- 	pattern = {
--- 		["*%.lua.symlink"] = "lua",
--- 	},
--- })
-
 vim.filetype.add({
 	extension = {
 		gotmpl = "helm",
@@ -62,6 +56,14 @@ vim.filetype.add({
 		[".*/templates/.*%.yaml"] = "helm",
 		[".*/templates/.*%.tpl"] = "helm",
 		["helmfile.*%.yaml"] = "helm",
+	},
+})
+
+vim.filetype.add({
+	pattern = {
+		[".*%.symlink"] = function(path, bufno, ext)
+			return vim.filetype.match({ buf = bufno, filename = path:gsub(".symlink", "") })
+		end,
 	},
 })
 

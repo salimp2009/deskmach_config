@@ -3,14 +3,13 @@
     "layer": "top", // Waybar on highest layer so tooltips go over windows
     "height": 30, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
-    // "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
-    // "modules-left": ["custom/launcher", "hyprland/workspaces"],
-    "modules-left": ["custom/launcher", "hyprland/workspaces"],
+    // "modules-left": ["custom/launcher", "wlr/workspaces", "hyprland/window"],
+    // "modules-left": ["custom/launcher", "wlr/workspaces"],
+    "modules-left": ["custom/launcher", "wlr/workspaces"],
     /* "modules-center": ["custom/spotify"], */
     "modules-right": ["tray", "pulseaudio", "network", "clock"],
-    "hyprland/workspaces": {
-      "format": "{name} {icon}",
-      /*"format": "{icon}",
+    "wlr/workspaces": {
+      "format": "{icon}",
       "on-click": "activate",
       /* "format-icons": { */
       /*   "1": "", */
@@ -24,7 +23,7 @@
       /* } */
     },
     "hyprland/window": {
-        "format": "{icon}"
+        "format": "{}"
     },
     "tray": {
         // "icon-size": 14,
@@ -106,5 +105,4 @@
         "on-right-click": "on-click-right"
     },
 }
-
 
