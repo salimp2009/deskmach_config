@@ -14,7 +14,7 @@ for _, server in pairs(require("utils").servers) do
 
 	local require_ok, conf_opts = pcall(require, "settings." .. server)
 	if require_ok then
-		Opts = vim.tbl_deep_extend("force", conf_opts, Opts)
+		Opts = vim.tbl_deep_extend("force", Opts, conf_opts)
 	end
 
 	lspconfig[server].setup(Opts)

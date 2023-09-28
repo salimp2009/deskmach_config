@@ -11,7 +11,7 @@ function M.config()
 		disable_netrw = true,
 		hijack_netrw = true,
 
-    renderer = {
+		renderer = {
 			group_empty = true,
 			icons = {
 				webdev_colors = true,
@@ -60,7 +60,7 @@ function M.config()
 		},
 		git = {
 			enable = true,
-			ignore = true,
+			ignore = false,
 			timeout = 500,
 		},
 		view = {

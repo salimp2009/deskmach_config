@@ -115,7 +115,7 @@ function M.config()
 				"%.settings/",
 				".vscode/",
 				"__pycache__/",
-				"build/",
+				-- "build/",
 				"env/",
 				"gradle/",
 				"node_modules/",

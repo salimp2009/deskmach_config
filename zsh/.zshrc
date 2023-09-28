@@ -19,7 +19,8 @@ plug "zap-zsh/supercharge"
 # plug "zap-zsh/vim"
 plug "zap-zsh/zap-prompt"
 plug "zap-zsh/fzf"
-plug "zap-zsh/exa"
+# plug "zap-zsh/exa"
 plug "zsh-users/zsh-syntax-highlighting"
+plug "$HOME/.config/zsh/exa.zsh"
 
 export PATH="$HOME/.local/bin":$PATH

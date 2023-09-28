@@ -44,6 +44,12 @@ vim.filetype.add({
 
 -- vim.filetype.add({
 -- 	extension = {
+-- 		a = "asm",
+-- 	},
+-- })
+
+-- vim.filetype.add({
+-- 	extension = {
 -- 		yml = "yaml.ansible",
 -- 	},
 -- })
@@ -70,6 +76,10 @@ vim.filetype.add({
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 	return server ~= "ansiblels"
 end, lvim.lsp.automatic_configuration.skipped_servers)
+
+-- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+-- 	return server ~= "asm-lsp"
+-- end, lvim.lsp.automatic_configuration.skipped_servers)
 
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 -- 	return server ~= "denols"

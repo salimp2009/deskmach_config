@@ -13,6 +13,8 @@ M.servers = {
 	"pyright",
 	"astro",
 	"emmet_ls",
+	-- "asm_lsp",
+	-- "cmake",
 }
 
 return M

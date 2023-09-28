@@ -31,6 +31,7 @@ lvim.builtin.telescope.theme = "center"
 lvim.builtin.treesitter.ensure_installed = {
 	"bash",
 	"c",
+	"cpp",
 	"javascript",
 	"json",
 	"lua",

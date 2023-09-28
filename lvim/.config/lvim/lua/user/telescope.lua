@@ -22,7 +22,7 @@ lvim.builtin.telescope.defaults.file_ignore_patterns = {
 	".settings/",
 	".vscode/",
 	"__pycache__/",
-	"build/",
+	-- "build/",
 	"env/",
 	"gradle/",
 	"node_modules/",
