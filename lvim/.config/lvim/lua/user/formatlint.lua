@@ -37,6 +37,12 @@ vim.filetype.add({
 })
 
 vim.filetype.add({
+	filename = {
+		[".envrc"] = "sh",
+	},
+})
+
+vim.filetype.add({
 	extension = {
 		conf = "dosini",
 	},
@@ -77,6 +83,12 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(serve
 	return server ~= "ansiblels"
 end, lvim.lsp.automatic_configuration.skipped_servers)
 
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+	return server ~= "neocmake"
+end, lvim.lsp.automatic_configuration.skipped_servers)
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "cmake-language-server" })
+
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 -- 	return server ~= "asm-lsp"
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
@@ -89,9 +101,9 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(serve
 	return server ~= "vuels"
 end, lvim.lsp.automatic_configuration.skipped_servers)
 
-lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
-	return server ~= "sqls"
-end, lvim.lsp.automatic_configuration.skipped_servers)
+-- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+-- 	return server ~= "sqls"
+-- end, lvim.lsp.automatic_configuration.skipped_servers)
 
 -- -- set additional linters
 local linters = require("lvim.lsp.null-ls.linters")

@@ -1,6 +1,20 @@
 -- Additional Plugins
 
 lvim.plugins = {
+	-- { "mattn/webapi-vim" },
+	-- { "mattn/vim-gist" },
+	{
+		"Rawnly/gist.nvim",
+		cmd = { "GistCreate", "GistCreateFromFile", "GistsList" },
+		config = true,
+	},
+	{
+		"samjwill/nvim-unception",
+		lazy = false,
+		init = function()
+			vim.g.unception_block_while_host_edits = true
+		end,
+	},
 	{ url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
 	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
 	{ url = "git@github.com:LunarVim/primer.nvim.git" },
