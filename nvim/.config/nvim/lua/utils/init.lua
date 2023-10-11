@@ -14,7 +14,8 @@ M.servers = {
 	"astro",
 	"emmet_ls",
 	"asm_lsp",
-	"cmake",
+	-- "cmake",
+	"neocmake",
 }
 
 return M

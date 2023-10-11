@@ -2,7 +2,7 @@
 # HISTFILE="$XDG_DATA_HOME"/zsh/history
 HISTSIZE=1000000
 SAVEHIST=1000000
-#export EDITOR="nvim"
+export EDITOR="nvim"
 export TERMINAL="kitty"
 export BROWSER="brave"
 export PATH="$HOME/.local/bin":$PATH
@@ -15,6 +15,7 @@ export GOPATH=$HOME/.local/share/go
 #export PATH="$HOME/.local/share/neovim/bin":$PATH
 export XDG_CURRENT_DESKTOP="Wayland"
 #export PATH="$PATH:./node_modules/.bin"
+export CPM_SOURCE_CACHE=$HOME/.cache/CPM
 eval "$(fnm env)"
 #eval "$(zoxide init zsh)"
 # eval "`pip completion --zsh`"

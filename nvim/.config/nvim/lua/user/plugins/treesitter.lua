@@ -44,6 +44,7 @@ function M.config()
 			"python",
 			"c",
 			"cpp",
+			"cmake",
 			"rust",
 			"astro",
 			"toml",

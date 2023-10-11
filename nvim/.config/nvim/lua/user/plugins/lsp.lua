@@ -6,6 +6,7 @@ return {
 			"lua",
 			"c",
 			"cpp",
+			"cmake",
 			"java",
 			"python",
 			"json",

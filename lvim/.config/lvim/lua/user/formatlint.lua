@@ -87,7 +87,7 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(serve
 	return server ~= "neocmake"
 end, lvim.lsp.automatic_configuration.skipped_servers)
 
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "cmake-language-server" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "cmake" })
 
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 -- 	return server ~= "asm-lsp"

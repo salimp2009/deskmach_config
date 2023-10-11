@@ -4,6 +4,11 @@ lvim.plugins = {
 	-- { "mattn/webapi-vim" },
 	-- { "mattn/vim-gist" },
 	{
+		"liaozixin/nvim-cpptools",
+		ft = { "cpp", "c" },
+		lazy = true,
+	},
+	{
 		"Rawnly/gist.nvim",
 		cmd = { "GistCreate", "GistCreateFromFile", "GistsList" },
 		config = true,
