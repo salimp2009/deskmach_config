@@ -2,10 +2,13 @@
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
 lvim.colorscheme = "lunar"
+-- lvim.colorscheme = "primer_dark"
 -- lvim.colorscheme = "onedark"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 vim.opt.relativenumber = true
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 -- vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 -- lvim.keys.normal_mode["<C-Left>"] = "<C-W> <"
@@ -23,25 +26,26 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.autotag = true
 lvim.builtin.dap.active = true
--- lvim.builtin.bufferline.active = false
+-- lvim.builtin.terminal.float_opts.highlights.border = "#4DBDCB"
+lvim.builtin.bufferline.active = false
 -- lvim.builtin.treesitter.auto_install = true
 -- lvim.builtin.telescope.defaults.layout_config = { width = 0.55, height = 0.95 }
 lvim.builtin.telescope.theme = "center"
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "cpp",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+	"bash",
+	"c",
+	"cpp",
+	"javascript",
+	"json",
+	"lua",
+	"python",
+	"typescript",
+	"tsx",
+	"css",
+	"rust",
+	"java",
+	"yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -50,20 +54,20 @@ lvim.builtin.treesitter.highlight.enable = true
 -- lvim.builtin.treesitter.rainbow.enable = true
 
 if lvim.colorscheme == "darkplus" then
-  lvim.builtin.treesitter.rainbow = {
-    enable = true,
-    extended_mode = false,
-    colors = {
-      "DodgerBlue",
-      "Orchid",
-      "Gold",
-    },
-    disable = { "html" },
-  }
+	lvim.builtin.treesitter.rainbow = {
+		enable = true,
+		extended_mode = false,
+		colors = {
+			"DodgerBlue",
+			"Orchid",
+			"Gold",
+		},
+		disable = { "html" },
+	}
 else
-  lvim.builtin.treesitter.rainbow = {
-    enable = true,
-    extended_mode = false,
-    disable = { "html" },
-  }
+	lvim.builtin.treesitter.rainbow = {
+		enable = true,
+		extended_mode = false,
+		disable = { "html" },
+	}
 end

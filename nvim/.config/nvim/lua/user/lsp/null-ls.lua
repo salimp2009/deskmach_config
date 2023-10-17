@@ -63,5 +63,6 @@ require("null-ls").setup({
 		diagnostics.zsh,
 		diagnostics.proselint,
 		diagnostics.flake8,
+		diagnostics.cppcheck,
 	},
 })

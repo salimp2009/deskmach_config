@@ -3,6 +3,7 @@
 lvim.plugins = {
 	-- { "mattn/webapi-vim" },
 	-- { "mattn/vim-gist" },
+	-- { "Shatur/neovim-tasks" },
 	{
 		"liaozixin/nvim-cpptools",
 		ft = { "cpp", "c" },

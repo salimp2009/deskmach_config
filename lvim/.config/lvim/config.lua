@@ -8,6 +8,7 @@ an executable
 ]]
 require("user.options")
 require("user.plugins")
+-- require("user.lualine")
 require("user.keymaps")
 reload("user.surround")
 require("user.lsp.init")

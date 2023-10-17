@@ -132,6 +132,14 @@ linters.setup({
 	-- 	---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
 	-- 	filetypes = { "javascript", "python", "markdown", "cpp" },
 	-- },
+	{
+		command = "cppcheck",
+		filetypes = { "cpp", "c" },
+	},
+	-- {
+	-- 	command = "cpplint",
+	-- 	filetypes = { "cpp", "c" },
+	-- },
 })
 
 local code_actions = require("lvim.lsp.null-ls.code_actions")
