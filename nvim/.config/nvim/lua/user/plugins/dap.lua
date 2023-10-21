@@ -23,34 +23,55 @@ function M.config()
 		dapui.close()
 	end
 
-	dap.adapters.codelldb = {
-		type = "server",
-		port = "${port}",
-		executable = {
-			-- provide the absolute path for `codelldb` command if not using the one installed using `mason.nvim`
-			command = "lldb-vscode",
-			args = { "--port", "${port}" },
-			-- On windows you may have to uncomment this:
-			-- detached = false,
-		},
+	local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
+
+	dap.adapters.cppdbg = {
+		id = "cppdbg",
+		type = "executable",
+		command = mason_path .. "bin/OpenDebugAD7",
 	}
+
 	dap.configurations.cpp = {
 		{
 			name = "Launch file",
-			type = "codelldb",
+			type = "cppdbg",
 			request = "launch",
 			program = function()
-				local path
-				vim.ui.input({ prompt = "Path to executable: ", default = vim.loop.cwd() .. "/bin/" }, function(input)
-					path = input
-				end)
-				vim.cmd([[redraw]])
-				return path
+				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 			end,
 			cwd = "${workspaceFolder}",
-			stopOnEntry = false,
+			stopAtEntry = true,
+			setupCommands = {
+				{
+					text = "-enable-pretty-printing",
+					description = "enable pretty printing",
+					ignoreFailures = false,
+				},
+			},
+		},
+		{
+			name = "Attach to gdbserver :1234",
+			type = "cppdbg",
+			request = "launch",
+			MIMode = "gdb",
+			miDebuggerServerAddress = "localhost:1234",
+			miDebuggerPath = "/usr/bin/gdb",
+			-- miDebuggerPath = "/usr/bin/lldb-vscode",
+			cwd = "${workspaceFolder}",
+			program = function()
+				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+			end,
+
+			setupCommands = {
+				{
+					text = "-enable-pretty-printing",
+					description = "enable pretty printing",
+					ignoreFailures = false,
+				},
+			},
 		},
 	}
+	dap.configurations.c = dap.configurations.cpp
+	-- dap.configurations.rust = dap.configurations.cpp
 end
-
 return M

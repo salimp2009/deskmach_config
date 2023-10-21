@@ -137,8 +137,8 @@ linters.setup({
 		filetypes = { "cpp", "c" },
 	},
 	-- {
-	-- 	command = "cpplint",
-	-- 	filetypes = { "cpp", "c" },
+	-- 	command = "cmake_lint",
+	-- 	filetypes = { "cmake" },
 	-- },
 })
 

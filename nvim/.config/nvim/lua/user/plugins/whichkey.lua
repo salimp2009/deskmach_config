@@ -69,7 +69,6 @@ function M.config()
 			-- most people should not need to change this
 			i = { "j", "k" },
 			v = { "j", "k" },
-
 		},
 	}
 
@@ -88,15 +87,15 @@ function M.config()
 			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 			"Buffers",
 		},
-		["d"] = { "<cmd>Telescope file_browser<cr>", "File browser" },
+		["D"] = { "<cmd>Telescope file_browser<cr>", "File browser" },
 		["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 		["w"] = { "<cmd>w!<CR>", "Save" },
 		["q"] = { "<cmd>q!<CR>", "Quit" },
 		["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
 		["m"] = { "<cmd>lua _MOCP_TOGGLE()<CR>", "MOCP" },
 		["j"] = { "<cmd>Jaq<CR>", "Jaq" },
-    ["h"] = { "<cmd>nohlsearch<cr>", "nohl" },
-    ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
+		["h"] = { "<cmd>nohlsearch<cr>", "nohl" },
+		["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
 		["f"] = {
 			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>",
 			"Find files",
@@ -139,9 +138,10 @@ function M.config()
 				"Diff",
 			},
 		},
-		D = {
+		d = {
 			name = "Debug",
 			b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
+			-- s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
 			c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
 			i = { "<cmd>lua require'dap'.step_into()<cr>", "Into" },
 			o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },
@@ -210,10 +210,10 @@ function M.config()
 		},
 		-- C = {
 		-- 	name = "Cmp",
---			c = { "<cmd>Copilot<cr>", "Copilot" },
---			e = { "<cmd>let g:cmp_toggle = v:true<cr>", "Enable" },
---			d = { "<cmd>let g:cmp_toggle = v:false<cr>", "Disable" },
---			g = { '<cmd>NeoAI<cr>', "ChatGpt" },
+		--			c = { "<cmd>Copilot<cr>", "Copilot" },
+		--			e = { "<cmd>let g:cmp_toggle = v:true<cr>", "Enable" },
+		--			d = { "<cmd>let g:cmp_toggle = v:false<cr>", "Disable" },
+		--			g = { '<cmd>NeoAI<cr>', "ChatGpt" },
 		-- },
 		["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
 	}
@@ -223,4 +223,3 @@ function M.config()
 end
 
 return M
-

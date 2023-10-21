@@ -58,7 +58,7 @@ require("null-ls").setup({
 		formatting.clang_format,
 		formatting.cmake_format.with({ filetypes = { "cmake" } }),
 		diagnostics.shellcheck,
-		diagnostics.cmake_lint.with({ filetypes = { "cmake" } }),
+		-- diagnostics.cmake_lint.with({ filetypes = { "cmake" } }),
 		-- diagnostics.shellcheck.with({ filetypes = { "sh", "bash", "zsh" } }),
 		diagnostics.zsh,
 		diagnostics.proselint,

@@ -45,10 +45,16 @@ function M.config()
 		floating = {
 			max_height = 0.9,
 			max_width = 0.5, -- Floats will be treated as percentage of your screen.
-			border = vim.g.border_chars, -- Border style. Can be 'single', 'double' or 'rounded'
+			border = "rounded",
+			-- border = vim.g.border_chars, -- Border style. Can be 'single', 'double' or 'rounded'
 			mappings = {
 				close = { "q", "<Esc>" },
 			},
+		},
+		windows = { indent = 1 },
+		render = {
+			max_type_length = nil, -- Can be integer or nil.
+			max_value_lines = 100, -- Can be integer or nil.
 		},
 	})
 
