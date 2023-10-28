@@ -141,7 +141,7 @@ function M.config()
 		d = {
 			name = "Debug",
 			b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
-			-- s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+			s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
 			c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
 			i = { "<cmd>lua require'dap'.step_into()<cr>", "Into" },
 			o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },

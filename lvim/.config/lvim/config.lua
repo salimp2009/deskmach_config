@@ -29,8 +29,6 @@ reload("user.bqf")
 reload("user.harpoon")
 reload("user.bookmark")
 reload("user.noice")
--- EXAMPLES for setups;
--- lvim.builtin.telescope.theme = "center"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping

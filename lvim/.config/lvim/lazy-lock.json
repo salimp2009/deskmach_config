@@ -80,6 +80,7 @@
   "trouble.nvim": { "branch": "main", "commit": "0e6703c1d37d2d34ed029ab54f9bd66e3f2ecbf7" },
   "typescript.nvim": { "branch": "main", "commit": "f66d4472606cb24615dfb7dbc6557e779d177624" },
   "venv-selector.nvim": { "branch": "main", "commit": "6f1865aba002ff8aa0d552491a4f24a3d191c830" },
+  "vim-cmake": { "branch": "master", "commit": "6b7b18130c30e1d498c0ec8fca3c18951273e4ea" },
   "vim-dadbod": { "branch": "master", "commit": "7d80bbd11c407a09e0f7b869c38f3dec3902805f" },
   "vim-dadbod-ui": { "branch": "master", "commit": "200aebf70e6fc4b0eb1d3ecf0d57028e198d8dc6" },
   "vim-helm": { "branch": "master", "commit": "c2e7b85711d410e1d73e64eb5df7b70b1c4c10eb" },

@@ -4,6 +4,7 @@ lvim.plugins = {
 	-- { "mattn/webapi-vim" },
 	-- { "mattn/vim-gist" },
 	-- { "Shatur/neovim-tasks" },
+	{ "cdelledonne/vim-cmake" },
 	{
 		"liaozixin/nvim-cpptools",
 		ft = { "cpp", "c" },

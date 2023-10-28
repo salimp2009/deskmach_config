@@ -72,6 +72,10 @@ require("noice").setup({
 		kind_icons = {}, -- set to `false` to disable icons
 	},
 
+	-- cmdline_popupmenu = {
+	-- 	view = "popupmenu",
+	-- 	zindex = 65,
+	-- },
 	routes = {
 		{
 			view = "mini",
