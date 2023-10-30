@@ -12,17 +12,21 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 		-- buffer is a directory
 		local directory = vim.fn.isdirectory(data.file) == 1
 
-		if not directory then
-			return
+		-- if not directory then
+		-- 	return
+		-- end
+		if directory then
+			vim.cmd.cd(data.file)
+			-- open the tree
+			require("nvim-tree.api").tree.open()
 		end
-
 		-- change to the directory
-		vim.cmd.cd(data.file)
-
-		-- open the tree
-		-- require("nvim-tree.api").tree.focus()
-		require("nvim-tree.api").tree.open()
+		-- vim.cmd.cd(data.file)
+		-- require("nvim-tree.api").tree.open()
 	end,
+
+	group = general,
+	desc = "Open NvimTree when it's a Directory",
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
