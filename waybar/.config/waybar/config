@@ -9,7 +9,8 @@
     /* "modules-center": ["custom/spotify"], */
     "modules-right": ["tray", "pulseaudio", "network", "clock"],
     "hyprland/workspaces": {
-      "format": "{name} {icon}",
+      /*"format": "{name}{icon}", */
+      "format": "{name}",
       /*"format": "{icon}",
       "on-click": "activate",
       /* "format-icons": { */

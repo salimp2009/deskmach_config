@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 		-- require("nvim-tree.api").tree.open()
 	end,
 
-	group = general,
+	-- group = general,
 	desc = "Open NvimTree when it's a Directory",
 })
 
@@ -122,17 +122,17 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "BufEnter" }, {
-	pattern = { "*" },
-	callback = function()
-		local buf_ft = vim.bo.filetype
-		if buf_ft == "" or buf_ft == nil then
-			vim.cmd([[
-      nnoremap <silent> <buffer> q :close<CR>
-      " nnoremap <silent> <buffer> <c-j> j<CR>
-      " nnoremap <silent> <buffer> <c-k> k<CR>
-      set nobuflisted
-    ]])
-		end
-	end,
-})
+-- vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "BufEnter" }, {
+-- 	pattern = { "*" },
+-- 	callback = function()
+-- 		local buf_ft = vim.bo.filetype
+-- 		if buf_ft == "" or buf_ft == nil then
+-- 			vim.cmd([[
+--       nnoremap <silent> <buffer> q :close<CR>
+--       " nnoremap <silent> <buffer> <c-j> j<CR>
+--       " nnoremap <silent> <buffer> <c-k> k<CR>
+--       set nobuflisted
+--     ]])
+-- 		end
+-- 	end,
+-- })

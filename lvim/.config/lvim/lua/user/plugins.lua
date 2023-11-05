@@ -5,6 +5,11 @@ lvim.plugins = {
 	-- { "mattn/vim-gist" },
 	-- { "Shatur/neovim-tasks" },
 	{ "cdelledonne/vim-cmake" },
+	-- {
+	-- 	"krady21/compiler-explorer.nvim",
+	--    enabled=false,
+	-- 	lazy = true,
+	-- },
 	{
 		"liaozixin/nvim-cpptools",
 		ft = { "cpp", "c" },
