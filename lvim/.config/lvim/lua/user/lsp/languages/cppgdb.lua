@@ -82,6 +82,36 @@ lvim.builtin.dap.on_config_done = function(dap)
 			program = function()
 				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 			end,
+
+			args = {},
+
+			cwd = "${workspaceFolder}",
+			stopAtEntry = true,
+			setupCommands = {
+				{
+					text = "-enable-pretty-printing",
+					description = "enable pretty printing",
+					ignoreFailures = false,
+				},
+			},
+		},
+		{
+			name = "Launch file with cli args",
+			type = "cppdbg",
+			request = "launch",
+			program = function()
+				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+			end,
+
+			args = function(...)
+				local args = {}
+				local args_no = vim.fn.input("Args No: ")
+				for _ = 1, args_no do
+					table.insert(args, vim.fn.input("Args: "))
+				end
+				return args
+			end,
+
 			cwd = "${workspaceFolder}",
 			stopAtEntry = true,
 			setupCommands = {
