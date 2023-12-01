@@ -13,7 +13,14 @@ function M.config()
 
 		renderer = {
 			group_empty = true,
+			highlight_git = true,
 			icons = {
+				show = {
+					file = true,
+					folder = true,
+					folder_arrow = true,
+					git = false,
+				},
 				webdev_colors = true,
 				glyphs = {
 					default = "",

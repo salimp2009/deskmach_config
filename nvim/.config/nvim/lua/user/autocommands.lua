@@ -58,6 +58,15 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	end,
 })
 
+-- changes nvim-tree color based on git-status; these colors are not good
+-- find nicer colors
+-- vim.api.nvim_create_autocmd({ "VimEnter", "BufWinEnter", "BufEnter" }, {
+-- 	callback = function()
+-- 		vim.api.nvim_set_hl(0, "NvimTreeGitDirty", { fg = "blue", underline = true })
+-- 		vim.api.nvim_set_hl(0, "NvimTreeFileDirty", { fg = "blue", underline = true })
+-- 	end,
+-- })
+
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	callback = function()
 		vim.cmd("hi link illuminatedWord LspReferenceText")

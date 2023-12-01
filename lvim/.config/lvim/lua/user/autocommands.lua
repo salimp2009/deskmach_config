@@ -67,6 +67,15 @@ vim.api.nvim_create_autocmd({ "TermEnter" }, {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+	pattern = { "pdf", "svg", "jpeg", "png" },
+	callback = function(ev)
+		local filename = ev.file
+		vim.fn.jobstart({ "xdg-open", filename }, { detach = true })
+		vim.api.nvim_buf_delete(0, {})
+	end,
+})
+
 -- vim.cmd([[
 --   augroup MyHighlightOverrides
 --     autocmd!

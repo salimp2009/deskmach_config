@@ -7,6 +7,7 @@ lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 vim.opt.relativenumber = true
+vim.opt.iskeyword:append("-")
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
