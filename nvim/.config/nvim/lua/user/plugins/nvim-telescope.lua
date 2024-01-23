@@ -118,7 +118,7 @@ function M.config()
 				-- "build/",
 				"env/",
 				"gradle/",
-				"node_modules/",
+				-- "node_modules/",
 				"%.pdb",
 				"%.dll",
 				"%.class",

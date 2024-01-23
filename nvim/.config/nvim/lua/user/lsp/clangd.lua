@@ -15,6 +15,9 @@ if vim.fn.executable("clangd") == 1 then
 			"--header-insertion=iwyu",
 			"--header-insertion-decorators",
 			"--pch-storage=memory",
+			"--enable-config", -- clangd 11+ supports reading from .clangd configuration file
+			"--suggest-missing-includes",
+			"--cross-file-rename",
 		},
 	})
 

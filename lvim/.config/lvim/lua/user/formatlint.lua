@@ -54,11 +54,17 @@ vim.filetype.add({
 -- 	},
 -- })
 
--- vim.filetype.add({
--- 	extension = {
--- 		yml = "yaml.ansible",
--- 	},
--- })
+vim.filetype.add({
+	extension = {
+		ansible = "yaml.ansible",
+	},
+})
+
+vim.filetype.add({
+	extension = {
+		yml = "*.yaml",
+	},
+})
 
 vim.filetype.add({
 	extension = {
@@ -142,8 +148,38 @@ linters.setup({
 	-- },
 })
 
-local code_actions = require("lvim.lsp.null-ls.code_actions")
-code_actions.setup({
-	-- { name = "proselint" },
-	{ name = "cspell", filetypes = { "markdown" } },
-})
+-- Sample filetype config for ansible; Check if it works
+-- local code_actions = require("lvim.lsp.null-ls.code_actions")
+-- code_actions.setup({
+-- 	-- { name = "proselint" },
+-- 	{ name = "cspell", filetypes = { "markdown" } },
+-- })
+
+-- local function yaml_ft(path, bufnr)
+-- 	-- get content of buffer as string
+-- 	local content = vim.filetype.getlines(bufnr)
+-- 	if type(content) == "table" then
+-- 		content = table.concat(content, "\n")
+-- 	end
+
+-- 	-- check if file is in roles, tasks, or handlers folder
+-- 	local path_regex = vim.regex("(tasks\\|roles\\|handlers)/")
+-- 	if path_regex and path_regex:match_str(path) then
+-- 		return "yaml.ansible"
+-- 	end
+-- 	-- check for known ansible playbook text and if found, return yaml.ansible
+-- 	local regex = vim.regex("hosts:\\|tasks:")
+-- 	if regex and regex:match_str(content) then
+-- 		return "yaml.ansible"
+-- 	end
+
+-- 	-- return yaml if nothing else
+-- 	return "yaml"
+-- end
+
+-- vim.filetype.add({
+-- 	extension = {
+-- 		yml = yaml_ft,
+-- 		yaml = yaml_ft,
+-- 	},
+-- })

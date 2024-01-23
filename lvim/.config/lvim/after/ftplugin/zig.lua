@@ -2,7 +2,7 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "zls" })
 require("lvim.lsp.manager").setup("zls", {
 	on_attach = require("lvim.lsp").common_on_attach,
 	capabilities = require("lvim.lsp").common_capabilities(),
-
+	on_init = require("lvim.lsp").common_on_init,
 	schema = "https://raw.githubusercontent.com/zigtools/zls/master/schema.json",
 	-- edit to match zig compiler path
 	-- zig_exe_path = "",--[[ "/home/xzhan/Development/Packages/software/zig/zig" ]]

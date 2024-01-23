@@ -72,6 +72,22 @@ require("noice").setup({
 		kind_icons = {}, -- set to `false` to disable icons
 	},
 
+	views = {
+		-- mini = {
+		-- 	winhighlight = {},
+		-- 	win_options = {
+		-- 		winblend = 0,
+		-- 	},
+		-- },
+
+		-- cmdline_popup = {
+		-- 	winhighlight = {},
+		-- 	win_options = {
+		-- 		winblend = 10,
+		-- 	},
+		-- },
+	},
+
 	-- cmdline_popupmenu = {
 	-- 	view = "popupmenu",
 	-- 	zindex = 65,

@@ -29,6 +29,18 @@ lvim.builtin.treesitter.autotag = true
 lvim.builtin.dap.active = true
 -- lvim.builtin.terminal.float_opts.highlights.border = "#4DBDCB"
 lvim.builtin.bufferline.active = false
+-- lvim.builtin.telescope.defaults.vimgrep_arguments = {
+-- 	"rg",
+-- 	"--color=never",
+-- 	"--no-heading",
+-- 	"--with-filename",
+-- 	"--line-number",
+-- 	"--column",
+-- 	"--smart-case",
+-- 	-- "--hidden",
+-- 	"--glob=!.git/",
+-- }
+
 -- lvim.builtin.treesitter.auto_install = true
 -- lvim.builtin.telescope.defaults.layout_config = { width = 0.55, height = 0.95 }
 lvim.builtin.telescope.theme = "center"

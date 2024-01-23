@@ -20,7 +20,12 @@ require("neotest").setup({
 				justMyCode = false,
 				console = "integratedTerminal",
 			},
-			args = { "--log-level", "DEBUG", "--quiet" },
+			args = {
+				"--log-level",
+				"DEBUG",
+				"--quiet",
+				-- "--fixtures",
+			},
 			runner = "pytest",
 			-- python = ".venv/bin/python",
 			-- python = python_path,
