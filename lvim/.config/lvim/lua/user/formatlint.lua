@@ -20,6 +20,7 @@ formatters.setup({
 			"javascriptreact",
 			"javascript",
 			"vue",
+			"svelte",
 		},
 	},
 	{ command = "shfmt", filetypes = { "sh", "zsh", "bash" } },
@@ -118,6 +119,11 @@ linters.setup({
 
 	{ name = "jsonlint" },
 	{
+		name = "eslint_d",
+		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" },
+	},
+
+	{
 		command = "markdownlint",
 		extra_args = { "--line-length=false", "--no-inline-html=false" },
 	},
@@ -148,13 +154,15 @@ linters.setup({
 	-- },
 })
 
--- Sample filetype config for ansible; Check if it works
--- local code_actions = require("lvim.lsp.null-ls.code_actions")
--- code_actions.setup({
--- 	-- { name = "proselint" },
--- 	{ name = "cspell", filetypes = { "markdown" } },
--- })
+local code_actions = require("lvim.lsp.null-ls.code_actions")
+code_actions.setup({
+	{
+		name = "eslint_d",
+		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" },
+	},
+})
 
+-- Sample filetype config for ansible; Check if it works
 -- local function yaml_ft(path, bufnr)
 -- 	-- get content of buffer as string
 -- 	local content = vim.filetype.getlines(bufnr)
