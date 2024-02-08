@@ -16,6 +16,7 @@ M.servers = {
 	"asm_lsp",
 	-- "cmake",
 	"neocmake",
+	"tailwindcss",
 }
 
 return M

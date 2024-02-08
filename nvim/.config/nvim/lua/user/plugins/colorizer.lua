@@ -20,7 +20,7 @@ function M.config()
 			-- Available modes for `mode`: foreground, background,  virtualtext
 			mode = "background", -- Set the display mode.
 			virtualtext = "■",
-			tailwing = "both",
+			tailwind = "both",
 		},
 		-- all the sub-options of filetypes apply to buftypes
 		buftypes = {},

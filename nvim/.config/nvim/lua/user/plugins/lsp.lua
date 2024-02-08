@@ -90,7 +90,7 @@ return {
 		end,
 	},
 	{
-		"jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		event = { "BufReadPre", "BufRead", "BufNew" },
 		lazy = true,
 		config = function()
@@ -102,6 +102,8 @@ return {
 		opts = {},
 		event = "BufRead",
 	},
+	{ "roobert/tailwindcss-colorizer-cmp.nvim" },
+
 	-- {
 	-- 	"j-hui/fidget.nvim",
 	-- 	tag = "legacy",

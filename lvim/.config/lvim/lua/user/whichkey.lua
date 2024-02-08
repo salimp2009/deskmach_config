@@ -75,3 +75,9 @@ lvim.builtin.which_key.mappings["t"] = {
 	s = { "<cmd>TodoTelescope<cr>", " Search Todos" },
 	k = { "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", " Search Todos Todo/Fix/Fixme" },
 }
+
+lvim.builtin.which_key.mappings["n"] = {
+	name = "Notes",
+	f = { "<cmd>Telescope find_files search_dirs=~/Documents/notes/<cr>", "Find Notes" },
+	n = { "<cmd>Telescope live_grep search_dirs=~/Documents/notes/<cr>", "Live Grep Notes" },
+}

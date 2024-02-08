@@ -208,6 +208,11 @@ function M.config()
 			t = { "<cmd>ToggleTerm<cr>", "toggle" },
 			T = { "<cmd>terminal<cr>", "Neoterminal" },
 		},
+		n = {
+			name = "Notes Markdown",
+			f = { "<cmd>Telescope find_files search_dirs=~/Documents/notes/<cr>", "Find Notes" },
+			n = { "<cmd>Telescope live_grep search_dirs=~/Documents/notes/<cr>", "Live Grep Notes" },
+		},
 		-- C = {
 		-- 	name = "Cmp",
 		--			c = { "<cmd>Copilot<cr>", "Copilot" },

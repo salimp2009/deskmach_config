@@ -100,7 +100,7 @@ function M.config()
 				"__pycache__/*",
 				"%.sqlite3",
 				"%.ipynb",
-				"node_modules/*",
+				-- "node_modules/*",
 				"%.jpg",
 				"%.jpeg",
 				"%.png",
