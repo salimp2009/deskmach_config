@@ -155,6 +155,27 @@ function M.config()
 		l = {
 			name = "LSP",
 			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+			-- Uncomment when nvim-conform and nvim-lint is enable instead of none-ls
+			-- f = {
+			--   function()
+			--     local function myCallback(err)
+			--       if err then
+			--         vim.notify("Error during formatting: ", err)
+			--       else
+			--         vim.notify("Formatting completed successfully.")
+			--       end
+			--     end
+			--     require("conform").format({
+			--       lsp_fallback = true,
+			--       async = false,
+			--       timeout_ms = 1000,
+			--     }, myCallback())
+			--   end,
+			--   "Format",
+			-- },
+			-- F = { "<cmd>FormatToggle<cr>", "Toggle Autoformat" },
+
+			-- Delete when the above alternative are enabled
 			f = { "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", "Format" },
 			F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
 			i = { "<cmd>LspInfo<cr>", "Info" },
@@ -220,7 +241,7 @@ function M.config()
 		--			d = { "<cmd>let g:cmp_toggle = v:false<cr>", "Disable" },
 		--			g = { '<cmd>NeoAI<cr>', "ChatGpt" },
 		-- },
-		["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
+		-- ["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
 	}
 
 	which_key.setup(setup)

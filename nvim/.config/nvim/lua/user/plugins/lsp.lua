@@ -97,12 +97,39 @@ return {
 			require("user.lsp.null-ls")
 		end,
 	},
+	-- {
+	--   "stevearc/conform.nvim",
+	--   event = { "BufReadPre", "BufNewFile" },
+	--   enabled = true,
+	--   lazy = true,
+	--   config = function()
+	--     require("rj.lsp.nvim-conform")
+	--   end,
+	--   init = function()
+	--     -- If you want the formatexpr, here is the place to set it
+	--     vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+	--   end,
+	-- },
+	-- {
+	--   "mfussenegger/nvim-lint",
+	--   event = { "BufReadPre", "BufNewFile" },
+	--   lazy = true,
+	--   enabled = true,
+	--   config = function()
+	--     require("rj.lsp.nvim-lint")
+	--   end,
+	-- },
+
 	{
 		"stevearc/dressing.nvim",
 		opts = {},
 		event = "BufRead",
+		lazy = true,
 	},
-	{ "roobert/tailwindcss-colorizer-cmp.nvim" },
+	{
+		"roobert/tailwindcss-colorizer-cmp.nvim",
+		lazy = true,
+	},
 
 	-- {
 	-- 	"j-hui/fidget.nvim",
