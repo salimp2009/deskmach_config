@@ -2,7 +2,8 @@
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{ command = "black", filetypes = { "python" } },
-	{ command = "isort", filetypes = { "python" } },
+	{ command = "ruff", filetypes = { "python" } },
+	-- { command = "isort", filetypes = { "python" } },
 	{ command = "goimports", filetypes = { "go" } },
 	{ command = "gofumpt", filetypes = { "go" } },
 	{
@@ -117,7 +118,8 @@ end, lvim.lsp.automatic_configuration.skipped_servers)
 -- -- set additional linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-	{ command = "flake8", filetypes = { "python" } },
+	-- { command = "flake8", filetypes = { "python" } },
+	{ command = "ruff", filetypes = { "python" } },
 
 	{ name = "jsonlint" },
 	{
