@@ -76,18 +76,50 @@ return {
 	},
 	{
 		"saecki/crates.nvim",
-		version = "v0.3.0",
+		-- version = "v0.3.0",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		-- ft = { "toml" },
 		config = function()
 			require("crates").setup({
+				src = {
+					cmp = {
+						enabled = true,
+						use_custom_kind = true,
+						kind_text = {
+							version = "Version",
+							feature = "Feature",
+						},
+						kind_highlight = {
+							version = "CmpItemKindVersion",
+							feature = "CmpItemKindFeature",
+						},
+					},
+				},
 				null_ls = {
 					enabled = true,
 					name = "crates.nvim",
 				},
+				lsp = {
+					enabled = true,
+					name = "crates.nvim",
+					on_attach = function(client, bufnr)
+						require("user.lsp.attach").on_attach(client, bufnr)
+					end,
+					actions = true,
+					completion = true,
+					hover = true,
+				},
 				popup = {
 					border = "rounded",
 				},
+
+				-- null_ls = {
+				-- 	enabled = true,
+				-- 	name = "crates.nvim",
+				-- },
+				-- popup = {
+				-- 	border = "rounded",
+				-- },
 			})
 		end,
 	},
