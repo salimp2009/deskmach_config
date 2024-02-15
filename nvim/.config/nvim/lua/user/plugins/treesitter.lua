@@ -1,5 +1,6 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
+	commit = "1897926700b6b0add1cf25c8ff0ba5f6e917814e",
 	event = "BufReadPost",
 	dependencies = {
 		"nvim-treesitter/playground",
@@ -80,10 +81,10 @@ function M.config()
 			-- additional_vim_regex_highlighting = true,
 		},
 		indent = { enable = true, disable = { "python" } },
-		context_commentstring = {
-			enable = true,
-			enable_autocmd = false,
-		},
+		-- context_commentstring = {
+		-- 	enable = true,
+		-- 	enable_autocmd = false,
+		-- },
 		textobjects = {
 			select = {
 				enable = true,
@@ -116,11 +117,11 @@ function M.config()
 				},
 			},
 		},
-		rainbow = {
-			enable = true,
-			extended_mode = false,
-			disable = { "html" },
-		},
+		-- rainbow = {
+		-- 	enable = true,
+		-- 	extended_mode = false,
+		-- 	disable = { "html" },
+		-- },
 	})
 end
 

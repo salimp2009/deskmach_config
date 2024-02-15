@@ -13,6 +13,9 @@ local M = {
 		"hrsh7th/cmp-nvim-lua",
 		{
 			"L3MON4D3/LuaSnip",
+			commit = "3d2ad0c0fa25e4e272ade48a62a185ebd0fe26c1",
+		},
+		{
 			"rafamadriz/friendly-snippets",
 		},
 		{

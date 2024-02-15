@@ -1,6 +1,7 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		commit = "a51892484c2002c083a8b0a9dfcefb3a569be36d",
 		ft = {
 			"markdown",
 			"lua",
@@ -58,6 +59,7 @@ return {
 	},
 	{
 		"p00f/clangd_extensions.nvim",
+		commit = "6d0bf36870d15c0c2284f4b6693a66552a6bf127",
 		ft = { "c", "cpp" },
 		lazy = true,
 		config = function()
