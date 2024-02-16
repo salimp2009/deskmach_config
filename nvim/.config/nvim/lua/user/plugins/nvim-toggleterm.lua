@@ -40,6 +40,55 @@ function M.config()
 	-- vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 	local Terminal = require("toggleterm.terminal").Terminal
+
+	local horiz_term = Terminal:new({
+		cmd = vim.o.shell,
+		-- hidden = true,
+		direction = "horizontal",
+		label = "horizontal",
+		size = 12,
+		on_open = function(_)
+			vim.cmd("startinsert!")
+		end,
+		on_close = function(_) end,
+		count = 101,
+	})
+
+	function _HORIZ_TOGGLE()
+		horiz_term:toggle()
+	end
+
+	local float_term = Terminal:new({
+		cmd = vim.o.shell,
+		direction = "float",
+		on_open = function(_)
+			vim.cmd("startinsert!")
+		end,
+		on_close = function(_) end,
+		count = 102,
+	})
+
+	function _FLOAT_TOGGLE()
+		float_term:toggle()
+	end
+
+	local vert_term = Terminal:new({
+		cmd = vim.o.shell,
+		-- hidden = true,
+		direction = "vertical",
+		label = "Vertical",
+		size = 50,
+		on_open = function(_)
+			vim.cmd("startinsert!")
+		end,
+		on_close = function(_) end,
+		count = 103,
+	})
+
+	function _VERT_TOGGLE()
+		vert_term:toggle()
+	end
+
 	local lazygit = Terminal:new({
 		cmd = "lazygit",
 		hidden = true,
