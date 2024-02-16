@@ -4,7 +4,11 @@ lvim.plugins = {
 	-- { "mattn/webapi-vim" },
 	-- { "mattn/vim-gist" },
 	-- { "Shatur/neovim-tasks" },
-	{ "cdelledonne/vim-cmake" },
+	{
+		"cdelledonne/vim-cmake",
+		ft = { "cpp", "c", "cmake", "fortran" },
+		-- lazy = true,
+	},
 	-- {
 	-- 	"krady21/compiler-explorer.nvim",
 	--    enabled=false,
@@ -19,6 +23,7 @@ lvim.plugins = {
 		"Rawnly/gist.nvim",
 		cmd = { "GistCreate", "GistCreateFromFile", "GistsList" },
 		config = true,
+		lazy = true,
 	},
 	{
 		"samjwill/nvim-unception",
@@ -27,8 +32,14 @@ lvim.plugins = {
 			vim.g.unception_block_while_host_edits = true
 		end,
 	},
-	{ url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
-	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
+	{
+		url = "git@github.com:ChristianChiarulli/bookmark.nvim.git",
+		lazy = true,
+	},
+	{
+		url = "git@github.com:ChristianChiarulli/onedark.nvim.git",
+		-- lazy = true,
+	},
 	{ url = "git@github.com:LunarVim/primer.nvim.git" },
 	{ "towolf/vim-helm" },
 	{
@@ -65,6 +76,7 @@ lvim.plugins = {
 	{
 		"christianchiarulli/harpoon",
 		event = "BufRead",
+		lazy = true,
 	},
 	{
 		"kndndrj/nvim-dbee",
@@ -108,7 +120,10 @@ lvim.plugins = {
 	-- 		vim.g.codeium_enabled = false
 	-- 	end,
 	-- },
-	{ "p00f/clangd_extensions.nvim" },
+	{
+		"p00f/clangd_extensions.nvim",
+		ft = { "cpp", "c", "cmake" },
+	},
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{
 		"monaqa/dial.nvim",
@@ -135,6 +150,7 @@ lvim.plugins = {
 	{
 		"windwp/nvim-spectre",
 		event = "BufRead",
+		lazy = "VeryLazy",
 	},
 	{
 		"mfussenegger/nvim-jdtls",
@@ -143,11 +159,13 @@ lvim.plugins = {
 	{
 		"leoluz/nvim-dap-go",
 		event = "BufRead",
+		ft = { "go" },
 		lazy = "VeryLazy",
 	},
 	{
 		"mfussenegger/nvim-dap-python",
 		event = "BufRead",
+		ft = { "python" },
 		lazy = "VeryLazy",
 	},
 	{
@@ -170,6 +188,7 @@ lvim.plugins = {
 	{
 		"simrat39/rust-tools.nvim",
 		event = "BufRead",
+		ft = { "rust", "Cargo.toml" },
 		lazy = true,
 	},
 	{
@@ -187,19 +206,50 @@ lvim.plugins = {
 	},
 	{
 		"saecki/crates.nvim",
-		version = "v0.3.0",
+		-- version = "v0.3.0",
+		ft = { "toml" },
 		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("crates").setup({
-				null_ls = {
-					enabled = true,
-					name = "crates.nvim",
-				},
-				popup = {
-					border = "rounded",
-				},
-			})
-		end,
+		-- require("crates").setup({
+		-- 	src = {
+		-- 		cmp = {
+		-- 			enabled = true,
+		-- 			use_custom_kind = true,
+		-- 			kind_text = {
+		-- 				version = "Version",
+		-- 				feature = "Feature",
+		-- 			},
+		-- 			kind_highlight = {
+		-- 				version = "CmpItemKindVersion",
+		-- 				feature = "CmpItemKindFeature",
+		-- 			},
+		-- 		},
+		-- 	},
+		-- 	null_ls = {
+		-- 		enabled = true,
+		-- 		name = "crates.nvim",
+		-- 	},
+		-- 	lsp = {
+		-- 		enabled = true,
+		-- 		name = "crates.nvim",
+		-- 		on_attach = function(client, bufnr)
+		-- 			require("lvim.lsp").common_on_attach(client, bufnr)
+		-- 		end,
+		-- 		actions = true,
+		-- 		completion = true,
+		-- 		hover = true,
+		-- 	},
+		-- 	popup = {
+		-- 		border = "rounded",
+		-- 	},
+
+		-- 	-- null_ls = {
+		-- 	-- 	enabled = true,
+		-- 	-- 	name = "crates.nvim",
+		-- 	-- },
+		-- 	-- popup = {
+		-- 	-- 	border = "rounded",
+		-- 	-- },
+		-- }),
 	},
 	-- {
 	-- 	"j-hui/fidget.nvim",
@@ -271,5 +321,9 @@ lvim.plugins = {
 		},
 	},
 	{ "nvim-neotest/neotest" },
-	{ "nvim-neotest/neotest-python" },
+	{
+		"nvim-neotest/neotest-python",
+		ft = { "python" },
+		lazy = true,
+	},
 }
