@@ -1,4 +1,4 @@
--- require("lvim.lsp.manager").setup("taplo")
+require("lvim.lsp.manager").setup("taplo")
 
 local path = vim.api.nvim_buf_get_name(0)
 local parts = vim.split(path, "/")

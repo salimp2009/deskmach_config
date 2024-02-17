@@ -40,6 +40,16 @@ vim.filetype.add({
 	},
 })
 
+-- vim.filetype.add({
+-- 	filename = {
+-- 		["terraform"] = "*.tf",
+-- 	},
+-- })
+
+vim.cmd([[
+au BufRead,BufNewFile *.tf setlocal filetype=terraform
+]])
+
 vim.filetype.add({
 	filename = {
 		[".envrc"] = "sh",
@@ -51,12 +61,6 @@ vim.filetype.add({
 		conf = "dosini",
 	},
 })
-
--- vim.filetype.add({
--- 	extension = {
--- 		a = "asm",
--- 	},
--- })
 
 vim.filetype.add({
 	extension = {
@@ -97,11 +101,11 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(serve
 	return server ~= "neocmake"
 end, lvim.lsp.automatic_configuration.skipped_servers)
 
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "cmake" })
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+	return server ~= "tflint"
+end, lvim.lsp.automatic_configuration.skipped_servers)
 
--- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
--- 	return server ~= "asm-lsp"
--- end, lvim.lsp.automatic_configuration.skipped_servers)
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "cmake" })
 
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 -- 	return server ~= "denols"

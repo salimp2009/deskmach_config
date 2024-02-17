@@ -5,6 +5,16 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		vim.opt_local.spell = true
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	pattern = "*.tf",
+	callback = function()
+		vim.cmd([[
+      au BufRead,BufNewFile *.tf setlocal filetype=terraform
+    ]])
+	end,
+})
+--
 -- vim.api.nvim_create_autocmd("FileType", {
 -- 	pattern = {
 -- 		"sql",
