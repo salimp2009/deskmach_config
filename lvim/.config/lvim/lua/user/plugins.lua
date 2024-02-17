@@ -141,7 +141,10 @@ lvim.plugins = {
 		event = "BufRead",
 		lazy = true,
 	},
-	{ "roobert/tailwindcss-colorizer-cmp.nvim" },
+	{
+		"roobert/tailwindcss-colorizer-cmp.nvim",
+		lazy = true,
+	},
 	{ "lunarvim/darkplus.nvim" },
 	{
 		"p00f/nvim-ts-rainbow",
