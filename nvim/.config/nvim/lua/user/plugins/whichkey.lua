@@ -208,6 +208,7 @@ function M.config()
 			k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 			C = { "<cmd>Telescope commands<cr>", "Commands" },
 			f = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find in current buffer" },
+			s = { "<cmd>lua require('luasnip.loaders').edit_snippet_files()<cr>", "Edit Snippets" },
 		},
 		T = {
 			name = "Treesitter",

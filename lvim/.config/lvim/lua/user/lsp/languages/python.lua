@@ -18,7 +18,7 @@ require("neotest").setup({
 			-- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
 			dap = {
 				justMyCode = false,
-				console = "integratedTerminal",
+				-- console = "integratedTerminal",
 			},
 			args = {
 				"--log-level",
@@ -26,7 +26,7 @@ require("neotest").setup({
 				"--quiet",
 				-- "--fixtures",
 			},
-			runner = "pytest",
+			-- runner = "pytest",
 			-- python = ".venv/bin/python",
 			-- python = python_path,
 		}),

@@ -19,6 +19,14 @@ function M.config()
 		enable_autosnippets = true,
 	})
 
+	require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/luasnippets" })
+	-- vscode format
+	require("luasnip.loaders.from_vscode").lazy_load()
+	require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.g.vscode_snippets_path or "" })
+	-- snipmate format
+	require("luasnip.loaders.from_snipmate").load()
+	require("luasnip.loaders.from_snipmate").lazy_load({ paths = vim.g.snipmate_snippets_path or "" })
+
 	ls.add_snippets("cpp", {
 		s(
 			"aoc",

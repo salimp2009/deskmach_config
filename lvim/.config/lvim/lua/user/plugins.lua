@@ -15,6 +15,11 @@ lvim.plugins = {
 	-- 	lazy = true,
 	-- },
 	{
+		"linrongbin16/gitlinker.nvim",
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+		event = "VeryLazy",
+	},
+	{
 		"liaozixin/nvim-cpptools",
 		ft = { "cpp", "c" },
 		lazy = true,

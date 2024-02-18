@@ -81,3 +81,13 @@ lvim.builtin.which_key.mappings["n"] = {
 	f = { "<cmd>Telescope find_files search_dirs=~/Documents/notes/<cr>", "Find Notes" },
 	n = { "<cmd>Telescope live_grep search_dirs=~/Documents/notes/<cr>", "Live Grep Notes" },
 }
+
+lvim.builtin.which_key.mappings["gy"] = {
+	"<cmd>GitLink!<cr>",
+	"Git link",
+}
+
+lvim.builtin.which_key.mappings["gY"] = {
+	"<cmd>GitLink blam<cr>",
+	"Git link blame",
+}
