@@ -1,6 +1,7 @@
 --[[
 lvim is the global options object
 
+
 Linters should be
 filled in as strings with either
 a global executable or a path to
@@ -29,6 +30,7 @@ reload("user.bqf")
 reload("user.harpoon")
 reload("user.bookmark")
 reload("user.noice")
+require("user.ufo")
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping

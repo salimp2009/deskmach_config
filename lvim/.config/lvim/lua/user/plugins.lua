@@ -5,6 +5,14 @@ lvim.plugins = {
 	-- { "mattn/vim-gist" },
 	-- { "Shatur/neovim-tasks" },
 	{
+		"kevinhwang91/nvim-ufo",
+		lazy = true,
+		dependencies = {
+			"kevinhwang91/promise-async",
+			"luukvbaal/statuscol.nvim",
+		},
+	},
+	{
 		"cdelledonne/vim-cmake",
 		ft = { "cpp", "c", "cmake", "fortran" },
 		-- lazy = true,
@@ -129,7 +137,10 @@ lvim.plugins = {
 		"p00f/clangd_extensions.nvim",
 		ft = { "cpp", "c", "cmake" },
 	},
-	{ "nvim-treesitter/nvim-treesitter-textobjects" },
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		lazy = true,
+	},
 	{
 		"monaqa/dial.nvim",
 		event = "BufRead",

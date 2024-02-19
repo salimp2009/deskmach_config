@@ -91,3 +91,7 @@ lvim.builtin.which_key.mappings["gY"] = {
 	"<cmd>GitLink blam<cr>",
 	"Git link blame",
 }
+lvim.builtin.which_key.mappings["ss"] = {
+	"<cmd>lua require('luasnip.loaders').edit_snippet_files()<cr>",
+	"Search Snippets",
+}
