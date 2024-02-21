@@ -13,6 +13,11 @@ lvim.plugins = {
 		},
 	},
 	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+	},
+	{
 		"cdelledonne/vim-cmake",
 		ft = { "cpp", "c", "cmake", "fortran" },
 		-- lazy = true,
@@ -174,6 +179,7 @@ lvim.plugins = {
 	{
 		"mfussenegger/nvim-jdtls",
 		lazy = true,
+		ft = { "java" },
 	},
 	{
 		"leoluz/nvim-dap-go",
@@ -187,11 +193,11 @@ lvim.plugins = {
 		ft = { "python" },
 		lazy = "VeryLazy",
 	},
-	{
-		"jose-elias-alvarez/typescript.nvim",
-		event = "BufRead",
-		lazy = "VeryLazy",
-	},
+	-- {
+	-- 	"jose-elias-alvarez/typescript.nvim",
+	-- 	event = "BufRead",
+	-- 	lazy = "VeryLazy",
+	-- },
 	{
 		"mxsdev/nvim-dap-vscode-js",
 		event = "BufRead",
@@ -336,6 +342,7 @@ lvim.plugins = {
 		dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
 		config = true,
 		event = "VeryLazy",
+		ft = { "python" },
 		opts = {
 			name = ".venv",
 		},
