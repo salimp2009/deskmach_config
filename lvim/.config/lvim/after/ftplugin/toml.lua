@@ -1,8 +1,10 @@
 require("lvim.lsp.manager").setup("taplo")
 
-local path = vim.api.nvim_buf_get_name(0)
-local parts = vim.split(path, "/")
-local filename = parts[#parts]
+-- local path = vim.api.nvim_buf_get_name(0)
+-- local parts = vim.split(path, "/")
+-- local filename = parts[#parts]
+local filename = vim.fn.expand("%:t")
+-- print(filename)
 
 if string.find(filename, "Cargo.toml") then
 	print(filename)

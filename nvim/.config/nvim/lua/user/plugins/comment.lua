@@ -1,6 +1,7 @@
 local M = {
 	"numToStr/Comment.nvim",
 	event = "BufRead",
+	lazy = true,
 	dependencies = {
 		{
 			"JoosepAlviste/nvim-ts-context-commentstring",
@@ -10,7 +11,7 @@ local M = {
 }
 
 function M.config()
-	 require("Comment").setup({
+	require("Comment").setup({
 		pre_hook = function(ctx)
 			-- Only calculate commentstring for tsx filetypes
 			if vim.bo.filetype == "typescriptreact" then
@@ -27,14 +28,13 @@ function M.config()
 					location = require("ts_context_commentstring.utils").get_visual_start_location()
 				end
 
-				return require("ts_context_commentstring.internal").calculate_commentstring{
+				return require("ts_context_commentstring.internal").calculate_commentstring({
 					key = type,
 					location = location,
-				}
+				})
 			end
-		end
+		end,
 	})
 end
 
 return M
-

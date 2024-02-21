@@ -1,6 +1,7 @@
 local M = {
 	"alvarosevilla95/luatab.nvim",
 	event = { "TabNew", "TabEnter", "TabNewEntered" },
+	lazy = "VeryLazy",
 }
 
 function M.config()
@@ -8,4 +9,3 @@ function M.config()
 end
 
 return M
-

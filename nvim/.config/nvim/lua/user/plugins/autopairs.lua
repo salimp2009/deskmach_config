@@ -1,6 +1,7 @@
 local M = {
 	"windwp/nvim-autopairs",
 	event = "InsertEnter",
+	lazy = true,
 	dependencies = {
 		{
 			"hrsh7th/nvim-cmp",
