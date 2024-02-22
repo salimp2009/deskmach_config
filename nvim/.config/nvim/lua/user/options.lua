@@ -39,6 +39,7 @@ local options = {
 	showtabline = 1,
 	guifont = "JetBrainsMono Nerd Font Regular:h14", -- the font used in graphical neovim applications
 	spelllang = "en_us",
+	showcmd = false,
 }
 
 for k, v in pairs(options) do
@@ -55,3 +56,5 @@ vim.opt.cinkeys:remove(":")
 vim.opt.indentkeys:remove(":")
 vim.opt.fillchars = { eob = " " }
 vim.g.cmp_toggle = true
+vim.opt.shortmess:append("I")
+vim.opt.shortmess:append("c")
