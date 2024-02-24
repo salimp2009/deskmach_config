@@ -84,3 +84,13 @@ else
 		disable = { "html" },
 	}
 end
+
+lvim.builtin.cmp.formatting = {
+	format = require("tailwindcss-colorizer-cmp").formatter,
+}
+
+-- lvim.lsp.buffer_mappings.normal_mode["gr"] = nil
+-- lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references<CR>", "Lsp References" }
+
+-- local opts = { noremap = true, silent = true }
+-- vim.api.nvim_buf_set_keymap(0, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)

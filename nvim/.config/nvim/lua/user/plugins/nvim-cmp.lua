@@ -145,6 +145,7 @@ function M.config()
 				-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 				-- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 				-- vim.api.nvim_set_hl(0, "CmpItemKindTabNine", {fg ="#6CC644"})
+
 				if entry.source.name == "copilot" then
 					vim_item.kind_hl_group = "CmpItemKindCopilot"
 				end

@@ -196,6 +196,7 @@ function M.config()
 				"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 				"Workspace Symbols",
 			},
+			h = { "<cmd>lua require('lsp-inlayhints').toggle()<cr>", "Toggle Hints" },
 		},
 		s = {
 			name = "Search",

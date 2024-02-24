@@ -17,11 +17,11 @@ lvim.plugins = {
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {},
 	},
-	{
-		"cdelledonne/vim-cmake",
-		ft = { "cpp", "c", "cmake", "fortran" },
-		-- lazy = true,
-	},
+	-- {
+	-- 	"cdelledonne/vim-cmake",
+	-- 	ft = { "cpp", "c", "cmake", "fortran" },
+	-- 	-- lazy = true,
+	-- },
 	-- {
 	-- 	"krady21/compiler-explorer.nvim",
 	--    enabled=false,
@@ -32,11 +32,11 @@ lvim.plugins = {
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 		event = "VeryLazy",
 	},
-	{
-		"liaozixin/nvim-cpptools",
-		ft = { "cpp", "c" },
-		lazy = true,
-	},
+	-- {
+	-- 	"liaozixin/nvim-cpptools",
+	-- 	ft = { "cpp", "c" },
+	-- 	lazy = true,
+	-- },
 	{
 		"Rawnly/gist.nvim",
 		cmd = { "GistCreate", "GistCreateFromFile", "GistsList" },
@@ -170,7 +170,12 @@ lvim.plugins = {
 	{
 		"p00f/nvim-ts-rainbow",
 	},
-	{ "lvimuser/lsp-inlayhints.nvim" },
+	{
+		"lvimuser/lsp-inlayhints.nvim",
+		-- event = "LspAttach",
+		-- branch = "anticonceal",
+		-- lazy = true,
+	},
 	{
 		"windwp/nvim-spectre",
 		event = "BufRead",
@@ -235,47 +240,6 @@ lvim.plugins = {
 		ft = { "toml" },
 		event = { "BufRead Cargo.toml" },
 		dependencies = { "nvim-lua/plenary.nvim" },
-		-- require("crates").setup({
-		-- 	src = {
-		-- 		cmp = {
-		-- 			enabled = true,
-		-- 			use_custom_kind = true,
-		-- 			kind_text = {
-		-- 				version = "Version",
-		-- 				feature = "Feature",
-		-- 			},
-		-- 			kind_highlight = {
-		-- 				version = "CmpItemKindVersion",
-		-- 				feature = "CmpItemKindFeature",
-		-- 			},
-		-- 		},
-		-- 	},
-		-- 	null_ls = {
-		-- 		enabled = true,
-		-- 		name = "crates.nvim",
-		-- 	},
-		-- 	lsp = {
-		-- 		enabled = true,
-		-- 		name = "crates.nvim",
-		-- 		on_attach = function(client, bufnr)
-		-- 			require("lvim.lsp").common_on_attach(client, bufnr)
-		-- 		end,
-		-- 		actions = true,
-		-- 		completion = true,
-		-- 		hover = true,
-		-- 	},
-		-- 	popup = {
-		-- 		border = "rounded",
-		-- 	},
-
-		-- 	-- null_ls = {
-		-- 	-- 	enabled = true,
-		-- 	-- 	name = "crates.nvim",
-		-- 	-- },
-		-- 	-- popup = {
-		-- 	-- 	border = "rounded",
-		-- 	-- },
-		-- }),
 	},
 	-- {
 	-- 	"j-hui/fidget.nvim",
@@ -312,9 +276,12 @@ lvim.plugins = {
 
 	{
 		"NvChad/nvim-colorizer.lua",
+		event = "BufReadPre",
+		lazy = true,
 		config = function()
 			require("colorizer").setup({
 				filetypes = {
+					"astro",
 					"typescript",
 					"typescriptreact",
 					"javascript",
@@ -326,13 +293,17 @@ lvim.plugins = {
 				},
 				user_default_options = {
 					names = false,
+					RGB = true, -- #RGB hex codes
+					RRGGBB = true, -- #RRGGBB hex codes
 					rgb_fn = true,
+					css = true,
+					css_fn = true,
+					hsl_fn = true, -- CSS hsl() and hsla() functions
+					mode = "background",
+					virtualtext = "■",
 					tailwind = "both",
 				},
-				buftypes = {
-					-- '*', -- seems like this doesn't work with the float window, but works with the other `buftype`s.
-					-- Not sure if the window has a `buftype` at all
-				},
+				buftypes = {},
 			})
 		end,
 	},
