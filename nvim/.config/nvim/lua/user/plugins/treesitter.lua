@@ -6,13 +6,23 @@ local M = {
 		"nvim-treesitter/playground",
 		{
 			"JoosepAlviste/nvim-ts-context-commentstring",
+			-- use this with nvim 0.10
+			-- config = function()
+			-- 	require("ts_context_commentstring").setup({
+			-- 		enable_autocmd = false,
+			-- 	})
+			-- 	vim.g.skip_ts_context_commentstring_module = true
+			-- end,
 		},
 		{
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		{ "windwp/nvim-ts-autotag" },
+		-- {
+		-- 	"p00f/nvim-ts-rainbow",
+		-- },
 		{
-			"p00f/nvim-ts-rainbow",
+			"HiPhish/rainbow-delimiters.nvim",
 		},
 		{
 			"kyazdani42/nvim-web-devicons",
@@ -81,10 +91,12 @@ function M.config()
 			-- additional_vim_regex_highlighting = true,
 		},
 		indent = { enable = true, disable = { "python" } },
-		-- context_commentstring = {
-		-- 	enable = true,
-		-- 	enable_autocmd = false,
-		-- },
+		-- disable commentstring module with nvim 0.10
+		context_commentstring = {
+			enable = true,
+			enable_autocmd = false,
+		},
+		-- see if this works after updating to nvim 0.10
 		textobjects = {
 			select = {
 				enable = true,
@@ -117,6 +129,7 @@ function M.config()
 				},
 			},
 		},
+		-- see if it works after updating to nvim 0.10
 		-- rainbow = {
 		-- 	enable = true,
 		-- 	extended_mode = false,

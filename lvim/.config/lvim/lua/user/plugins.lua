@@ -167,8 +167,11 @@ lvim.plugins = {
 		lazy = true,
 	},
 	{ "lunarvim/darkplus.nvim" },
+	-- {
+	-- 	"p00f/nvim-ts-rainbow",
+	-- },
 	{
-		"p00f/nvim-ts-rainbow",
+		"HiPhish/rainbow-delimiters.nvim",
 	},
 	{
 		"lvimuser/lsp-inlayhints.nvim",

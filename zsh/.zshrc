@@ -11,6 +11,9 @@ plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/openaikey.zsh"
 #plug "$HOME/.config/zsh/keybindings.zsh"
 
+# nvim alias's
+# alias nvim-lazy='NVIM_APPNAME="LazyVim" nvim'
+
 # plugins
 plug "esc/conda-zsh-completion"
 plug "zsh-users/zsh-autosuggestions"
