@@ -218,7 +218,23 @@ function M.config()
 				only_sort_text = true,
 			},
 			find_files = {
+				-- layout_strategy = "horizontal",
+				-- layout_config = {
+				-- 	horizontal = {
+				-- 		prompt_position = "top",
+				-- 		preview_width = 0.55,
+				-- 	},
+				-- 	vertical = {
+				-- 		mirror = false,
+				-- 	},
+				-- 	width = 0.87,
+				-- 	height = 0.80,
+				-- 	preview_cutoff = 120,
+				-- },
 				theme = "dropdown",
+				-- layout_strategy = "horizontal",
+				-- layout_config = { width = 0.95 },
+				-- previewer = true,
 				previewer = false,
 				hidden = true,
 			},

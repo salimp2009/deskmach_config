@@ -18,9 +18,6 @@ local M = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		{ "windwp/nvim-ts-autotag" },
-		-- {
-		-- 	"p00f/nvim-ts-rainbow",
-		-- },
 		{
 			"HiPhish/rainbow-delimiters.nvim",
 		},

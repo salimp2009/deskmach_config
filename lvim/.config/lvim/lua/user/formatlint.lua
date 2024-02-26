@@ -40,6 +40,12 @@ vim.filetype.add({
 	},
 })
 
+vim.filetype.add({
+	extension = {
+		mdx = "markdown",
+	},
+})
+
 -- vim.filetype.add({
 -- 	filename = {
 -- 		["terraform"] = "*.tf",
