@@ -64,27 +64,6 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
--- lvim.builtin.treesitter.rainbow.enable = true
-
--- if lvim.colorscheme == "darkplus" then
--- 	lvim.builtin.treesitter.rainbow = {
--- 		enable = true,
--- 		extended_mode = false,
--- 		colors = {
--- 			"DodgerBlue",
--- 			"Orchid",
--- 			"Gold",
--- 		},
--- 		disable = { "html" },
--- 	}
--- else
--- 	lvim.builtin.treesitter.rainbow = {
--- 		enable = true,
--- 		extended_mode = false,
--- 		disable = { "html" },
--- 	}
--- end
-
 lvim.lsp.buffer_mappings.normal_mode["gr"] = nil
 lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references<CR>", "Lsp References" }
 

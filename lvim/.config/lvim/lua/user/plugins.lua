@@ -282,32 +282,33 @@ lvim.plugins = {
 		event = "BufReadPre",
 		lazy = true,
 		config = function()
-			require("colorizer").setup({
-				filetypes = {
-					"astro",
-					"typescript",
-					"typescriptreact",
-					"javascript",
-					"javascriptreact",
-					"css",
-					"html",
-					"astro",
-					"lua",
-				},
-				user_default_options = {
-					names = false,
-					RGB = true, -- #RGB hex codes
-					RRGGBB = true, -- #RRGGBB hex codes
-					rgb_fn = true,
-					css = true,
-					css_fn = true,
-					hsl_fn = true, -- CSS hsl() and hsla() functions
-					mode = "background",
-					virtualtext = "■",
-					tailwind = "both",
-				},
-				buftypes = {},
-			})
+			require("user.colorizer")
+			-- require("colorizer").setup({
+			-- 	filetypes = {
+			-- 		"astro",
+			-- 		"typescript",
+			-- 		"typescriptreact",
+			-- 		"javascript",
+			-- 		"javascriptreact",
+			-- 		"css",
+			-- 		"html",
+			-- 		"astro",
+			-- 		"lua",
+			-- 	},
+			-- 	user_default_options = {
+			-- 		names = false,
+			-- 		RGB = true, -- #RGB hex codes
+			-- 		RRGGBB = true, -- #RRGGBB hex codes
+			-- 		rgb_fn = true,
+			-- 		css = true,
+			-- 		css_fn = true,
+			-- 		hsl_fn = true, -- CSS hsl() and hsla() functions
+			-- 		mode = "background",
+			-- 		virtualtext = "■",
+			-- 		tailwind = "both",
+			-- 	},
+			-- 	buftypes = {},
+			-- })
 		end,
 	},
 
