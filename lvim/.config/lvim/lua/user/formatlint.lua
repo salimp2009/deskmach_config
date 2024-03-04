@@ -45,7 +45,7 @@ vim.filetype.add({
 		mdx = "markdown",
 	},
 })
-
+vim.treesitter.language.register("markdown", "mdx")
 -- vim.filetype.add({
 -- 	filename = {
 -- 		["terraform"] = "*.tf",

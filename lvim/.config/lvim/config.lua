@@ -31,6 +31,7 @@ reload("user.harpoon")
 reload("user.bookmark")
 reload("user.noice")
 require("user.ufo")
+require("user.rainbow")
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping

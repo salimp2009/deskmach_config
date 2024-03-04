@@ -255,10 +255,11 @@ lvim.plugins = {
 
 	{
 		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-		ft = "markdown",
+		ft = { "markdown", "markdown.mdx", "mdx" },
 		config = function()
 			vim.g.mkdp_auto_close = 0
 		end,
