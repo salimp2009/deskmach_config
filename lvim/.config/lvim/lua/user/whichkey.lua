@@ -9,6 +9,8 @@ lvim.builtin.which_key.mappings["a"] = {
 	-- d = { "<cmd>Codeium Disable<cr>", "Codeium Disable" },
 }
 
+lvim.builtin.which_key.mappings["lb"] = { "<cmd>%!xxd<cr>", "From Binary to Hex" }
+
 lvim.builtin.which_key.mappings["P"] = {
 	"<cmd>Telescope projects hidden=true layout_config={prompt_position='top'}<cr>",
 	"Projects",
