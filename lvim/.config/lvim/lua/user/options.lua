@@ -17,6 +17,7 @@ vim.opt.iskeyword:append("-")
 lvim.leader = "space"
 -- add your own keymappin€ý.g
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+-- lvim.builtin.cmp.experimental.ghost_text = true
 
 -- NOTE: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile

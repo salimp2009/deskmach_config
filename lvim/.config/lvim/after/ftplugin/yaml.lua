@@ -1,8 +1,8 @@
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "yamlls" })
 
--- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
--- 	return server ~= "ansiblels"
--- end, lvim.lsp.automatic_configuration.skipped_servers)
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+	return server ~= "ansiblels"
+end, lvim.lsp.automatic_configuration.skipped_servers)
 
 -- print(vim.api.nvim_buf_get_name(0))
 -- local path = vim.api.nvim_buf_get_name(0)

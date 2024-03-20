@@ -52,6 +52,7 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
 end
 
 local ftMap = {
+	yaml = { "treesitter" },
 	-- typescriptreact = { "lsp", "treesitter" },
 	-- python = { "indent" },
 	-- git = "",
