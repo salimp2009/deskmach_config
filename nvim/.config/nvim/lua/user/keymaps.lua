@@ -93,37 +93,37 @@ end
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", "<cmd>NvimTreetoggle<cr>", opts)
 
 --keymaps for toggleterm
-keymap("n", "<M-1>", "<cmd>lua _HORIZ_TOGGLE()<cr>", opts)
-keymap("t", "<M-1>", "<cmd>lua _HORIZ_TOGGLE()<cr>", opts)
--- keymap("n", "<M-1>", "<cmd>ToggleTerm direction=horizontal size=12<cr>", opts)
--- keymap("t", "<M-1>", "<cmd>ToggleTerm direction=horizontal size=12<cr>", opts)
+keymap("n", "<m-1>", "<cmd>lua _horiz_toggle()<cr>", opts)
+keymap("t", "<m-1>", "<cmd>lua _horiz_toggle()<cr>", opts)
+-- keymap("n", "<m-1>", "<cmd>toggleterm direction=horizontal size=12<cr>", opts)
+-- keymap("t", "<m-1>", "<cmd>toggleterm direction=horizontal size=12<cr>", opts)
 
-keymap("n", "<M-2>", "<cmd>lua _VERT_TOGGLE()<cr>", opts)
-keymap("t", "<M-2>", "<cmd>lua _VERT_TOGGLE()<cr>", opts)
--- keymap("n", "<M-2>", "<cmd>ToggleTerm direction=vertical size=50<cr>", opts)
--- keymap("t", "<M-2>", "<cmd>ToggleTerm direction=vertical size=50<cr>", opts)
+keymap("n", "<m-2>", "<cmd>lua _vert_toggle()<cr>", opts)
+keymap("t", "<m-2>", "<cmd>lua _vert_toggle()<cr>", opts)
+-- keymap("n", "<m-2>", "<cmd>toggleterm direction=vertical size=50<cr>", opts)
+-- keymap("t", "<m-2>", "<cmd>toggleterm direction=vertical size=50<cr>", opts)
 
-keymap("n", "<M-3>", "<cmd>lua _FLOAT_TOGGLE()<cr>", opts)
-keymap("t", "<M-3>", "<cmd>lua _FLOAT_TOGGLE()<cr>", opts)
--- keymap("n", "<M-3>", "<cmd>ToggleTerm direction=float<cr>", opts)
--- keymap("t", "<M-3>", "<cmd>ToggleTerm direction=float<cr>", opts)
+keymap("n", "<m-3>", "<cmd>lua _float_toggle()<cr>", opts)
+keymap("t", "<m-3>", "<cmd>lua _float_toggle()<cr>", opts)
+-- keymap("n", "<m-3>", "<cmd>toggleterm direction=float<cr>", opts)
+-- keymap("t", "<m-3>", "<cmd>toggleterm direction=float<cr>", opts)
 
 --keymaps for tabs
--- keymap("n", "<M-l>", ":tabnext<CR>", opts)
--- keymap("n", "<M-h>", ":tabprevious<CR>", opts)
-keymap("n", "<A-q>", ":tabclose<CR>", opts)
-keymap("n", "<A-i>", ":tabnew<CR>", opts)
+-- keymap("n", "<m-l>", ":tabnext<cr>", opts)
+-- keymap("n", "<m-h>", ":tabprevious<cr>", opts)
+keymap("n", "<a-q>", ":tabclose<cr>", opts)
+keymap("n", "<a-i>", ":tabnew<cr>", opts)
 
 -- lsp keymap
-keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
 
--- keymap("n", "-", require("oil").open, { desc = "Open parent directory" })
+-- keymap("n", "-", require("oil").open, { desc = "open parent directory" })
 
 keymap("n", "n", "nzz", opts)
-keymap("n", "N", "Nzz", opts)
+keymap("n", "n", "nzz", opts)
 keymap("n", "*", "*zz", opts)
 keymap("n", "#", "#zz", opts)
 keymap("n", "g*", "g*zz", opts)

@@ -22,6 +22,9 @@ lsp_manager.setup("emmet_ls", {
 	capabilities = require("lvim.lsp").common_capabilities(),
 })
 
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "biome" })
+-- lsp_manager.setup("biome", {})
+
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver" })
 
 -- local capabilities = require("lvim.lsp").common_capabilities()

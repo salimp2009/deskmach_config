@@ -18,6 +18,11 @@ lvim.leader = "space"
 -- add your own keymappin€ý.g
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.builtin.cmp.experimental.ghost_text = true
+-- lvim.builtin.terminal.execs = {
+-- 	{ nil, "<M-2>", "Horizontal Terminal", "horizontal", 0.3 },
+-- 	{ nil, "<M-1>", "Vertical Terminal", "vertical", 0.4 },
+-- 	{ nil, "<M-3>", "Float Terminal", "float", nil },
+-- }
 
 -- NOTE: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -44,6 +49,7 @@ lvim.builtin.bufferline.active = false
 
 -- lvim.builtin.treesitter.auto_install = true
 -- lvim.builtin.telescope.defaults.layout_config = { width = 0.55, height = 0.95 }
+-- lvim.builtin.telescope.extensions.fzf.fuzzy=true
 lvim.builtin.telescope.theme = "center"
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {

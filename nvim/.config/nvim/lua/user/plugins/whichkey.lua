@@ -22,7 +22,7 @@ function M.config()
 				text_objects = true, -- help for text objects triggered after entering an operator
 				windows = true, -- default bindings on <c-w>
 				nav = true, -- misc bindings to work with windows
-				z = false, -- bindings for folds, spelling and others prefixed with z
+				z = true, -- bindings for folds, spelling and others prefixed with z
 				g = true, -- bindings for prefixed with g
 			},
 		},
@@ -92,7 +92,7 @@ function M.config()
 		["w"] = { "<cmd>w!<CR>", "Save" },
 		["q"] = { "<cmd>q!<CR>", "Quit" },
 		["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
-		["m"] = { "<cmd>lua _MOCP_TOGGLE()<CR>", "MOCP" },
+		-- ["m"] = { "<cmd>lua _MOCP_TOGGLE()<CR>", "MOCP" },
 		["j"] = { "<cmd>Jaq<CR>", "Jaq" },
 		["h"] = { "<cmd>nohlsearch<cr>", "nohl" },
 		["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
