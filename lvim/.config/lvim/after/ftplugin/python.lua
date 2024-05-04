@@ -21,6 +21,10 @@ local pyright_opts = {
 				typeCheckingMode = "basic", -- off, basic, strict
 				useLibraryCodeForTypes = true,
 			},
+			inlayHints = {
+				variableTypes = true,
+				functionReturnTypes = true,
+			},
 		},
 	},
 }
