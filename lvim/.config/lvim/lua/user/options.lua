@@ -6,6 +6,7 @@ lvim.colorscheme = "lunar"
 -- lvim.colorscheme = "onedark"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
+-- lvim.builtin.bigfile=false
 vim.opt.relativenumber = true
 vim.opt.iskeyword:append("-")
 -- vim.opt.foldmethod = "expr"
