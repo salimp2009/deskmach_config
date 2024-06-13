@@ -96,20 +96,20 @@ keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreetoggle<cr>", opts)
 
 --keymaps for toggleterm
-keymap("n", "<m-1>", "<cmd>lua _horiz_toggle()<cr>", opts)
-keymap("t", "<m-1>", "<cmd>lua _horiz_toggle()<cr>", opts)
--- keymap("n", "<m-1>", "<cmd>toggleterm direction=horizontal size=12<cr>", opts)
--- keymap("t", "<m-1>", "<cmd>toggleterm direction=horizontal size=12<cr>", opts)
+keymap("n", "<m-1>", "<cmd>lua _HORIZ_TOGGLE()<cr>", opts)
+keymap("t", "<m-1>", "<cmd>lua _HORIZ_TOGGLE()<cr>", opts)
+-- keymap("n", "<m-1>", ":ToggleTerm direction=horizontal size=12<cr>", opts)
+-- keymap("t", "<m-1>", ":ToggleTerm direction=horizontal size=12<cr>", opts)
 
-keymap("n", "<m-2>", "<cmd>lua _vert_toggle()<cr>", opts)
-keymap("t", "<m-2>", "<cmd>lua _vert_toggle()<cr>", opts)
--- keymap("n", "<m-2>", "<cmd>toggleterm direction=vertical size=50<cr>", opts)
--- keymap("t", "<m-2>", "<cmd>toggleterm direction=vertical size=50<cr>", opts)
+keymap("n", "<m-2>", "<cmd>lua _VERT_TOGGLE()<cr>", opts)
+keymap("t", "<m-2>", "<cmd>lua _VERT_TOGGLE()<cr>", opts)
+-- keymap("n", "<m-2>", "<cmd>ToggleTerm direction=vertical size=50<cr>", opts)
+-- keymap("t", "<m-2>", "<cmd>ToggleTerm direction=vertical size=50<cr>", opts)
 
-keymap("n", "<m-3>", "<cmd>lua _float_toggle()<cr>", opts)
-keymap("t", "<m-3>", "<cmd>lua _float_toggle()<cr>", opts)
--- keymap("n", "<m-3>", "<cmd>toggleterm direction=float<cr>", opts)
--- keymap("t", "<m-3>", "<cmd>toggleterm direction=float<cr>", opts)
+keymap("n", "<m-3>", "<cmd>lua _FLOAT_TOGGLE()<cr>", opts)
+keymap("t", "<m-3>", "<cmd>lua _FLOAT_TOGGLE()<cr>", opts)
+-- keymap("n", "<m-3>", "<cmd>ToggleTerm direction=float<cr>", opts)
+-- keymap("t", "<m-3>", "<cmd>ToggleTerm direction=float<cr>", opts)
 
 --keymaps for tabs
 -- keymap("n", "<m-l>", ":tabnext<cr>", opts)
