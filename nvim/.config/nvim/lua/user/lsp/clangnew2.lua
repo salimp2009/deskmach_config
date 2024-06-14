@@ -59,6 +59,7 @@ local opts = {
 	cmd = { provider, unpack(clangd_flags) },
 	on_attach = custom_on_attach,
 	on_init = custom_on_init,
+	capabilities = require("user.lsp.attach").capabilities,
 }
 
 require("lspconfig").clangd.setup(opts)
