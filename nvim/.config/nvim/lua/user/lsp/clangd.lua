@@ -18,6 +18,7 @@ if vim.fn.executable("clangd") == 1 then
 			"--enable-config", -- clangd 11+ supports reading from .clangd configuration file
 			"--suggest-missing-includes",
 			"--cross-file-rename",
+			"--query-driver=/usr/bin/arm-none-eabi-gcc,/usr/bin/arm-none-eabi-g++",
 		},
 	})
 

@@ -1,6 +1,3 @@
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
-local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
-
 -- some settings can only passed as commandline flags, see `clangd --help`
 local clangd_flags = {
 	"--background-index",
@@ -27,7 +24,7 @@ local clangd_flags = {
 local provider = "clangd"
 
 local custom_on_attach = function(client, bufnr)
-	require("lvim.lsp").common_on_attach(client, bufnr)
+	require("user.lsp.attach").on_attach(client, bufnr)
 
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "<leader>lh", "<cmd>ClangdSwitchSourceHeader<cr>", opts)
@@ -47,7 +44,6 @@ if status_ok then
 end
 
 local custom_on_init = function(client, bufnr)
-	require("lvim.lsp").common_on_init(client, bufnr)
 	require("clangd_extensions.config").setup({})
 	require("clangd_extensions.ast").init()
 	vim.cmd([[
@@ -65,86 +61,4 @@ local opts = {
 	on_init = custom_on_init,
 }
 
-require("lvim.lsp.manager").setup("clangd", opts)
-
--- local dap = require("dap")
-lvim.builtin.dap.on_config_done = function(dap)
-	dap.adapters.cppdbg = {
-		id = "cppdbg",
-		type = "executable",
-		command = mason_path .. "bin/OpenDebugAD7",
-	}
-
-	dap.configurations.cpp = {
-		{
-			name = "Launch file",
-			type = "cppdbg",
-			request = "launch",
-			program = function()
-				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-			end,
-
-			args = {},
-
-			cwd = "${workspaceFolder}",
-			stopAtEntry = true,
-			setupCommands = {
-				{
-					text = "-enable-pretty-printing",
-					description = "enable pretty printing",
-					ignoreFailures = false,
-				},
-			},
-		},
-		{
-			name = "Launch file with cli args",
-			type = "cppdbg",
-			request = "launch",
-			program = function()
-				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-			end,
-
-			args = function(...)
-				local args = {}
-				local args_no = vim.fn.input("Args No: ")
-				for _ = 1, args_no do
-					table.insert(args, vim.fn.input("Args: "))
-				end
-				return args
-			end,
-
-			cwd = "${workspaceFolder}",
-			stopAtEntry = true,
-			setupCommands = {
-				{
-					text = "-enable-pretty-printing",
-					description = "enable pretty printing",
-					ignoreFailures = false,
-				},
-			},
-		},
-		{
-			name = "Attach to gdbserver :1234",
-			type = "cppdbg",
-			request = "launch",
-			MIMode = "gdb",
-			miDebuggerServerAddress = "localhost:1234",
-			miDebuggerPath = "/usr/bin/gdb",
-			-- miDebuggerPath = "/usr/bin/lldb-vscode",
-			cwd = "${workspaceFolder}",
-			program = function()
-				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-			end,
-
-			setupCommands = {
-				{
-					text = "-enable-pretty-printing",
-					description = "enable pretty printing",
-					ignoreFailures = false,
-				},
-			},
-		},
-	}
-	dap.configurations.c = dap.configurations.cpp
-	dap.configurations.rust = dap.configurations.cpp
-end
+require("lspconfig").clangd.setup(opts)

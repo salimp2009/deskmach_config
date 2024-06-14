@@ -63,7 +63,7 @@ return {
 		ft = { "c", "cpp" },
 		lazy = true,
 		config = function()
-			require("user.lsp.clangd")
+			require("user.lsp.clangnew2")
 		end,
 	},
 	{
