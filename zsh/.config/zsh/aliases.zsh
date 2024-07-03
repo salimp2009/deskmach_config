@@ -9,6 +9,10 @@
 # alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
 # alias lvim="env TERM=wezterm lvim"
 
+alias ls="exa --icons --group-directories-first"
+alias ll='eza -lh'
+alias lla='eza -lah'
+
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
@@ -21,8 +25,8 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+# alias egrep='egrep --color=auto'
+# alias fgrep='fgrep --color=auto'
 
 # confirm before overwriting something
 # alias cp="cp -i"
