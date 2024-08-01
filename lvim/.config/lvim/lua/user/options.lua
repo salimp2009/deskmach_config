@@ -24,7 +24,6 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- 	{ nil, "<M-1>", "Vertical Terminal", "vertical", 0.4 },
 -- 	{ nil, "<M-3>", "Float Terminal", "float", nil },
 -- }
-
 -- NOTE: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true

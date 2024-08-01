@@ -7,6 +7,7 @@ filled in as strings with either
 a global executable or a path to
 an executable
 ]]
+
 require("user.options")
 require("user.plugins")
 -- require("user.lualine")
