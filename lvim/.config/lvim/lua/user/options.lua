@@ -77,5 +77,7 @@ lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references<CR
 lvim.lsp.buffer_mappings.normal_mode["gd"] = nil
 lvim.lsp.buffer_mappings.normal_mode["gd"] = { "<cmd>Telescope lsp_definitions<CR>", "Lsp References" }
 
+-- vim.g.db_ui_use_nvim_notify = 1
+
 -- local opts = { noremap = true, silent = true }
 -- vim.api.nvim_buf_set_keymap(0, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)

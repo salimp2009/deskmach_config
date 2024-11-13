@@ -5,7 +5,7 @@ local M = {
 
 function M.config()
 	require("toggleterm").setup({
-		size = 20,
+		size = 5,
 		open_mapping = [[<c-\>]],
 		hide_numbers = true,
 		shade_filetypes = {},
@@ -47,7 +47,7 @@ function M.config()
 		-- hidden = true,
 		direction = "horizontal",
 		label = "horizontal",
-		size = 12,
+		size = 5,
 		on_open = function(_)
 			vim.cmd("startinsert!")
 		end,
