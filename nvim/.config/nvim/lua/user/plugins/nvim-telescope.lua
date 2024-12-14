@@ -299,6 +299,9 @@ function M.config()
 					hidden = true,
 				},
 			},
+			-- man_pages = {
+			-- 	sections = { "ALL" },
+			-- },
 		},
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
