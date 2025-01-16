@@ -2,6 +2,7 @@
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
 lvim.colorscheme = "lunar"
+-- lvim.colorscheme = "everforest"
 -- lvim.colorscheme = "primer_dark"
 -- lvim.colorscheme = "onedark"
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -26,6 +27,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- }
 -- NOTE: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+lvim.lsp.automatic_servers_installation = false
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true

@@ -4,6 +4,15 @@ lvim.plugins = {
 	-- { "mattn/webapi-vim" },
 	-- { "mattn/vim-gist" },
 	-- { "Shatur/neovim-tasks" },
+	-- {
+	-- 	"neanias/everforest-nvim",
+	-- 	-- opts = { italics = true },
+	-- 	config = function()
+	-- 		require("everforest").setup({
+	-- 			italics = true,
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"kevinhwang91/nvim-ufo",
 		lazy = true,
