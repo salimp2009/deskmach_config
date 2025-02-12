@@ -81,14 +81,13 @@ lvim.lsp.buffer_mappings.normal_mode["gd"] = { "<cmd>Telescope lsp_definitions<C
 
 -- Telesc man_pages
 -- clear the existing mapping
--- lvim.builtin.which_key.mappings["sM"] = {}
+lvim.builtin.which_key.mappings["sM"] = {}
 
 -- then change it
--- lvim.builtin.which_key.mappings["sM"] =
--- 	{ "<cmd>Telescope man_pages { sections = { '1', '2', '3', '4', '5', '6', '7'}}<CR>", "Find Man Pages" }
+-- lvim.builtin.which_key.mappings["sM"] = { "<cmd>Telescope man_pages { sections = { 1, 2, 3}}<CR>", "Find Man Pages" }
 
--- lvim.builtin.which_key.mappings["sM"] =
--- 	{ "<cmd>lua require('telescope.builtin').man_pages { sections = {'ALL' }}<CR>", "Find Man Pages" }
+lvim.builtin.which_key.mappings["sM"] =
+	{ "<cmd>lua require('telescope.builtin').man_pages { sections = {'ALL' }}<CR>", "Find Man Pages" }
 
 -- vim.g.db_ui_use_nvim_notify = 1
 
