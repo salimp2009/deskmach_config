@@ -249,7 +249,7 @@ lvim.plugins = {
 	{
 		"saecki/crates.nvim",
 		-- version = "v0.3.0",
-		ft = { "toml" },
+		-- ft = { "toml" },
 		event = { "BufRead Cargo.toml" },
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},

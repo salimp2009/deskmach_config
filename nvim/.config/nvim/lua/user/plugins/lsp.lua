@@ -79,9 +79,10 @@ return {
 		-- version = "v0.3.0",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		-- ft = { "toml" },
+		event = { "BufRead Cargo.toml" },
 		config = function()
 			require("crates").setup({
-				src = {
+				completion = {
 					cmp = {
 						enabled = true,
 						use_custom_kind = true,

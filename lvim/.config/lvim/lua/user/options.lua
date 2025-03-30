@@ -93,3 +93,4 @@ lvim.builtin.which_key.mappings["sM"] =
 
 -- local opts = { noremap = true, silent = true }
 -- vim.api.nvim_buf_set_keymap(0, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+-- vim.b.editorconfig = true
