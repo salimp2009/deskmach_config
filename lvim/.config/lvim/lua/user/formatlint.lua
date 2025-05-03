@@ -1,6 +1,7 @@
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
+	-- { command = "vsg", filetypes = { "vhd", "vhdl" } },
 	{ command = "black", filetypes = { "python" } },
 	{ command = "ruff", filetypes = { "python" } },
 	-- { command = "isort", filetypes = { "python" } },
@@ -115,6 +116,10 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(serve
 	return server ~= "tflint"
 end, lvim.lsp.automatic_configuration.skipped_servers)
 
+-- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+-- 	return server ~= "vhdl_ls"
+-- end, lvim.lsp.automatic_configuration.skipped_servers)
+
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "cmake" })
 
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
@@ -215,4 +220,26 @@ code_actions.setup({
 -- 		yml = yaml_ft,
 -- 		yaml = yaml_ft,
 -- 	},
+
+local helpers = require("null-ls.helpers")
+local FORMATTING = require("null-ls.methods").internal.FORMATTING
+require("null-ls").register({
+	--your custom sources go here
+	helpers.make_builtin({
+		name = "vgs",
+		meta = {
+			url = "https://github.com/jeremiah-c-leary/vhdl-style-guide",
+			description = "A formatter for vhd/vhdl",
+		},
+		method = FORMATTING,
+		filetypes = { "vhd", "vhdl" },
+		generator_opts = {
+			command = "vsg",
+			args = {}, -- put any required arguments in this table
+			to_stdin = true, -- instructs the command to ingest the file from STDIN (i.e. run the currently open buffer through the linter/formatter)
+		},
+		factory = helpers.formatter_factory,
+	}),
+})
+
 -- })
