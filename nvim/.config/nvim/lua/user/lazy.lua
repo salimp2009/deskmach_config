@@ -66,7 +66,7 @@ require("lazy").setup("user.plugins", {
 				"netrwPlugin",
 				"tohtml",
 				"man",
-				"matchit",
+				-- "matchit",
 				"editorconfig",
 				"matchparen",
 			},

@@ -147,11 +147,11 @@ linters.setup({
 	{ command = "ruff", filetypes = { "python" } },
 
 	{ name = "jsonlint" },
-	{
-		name = "eslint_d",
-		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" },
-		-- extra_args = { "--config", "--no-eslintrc" },
-	},
+	-- {
+	-- 	name = "eslint_d",
+	-- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" },
+	-- 	-- extra_args = { "--config", "--no-eslintrc" },
+	-- },
 
 	{
 		command = "markdownlint",
